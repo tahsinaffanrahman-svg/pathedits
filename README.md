@@ -1,34 +1,30 @@
-# Astro Starter Kit: Basics
+# Pathedits
 
-```sh
-npm create astro@latest -- --template basics
-```
+Pathedits is a modern web application built with Astro. This repository contains the source code for the Pathedits website, including the homepage, pricing, blog, help center, and other core pages.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Project Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+Inside of your project, you will see the following folders and files:
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── public/           # Static assets like images and fonts
+├── src/
+│   ├── components/   # Reusable Astro and UI components
+│   ├── layouts/      # Page layout wrappers
+│   ├── pages/        # File-based routing for the application
+│   └── styles/       # Global CSS styles
+├── package.json      # Dependencies and scripts
+└── astro.config.mjs  # Astro configuration
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Technologies
 
-## 🧞 Commands
+- Astro (Static Site Generation / Server-Side Rendering)
+- LightningCSS (Fast CSS processing)
+- Custom CSS (No external utility frameworks used for core components)
+
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -39,8 +35,9 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Development Guidelines
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- When adding new pages, place them in the `src/pages/` directory.
+- Use explicit, standalone CSS for styling to ensure styles are resilient and self-contained.
+- Follow existing component patterns in `src/components/`.
