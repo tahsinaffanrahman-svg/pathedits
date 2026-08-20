@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="About Path | Path Edits" description="We're your virtual photo editing and design studio">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="About Path" subtitle="We're your virtual photo editing and design studio" />
+    <section class="about-section">
+      <div class="container">
+        <div class="story">
+          <div class="text">
+            <h2>Our Story</h2>
+            <p>Formerly known as Clipping Path India, Path has evolved into a global leader in professional photo editing. Today, we proudly serve over 42,000 businesses worldwide, delivering high-quality image editing at scale.</p>
+          </div>
+          <div class="image">
+            <img src="https://cdn.pathedits.com/Illustrations/work-and-passion-illustration.svg" alt="Work and Passion" />
+          </div>
+        </div>
+
+        <div class="operations">
+          <h2>Bangladesh Operations & Team Values</h2>
+          <p>Our dedicated team in Bangladesh forms the heart of our operations. We believe in providing fair wages, excellent working conditions, and ongoing training to empower our professionals.</p>
+        </div>
+
+        <div class="impact">
+          <div class="image">
+            <img src="https://cdn.pathedits.com/Images/pages/home/path-impact-gaibandha-children-smiling.png" alt="Path Impact" />
+          </div>
+          <div class="text">
+            <h2>Social Impact & Anisa Foundation</h2>
+            <p>We believe in giving back. We donate 5% of our revenue to the Anisa Foundation to support local communities, education, and healthcare initiatives.</p>
+            <p>We are also a proud partner of the UN Global Compact, committed to sustainable and socially responsible business practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container { max-width: 1256px; margin: 0 auto; padding: 40px 20px; }
+  .about-section { background-color: #F3F1F9; }
+  .story, .impact { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; background: white; padding: 40px; border-radius: 20px; }
+  .operations { background: white; padding: 40px; border-radius: 20px; margin-bottom: 60px; text-align: center; }
+  .text { flex: 1; }
+  .image { flex: 1; text-align: center; }
+  .image img { max-width: 100%; border-radius: 10px; }
+  h2 { font-family: 'Livvic', sans-serif; color: #2B1B9A; margin-bottom: 20px; font-size: 2rem; }
+  p { font-family: 'Asap', sans-serif; color: #5F5572; line-height: 1.6; font-size: 1.1rem; margin-bottom: 15px; }
+  @media (max-width: 768px) {
+    .story, .impact { flex-direction: column; }
+  }
+</style>

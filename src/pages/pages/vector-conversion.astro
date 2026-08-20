@@ -1,0 +1,177 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
+import CtaSection from '../../components/CtaSection.astro';
+---
+
+<Layout title="Vector Conversion Service | Path Edits" description="Convert images to vector files that scale to any size without losing detail.">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero 
+      title="Vector Conversion Service" 
+      subtitle="Convert images to vector files that scale to any size without losing detail" 
+      breadcrumb="Home / Services / Vector Conversion"
+    />
+    
+    <section class="service-overview">
+      <div class="container">
+        <div class="overview-content">
+          <div class="text-content">
+            <h2>Perfectly crisp vector files starting at $3.99 per image</h2>
+            <p>Our vector conversion service transforms your raster images into clean, infinitely scalable vector files that are ready for print, web, or any other medium without losing quality.</p>
+            
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <img src="https://cdn.pathedits.com/Icons/vector-services.svg" alt="Infinite scalability" class="benefit-icon" />
+                <h3>Infinite scalability</h3>
+                <p>Resize your graphics to any dimension without losing detail or crispness.</p>
+              </div>
+              <div class="benefit-card">
+                <img src="https://cdn.pathedits.com/Icons/vector-services.svg" alt="Print-ready files" class="benefit-icon" />
+                <h3>Print-ready files</h3>
+                <p>Get files formatted perfectly for professional printing equipment.</p>
+              </div>
+              <div class="benefit-card">
+                <img src="https://cdn.pathedits.com/Icons/vector-services.svg" alt="Logo conversion" class="benefit-icon" />
+                <h3>Logo conversion</h3>
+                <p>Transform old, pixelated logos into sharp, modern vector formats.</p>
+              </div>
+              <div class="benefit-card">
+                <img src="https://cdn.pathedits.com/Icons/vector-services.svg" alt="Clean line art" class="benefit-icon" />
+                <h3>Clean line art</h3>
+                <p>Convert sketches or raster artwork into precise, clean vector paths.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="image-content">
+            <img src="https://cdn.pathedits.com/Images/shared/service-cards/vector-conversion-drawing-pen-edited.png?w=400" alt="Vector Conversion Example" class="service-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section bg-pale">
+      <div class="container">
+        <h2 class="text-center">Frequently Asked Questions</h2>
+        <FAQ items={[
+          {
+            question: "What is vector conversion?",
+            answer: "Converting raster/bitmap images (like JPGs or PNGs) into scalable vector formats. These mathematically drawn images can be scaled up infinitely without pixelating."
+          },
+          {
+            question: "What are the output formats?",
+            answer: "We typically provide vector files in AI (Adobe Illustrator), EPS, SVG, and PDF formats."
+          },
+          {
+            question: "What images work best for vector conversion?",
+            answer: "Logos, line art, illustrations, simple graphics, and typography are ideal for vector conversion. Photographs are typically not suited for vectorization."
+          }
+        ]} />
+      </div>
+    </section>
+
+    <CtaSection />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .bg-pale {
+    background-color: #F8F6FA;
+  }
+  
+  .service-overview, .faq-section {
+    padding: 80px 0;
+  }
+  
+  .overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  
+  @media (max-width: 900px) {
+    .overview-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .text-content h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .text-content p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  .benefit-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  
+  .benefit-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+  
+  .benefit-card h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #332B50;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+  
+  .benefit-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  
+  .image-content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .service-image {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(43,27,154,0.1);
+  }
+  
+  .text-center {
+    text-align: center;
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+</style>

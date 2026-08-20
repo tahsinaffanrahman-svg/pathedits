@@ -1,0 +1,768 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import Footer from '../../components/Footer.astro';
+
+const creditPacks = [
+  { price: "$50", credits: "54 credits", paid: "50 paid", free: "4 free", rate: "$0.93 / credit" },
+  { price: "$100", credits: "113 credits", paid: "100 paid", free: "13 free", rate: "$0.88 / credit" },
+  { price: "$250", credits: "290 credits", paid: "250 paid", free: "40 free", rate: "$0.86 / credit" },
+  { price: "$500", credits: "600 credits", paid: "500 paid", free: "100 free", rate: "$0.83 / credit" },
+  { price: "$1,000", credits: "1,250 credits", paid: "1,000 paid", free: "250 free", rate: "$0.80 / credit" },
+  { price: "$2,500", credits: "3,200 credits", paid: "2,500 paid", free: "700 free", rate: "$0.78 / credit" },
+  { price: "$5,000", credits: "6,550 credits", paid: "5,000 paid", free: "1,550 free", rate: "$0.76 / credit" },
+  { price: "$10,000", credits: "13,500 credits", paid: "10,000 paid", free: "3,500 free", rate: "$0.74 / credit" }
+];
+
+const faqs = [
+  {
+    q: "Can I get a bigger discount for more edits?",
+    a: "You can! There are two ways:",
+    list: [
+      "Purchase the biggest package of Path credits.",
+      "If you have tons of product photos you need edited all the time, you can get photo-editing services at a reduced rate. Send us a message to let us know more about what you need."
+    ]
+  },
+  {
+    q: "How long do Path credits last?",
+    a: "Path credits never expire, so you can stock up and keep using them for as long as you need."
+  },
+  {
+    q: "How do I pay with my credits?",
+    a: "We’ll save your Path credits in your Path account, and you’ll be able to choose to pay with credits when you place any future orders.",
+    a2: "Once you’ve confirmed your order, you’ll be able to choose between PayPal, credit or debit card, or your Path credits."
+  },
+  {
+    q: "How can I check how many Path credits I have?",
+    a: "You can check your Path credits balance if you’re logged in to the customer dashboard. Click on BILLING in the main menu. Your Path credits balance will display at the top. You can also purchase more Path credits from this page. Please see more details <a href=\"https://help.pathedits.com/article/190-how-do-i-check-my-path-credits-balance\" target=\"_blank\" rel=\"noopener\">here</a>."
+  }
+];
+---
+
+<Layout title="Path Credits | Save on Photo Editing | Path" description="Buy credits and save on your photo editing">
+  <Header />
+  <InfoBar />
+  <main>
+    <!-- Hero Block -->
+    <section class="hero-credits-section">
+      <div class="container-wide">
+        <div class="hero-columns">
+          <div class="hero-content">
+            <h1>Save time and money with Path credits</h1>
+            <p class="hero-subtitle">If you’re a Path regular or have a mountain of edits coming up, use Path credits for the best price per shot.</p>
+            <div class="hero-actions">
+              <a href="#section-credits" class="btn-solid">Buy credits &rarr;</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="https://cdn.pathedits.com/Illustrations/save-time-money-path-credits.svg" alt="Path credits help you save time and money on photo editing services." />
+          </div>
+        </div>
+
+        <!-- Benefits Card -->
+        <div class="benefits-card box-shadow">
+          <div class="benefit-col">
+            <h3 class="check">Save time</h3>
+            <p>Pay once to streamline your future orders and zoom through checkout.</p>
+          </div>
+          <div class="benefit-col">
+            <h3 class="check">Save money</h3>
+            <p>Credits give you the lowest price per edit. The more you buy, the more you save.</p>
+          </div>
+          <div class="benefit-col">
+            <h3 class="check">Collaborate easily</h3>
+            <p>Give your team access to a fully stocked account, without sharing your card details.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buy More, Get More Grid Section -->
+    <section class="buy-more-section" id="section-credits">
+      <div class="container">
+        <div class="section-header">
+          <h2>Buy more, get more</h2>
+          <p>When you buy a bigger credit pack, we’ll top you up with extra bonus credits. Each credit is worth $1 towards your future orders.</p>
+        </div>
+
+        <div class="credit-grid">
+          {creditPacks.map(pack => (
+            <div class="credit-card box-shadow">
+              <figure class="star-icon">
+                <img src="https://cdn.pathedits.com/Illustrations/trusted-image-editing-services.svg" alt="Path credits" />
+              </figure>
+              <h4><strong>{pack.price}</strong> &rarr; <strong>{pack.credits}</strong></h4>
+              <p class="pack-badge">
+                <strong>{pack.paid}</strong> + <span class="free-text"><strong>{pack.free}</strong></span> &middot; <span class="rate-text"><strong>{pack.rate}</strong></span>
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div class="cta-center">
+          <a href="https://dashboard.pathedits.com/credits" class="btn-solid purple-btn">Buy credits &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Path Credits Work Section -->
+    <section class="how-it-works-section">
+      <div class="container">
+        <h2>How Path credits work</h2>
+        <div class="steps-card box-shadow">
+          <!-- Step 1 -->
+          <div class="step-item">
+            <div class="step-icon">
+              <span class="list-number list-number-orange">1</span>
+            </div>
+            <div class="step-text">
+              <h3>Buy a credit pack</h3>
+              <p>When you choose a bigger pack, we’ll add more credits as a bonus. Each credit is worth $1 toward your order total.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="step-item">
+            <div class="step-icon">
+              <span class="list-number list-number-blue">2</span>
+            </div>
+            <div class="step-text">
+              <h3>We’ll add your credits to your Path account</h3>
+              <p>Next time you order, you can choose to pay with credits and zoom through checkout — at a lower cost per shot.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="step-item">
+            <div class="step-icon">
+              <span class="list-number list-number-yellow">3</span>
+            </div>
+            <div class="step-text">
+              <h3>That’s it!</h3>
+              <p>Your credits will never expire, so you can stock up and keep saving.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-credits-section">
+      <div class="container">
+        <div class="faq-header">
+          <h2>Have questions about Path credits?</h2>
+          <p class="faq-subtitle">Here’s what other people have asked us:</p>
+        </div>
+
+        <div class="pe-faq">
+          {faqs.map(faq => (
+            <div class="faq-wrapper">
+              <div class="faq faq-border">
+                <h2 class="question">
+                  {faq.q}
+                  <span class="toggle"></span>
+                </h2>
+                <div class="answer" style="display: none;">
+                  <div class="content">
+                    <p>{faq.a}</p>
+                    {faq.list && (
+                      <ol class="faq-list">
+                        {faq.list.map(item => (
+                          <li>{item}</li>
+                        ))}
+                      </ol>
+                    )}
+                    {faq.a2 && <p>{faq.a2}</p>}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="just-ask-row">
+          <span>Have other questions?</span>
+          <a href="https://dashboard.pathedits.com/help" class="just-ask-link">Just ask &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pay Per Order Section -->
+    <section class="pay-per-order-section">
+      <div class="container-wide">
+        <div class="pay-card box-shadow">
+          <div class="pay-image">
+            <img src="https://cdn.pathedits.com/Illustrations/instant-photo-edit-pricing.svg" alt="Quickly calculate the cost of your photo edits with instant pricing tools." />
+          </div>
+          <div class="pay-text">
+            <h2>Want to pay per order instead?</h2>
+            <p>Select your service, choose your turnaround time, and we’ll send you a custom quote within 45 minutes.</p>
+            <a href="https://dashboard.pathedits.com/instant_quotes/new" class="btn-solid">Order your edits &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Base Containers */
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  .container-wide {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  
+  .box-shadow {
+    box-shadow: 0px 8px 32px rgba(43, 27, 154, 0.04), 0px 0px 4px rgba(43, 27, 154, 0.04);
+  }
+
+  /* Buttons */
+  .btn-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #67B6F4;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    min-height: 48px;
+    padding: 0 32px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(103, 182, 244, 0.4);
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .btn-solid:hover {
+    background: #79B5EF;
+    box-shadow: 0 6px 20px rgba(103, 182, 244, 0.5);
+  }
+  .purple-btn {
+    background: #736BCC;
+    box-shadow: 0 4px 14px rgba(115, 107, 204, 0.4);
+  }
+  .purple-btn:hover {
+    background: #837BD6;
+    box-shadow: 0 6px 20px rgba(115, 107, 204, 0.5);
+  }
+
+  /* 1. Hero Credits Section */
+  .hero-credits-section {
+    background-color: #F8F6FA;
+    padding: 80px 0 100px;
+  }
+  .hero-columns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 64px;
+    margin-bottom: 64px;
+  }
+  .hero-content {
+    flex: 1;
+    max-width: 600px;
+  }
+  .hero-content h1 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 24px;
+  }
+  .hero-subtitle {
+    font-family: 'Asap', sans-serif;
+    color: #2B1B9A;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 0 40px;
+  }
+  .hero-image {
+    flex-shrink: 0;
+  }
+  .hero-image img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+  }
+
+  /* Benefits Card */
+  .benefits-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 48px 64px;
+    display: flex;
+    gap: 48px;
+    position: relative;
+    z-index: 10;
+    margin-top: -20px;
+  }
+  .benefit-col {
+    flex: 1;
+  }
+  .benefit-col h3.check {
+    font-family: 'Livvic', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2B1B9A;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .benefit-col h3.check:before {
+    content: url(https://cdn.pathedits.com/Icons/check.svg);
+    background-color: #d2eafc;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .benefit-col p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* 2. Buy More Section */
+  .buy-more-section {
+    background: #FFFFFF;
+    padding: 100px 0;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .section-header h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+  .section-header p {
+    font-family: 'Asap', sans-serif;
+    color: #2B1B9A;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Credit Packs Grid */
+  .credit-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
+  .credit-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    border-top: 10px solid #9D91F5;
+    padding: 40px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 calc(33.33% - 22px);
+    min-width: 320px;
+    box-sizing: border-box;
+  }
+  .star-icon {
+    margin: 0 0 16px;
+  }
+  .star-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+  .credit-card h4 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0 0 20px;
+  }
+  .pack-badge {
+    border: 1px solid #ccebd8;
+    border-radius: 10px;
+    color: #667085;
+    background-color: #ecf9f1;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: 'Asap', sans-serif;
+    margin: 0;
+  }
+  .pack-badge strong {
+    color: #5F5572;
+  }
+  .pack-badge .free-text strong {
+    color: #17b86a;
+  }
+  .pack-badge .rate-text strong {
+    color: #17b86a;
+  }
+  
+  .cta-center {
+    margin-top: 56px;
+    text-align: center;
+  }
+
+  /* 3. How Path Credits Work Section */
+  .how-it-works-section {
+    background-color: #F8F6FA;
+    padding: 100px 0;
+  }
+  .how-it-works-section h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 48px;
+  }
+  .steps-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .step-icon {
+    flex-shrink: 0;
+  }
+  
+  /* Step number badges styling from WordPress theme */
+  .list-number {
+    border: 6px solid #fff;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: normal !important;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+  }
+  .list-number-orange {
+    color: #fa585a;
+    background-color: #ffeeef;
+  }
+  .list-number-blue {
+    color: #67b6f4;
+    background-color: #f0f8fe;
+  }
+  .list-number-yellow {
+    color: #ffcd1e;
+    background-color: #fff7e8;
+  }
+
+  .step-text h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .step-text p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* 4. FAQ Section */
+  .faq-credits-section {
+    background-color: #FFFFFF;
+    padding: 100px 0;
+  }
+  .faq-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .faq-header h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+  .faq-subtitle {
+    font-family: 'Asap', sans-serif;
+    font-size: 18px;
+    color: #67B6F4;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* FAQ Accordions */
+  .pe-faq {
+    max-width: 1040px;
+    margin: 0 auto 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .faq-wrapper {
+    width: 100%;
+  }
+  .faq {
+    border-radius: 8px;
+    background: #f8f6fa;
+    padding: 24px 32px;
+    position: relative;
+    transition: background 0.2s, border-color 0.2s;
+    box-sizing: border-box;
+  }
+  .faq.active {
+    background: #fff;
+    border: 2px solid #2b1b9a;
+    padding: 22px 30px;
+  }
+  .question {
+    color: #2b1b9a;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    font-family: 'Livvic', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    min-height: 40px;
+  }
+  .toggle {
+    position: relative;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 2px 4px 12px rgba(43, 27, 154, 0.06);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .toggle:before, .toggle:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #2b1b9a;
+    border-radius: 1px;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 2px;
+    transition: all 0.2s ease;
+  }
+  .toggle:after {
+    width: 2px;
+    height: 14px;
+  }
+  .faq.active .toggle:after {
+    opacity: 0;
+  }
+  
+  .answer {
+    margin-top: 16px;
+    color: #5f5572;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Asap', sans-serif;
+  }
+  .answer p {
+    margin: 0 0 12px;
+  }
+  .answer p:last-child {
+    margin-bottom: 0;
+  }
+  .answer a {
+    color: #2b1b9a;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .faq-list {
+    margin: 12px 0;
+    padding-left: 20px;
+  }
+  .faq-list li {
+    margin-bottom: 8px;
+  }
+
+  .just-ask-row {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    color: #5F5572;
+  }
+  .just-ask-link {
+    color: #2B1B9A;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+  }
+  .just-ask-link:hover {
+    color: #736BCC;
+  }
+
+  /* 5. Pay Per Order Section */
+  .pay-per-order-section {
+    background-color: #F8F6FA;
+    padding: 100px 0;
+  }
+  .pay-card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 64px 80px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+  .pay-image {
+    flex: 0 0 240px;
+    text-align: center;
+  }
+  .pay-image img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+  .pay-text {
+    flex: 1;
+  }
+  .pay-text h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+  .pay-text p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 32px;
+  }
+
+  /* Responsive styling */
+  @media (max-width: 1100px) {
+    .credit-card {
+      flex: 0 1 calc(50% - 16px);
+    }
+  }
+
+  @media (max-width: 960px) {
+    .hero-columns {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 32px;
+    }
+    .hero-content {
+      max-width: 100%;
+    }
+    .benefits-card {
+      flex-direction: column;
+      padding: 32px;
+      gap: 32px;
+    }
+    .pay-card {
+      flex-direction: column;
+      padding: 40px;
+      text-align: center;
+      gap: 32px;
+    }
+    .pay-image {
+      flex: 0 0 auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .credit-card {
+      flex: 0 1 100%;
+    }
+    .steps-card {
+      padding: 32px;
+    }
+    .step-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+  }
+</style>
+
+<script>
+  // FAQ accordion interactivity
+  const questions = document.querySelectorAll('.question');
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      const faq = q.parentElement;
+      const answer = q.nextElementSibling;
+      
+      // Close other FAQs
+      document.querySelectorAll('.faq').forEach(otherFaq => {
+        if (otherFaq !== faq && otherFaq.classList.contains('active')) {
+          otherFaq.classList.remove('active');
+          const otherAnswer = otherFaq.querySelector('.answer');
+          if (otherAnswer && otherAnswer instanceof HTMLElement) {
+            otherAnswer.style.display = 'none';
+          }
+        }
+      });
+      
+      // Toggle current FAQ
+      const isActive = faq.classList.contains('active');
+      if (isActive) {
+        faq.classList.remove('active');
+        if (answer && answer instanceof HTMLElement) {
+          answer.style.display = 'none';
+        }
+      } else {
+        faq.classList.add('active');
+        if (answer && answer instanceof HTMLElement) {
+          answer.style.display = 'block';
+        }
+      }
+    });
+  });
+</script>

@@ -1,0 +1,791 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Path Help Centre | Path" description="Take a short Academy course or browse help articles. We’re always here with 24/7 support from real people who are ready to help.">
+  <Header />
+  <InfoBar />
+  <main class="help-centre-page-wrapper">
+    <div class="help-centre-inner-container">
+      
+      <!-- Top Header & Search -->
+      <div class="help-centre-top-header">
+        <div class="help-centre-title-area">
+          <h1 class="help-centre-main-title">How can we help?</h1>
+          <p class="help-centre-sub-text">Take a short Academy course or browse help articles.</p>
+        </div>
+        <div class="help-centre-search-area">
+          <form class="help-search-form-box" onsubmit="event.preventDefault();">
+            <input type="text" id="helpSearchInput" class="help-search-input" placeholder="Search help…" autocomplete="off" />
+            <button type="submit" class="help-search-submit-btn">Search</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Academy Section -->
+      <div class="help-section-title-wrap">
+        <h2 class="help-section-heading">Academy</h2>
+      </div>
+      
+      <div class="academy-card-container">
+        <div class="academy-banner-card">
+          <div class="academy-icon-box" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8075FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <circle cx="12" cy="13" r="1.5"></circle>
+              <path d="M12 9v1.5"></path>
+            </svg>
+          </div>
+          <div class="academy-text-box">
+            <h3 class="academy-course-title">
+              <a href="/pages/free-trial" class="academy-title-link">Path 101</a>
+            </h3>
+            <p class="academy-course-desc">
+              Onboarding for new Path customers — learn the portal, place your first order, pay with Path credits, and set up templates for faster reorders.
+            </p>
+            <div class="academy-course-meta">
+              8 lessons · Approx. 27 min
+            </div>
+          </div>
+          <div class="academy-btn-actions">
+            <a href="/pages/free-trial" class="btn-start-course">Start course</a>
+            <a href="/pages/how-it-works" class="btn-view-outline">View outline</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Browse Topics Section -->
+      <div class="browse-topics-container">
+        <h2 class="help-section-heading">Browse topics</h2>
+        
+        <div class="browse-topics-grid-2col">
+          
+          <!-- Card 1: Invoice and Billing -->
+          <div class="topic-card-box">
+            <div class="topic-card-text-area">
+              <h3 class="topic-card-title">
+                <a href="/pages/pricing" class="topic-title-link">Invoice and Billing</a>
+              </h3>
+              <ul class="topic-article-links-list">
+                <li>
+                  <a href="/pages/pricing" class="topic-article-link">Do I need to pay VAT if I am in the E.U.? How do I enable VAT exemption?</a>
+                </li>
+                <li>
+                  <a href="/pages/pricing" class="topic-article-link">How do I get a VAT invoice?</a>
+                </li>
+                <li>
+                  <a href="/pages/pricing" class="topic-article-link">What payment methods do you accept?</a>
+                </li>
+                <li>
+                  <a href="/pages/pricing" class="topic-article-link">How do I pay for my order with credit / debit card or PayPal?</a>
+                </li>
+              </ul>
+              <div class="topic-card-footer-link">
+                <a href="/pages/pricing" class="view-all-link">View all 8 articles</a>
+              </div>
+            </div>
+            <div class="topic-card-icon-area">
+              <img src="https://cdn.pathedits.com/Illustrations/custom-photo-editing.svg" alt="Invoice and Billing" class="topic-svg-icon" />
+            </div>
+          </div>
+
+          <!-- Card 2: My Account -->
+          <div class="topic-card-box">
+            <div class="topic-card-text-area">
+              <h3 class="topic-card-title">
+                <a href="/pages/free-trial" class="topic-title-link">My Account</a>
+              </h3>
+              <ul class="topic-article-links-list">
+                <li>
+                  <a href="/pages/free-trial" class="topic-article-link">How do I create a Path account?</a>
+                </li>
+                <li>
+                  <a href="/pages/contact" class="topic-article-link">How do I log in to my Path account?</a>
+                </li>
+                <li>
+                  <a href="/pages/contact" class="topic-article-link">How do I reset my Path account password?</a>
+                </li>
+                <li>
+                  <a href="/pages/contact" class="topic-article-link">How do I change my Path account password?</a>
+                </li>
+              </ul>
+              <div class="topic-card-footer-link">
+                <a href="/pages/free-trial" class="view-all-link">View all 12 articles</a>
+              </div>
+            </div>
+            <div class="topic-card-icon-area">
+              <img src="https://cdn.pathedits.com/Illustrations/trusted-40000-clients-image-editing.svg" alt="My Account" class="topic-svg-icon" />
+            </div>
+          </div>
+
+          <!-- Card 3: Order -->
+          <div class="topic-card-box">
+            <div class="topic-card-text-area">
+              <h3 class="topic-card-title">
+                <a href="/pages/services" class="topic-title-link">Order</a>
+              </h3>
+              <ul class="topic-article-links-list">
+                <li>
+                  <a href="/pages/free-trial" class="topic-article-link">How do I submit a trial order?</a>
+                </li>
+                <li>
+                  <a href="/pages/services" class="topic-article-link">What is Next Morning delivery?</a>
+                </li>
+                <li>
+                  <a href="/pages/contact" class="topic-article-link">How do I request a quote?</a>
+                </li>
+                <li>
+                  <a href="/pages/pricing" class="topic-article-link">What are your turnaround times, and how do they affect your rates?</a>
+                </li>
+              </ul>
+              <div class="topic-card-footer-link">
+                <a href="/pages/services" class="view-all-link">View all 24 articles</a>
+              </div>
+            </div>
+            <div class="topic-card-icon-area">
+              <img src="https://cdn.pathedits.com/Illustrations/services-busy-professional-photographers.svg" alt="Order" class="topic-svg-icon" />
+            </div>
+          </div>
+
+          <!-- Card 4: Path credits -->
+          <div class="topic-card-box">
+            <div class="topic-card-text-area">
+              <h3 class="topic-card-title">
+                <a href="/pages/credits" class="topic-title-link">Path credits</a>
+              </h3>
+              <ul class="topic-article-links-list">
+                <li>
+                  <a href="/pages/credits" class="topic-article-link">What are Path credits, and how do they work?</a>
+                </li>
+                <li>
+                  <a href="/pages/credits" class="topic-article-link">How do I buy Path credits?</a>
+                </li>
+                <li>
+                  <a href="/pages/credits" class="topic-article-link">How do I pay for my order with Path credits?</a>
+                </li>
+                <li>
+                  <a href="/pages/credits" class="topic-article-link">How do I check my Path credits balance?</a>
+                </li>
+              </ul>
+              <div class="topic-card-footer-link">
+                <a href="/pages/credits" class="view-all-link">View all 5 articles</a>
+              </div>
+            </div>
+            <div class="topic-card-icon-area">
+              <img src="https://cdn.pathedits.com/Illustrations/trusted-image-editing-services.svg" alt="Path credits" class="topic-svg-icon" />
+            </div>
+          </div>
+
+          <!-- Card 5: Referral and Affiliate programs -->
+          <div class="topic-card-box">
+            <div class="topic-card-text-area">
+              <h3 class="topic-card-title">
+                <a href="/pages/affiliate" class="topic-title-link">Referral and Affiliate programs</a>
+              </h3>
+              <ul class="topic-article-links-list">
+                <li>
+                  <a href="/pages/affiliate" class="topic-article-link">Does Path have a Referral or Rewards program?</a>
+                </li>
+                <li>
+                  <a href="/pages/affiliate" class="topic-article-link">How do I join the Path Referral Program?</a>
+                </li>
+                <li>
+                  <a href="/pages/affiliate" class="topic-article-link">Does Path have an Affiliate Program?</a>
+                </li>
+                <li>
+                  <a href="/pages/affiliate" class="topic-article-link">How do I join the Path Affiliate program?</a>
+                </li>
+              </ul>
+            </div>
+            <div class="topic-card-icon-area">
+              <img src="https://cdn.pathedits.com/Illustrations/work-and-passion-illustration.svg" alt="Referral and Affiliate programs" class="topic-svg-icon" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contact the Path Team Section -->
+      <section class="contact-team-section-wrap" id="contact-form">
+        <div class="contact-team-header-area">
+          <h2 class="help-section-heading">Contact the Path team</h2>
+          <p class="help-centre-sub-text">
+            We’re always here when you need us, with <strong>24/7 support</strong> from real people who are ready to help. Email us at <a href="mailto:hello@pathedits.com" class="direct-email-link">hello@pathedits.com</a>.
+          </p>
+        </div>
+
+        <div class="contact-team-main-card">
+          <div class="contact-team-grid-layout">
+            
+            <!-- Left Column: Avatar Cluster -->
+            <div class="contact-avatar-cluster-col">
+              <div class="contact-avatar-stage">
+                <!-- Background decorative bubbles -->
+                <div aria-hidden="true" class="stage-bubble stage-bubble-filler stage-bubble-yellow" style="width: 12%; height: 12%; top: 84.0%; left: 82.0%; z-index: 6;"></div>
+                <div aria-hidden="true" class="stage-bubble stage-bubble-filler stage-bubble-purple" style="width: 7%; height: 7%; top: 4.5%; left: 46.5%; z-index: 7;"></div>
+                <div aria-hidden="true" class="stage-bubble stage-bubble-filler stage-bubble-red" style="width: 9%; height: 9%; top: 88.5%; left: 45.5%; z-index: 8;"></div>
+                <div aria-hidden="true" class="stage-bubble stage-bubble-filler stage-bubble-blue" style="width: 8%; height: 8%; top: 14.0%; left: 24.0%; z-index: 9;"></div>
+                <div aria-hidden="true" class="stage-bubble stage-bubble-filler stage-bubble-indigo" style="width: 7%; height: 7%; top: 12.5%; left: 70.5%; z-index: 10;"></div>
+                <div aria-hidden="true" class="stage-bubble stage-bubble-filler stage-bubble-purple" style="width: 7%; height: 7%; top: 74.5%; left: 18.5%; z-index: 11;"></div>
+                <div aria-hidden="true" class="stage-bubble stage-bubble-filler stage-bubble-yellow" style="width: 8%; height: 8%; top: 72.0%; left: 74.0%; z-index: 12;"></div>
+
+                <!-- Team Avatar Bubbles with photos -->
+                <div class="stage-bubble stage-bubble-yellow" title="Sheikh Evan" style="width: 32%; height: 32%; top: 34.0%; left: 34.0%; z-index: 20;">
+                  <img src="https://dashboard.pathedits.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjR2RGc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--8618ee9809018e7bfcae0def6fa461f7d05c231f/WhatsApp%20Image%202024-06-04%20at%2010.36.48%20AM.jpeg" alt="Sheikh Evan" />
+                </div>
+                <div class="stage-bubble stage-bubble-blue" title="Rasel Mir" style="width: 26%; height: 26%; top: 21.0%; left: 64.71%; z-index: 19;">
+                  <img src="https://dashboard.pathedits.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBODFFRGc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--dd827c749bac10ff6f662426bbdecf4344eacf40/1000020631.jpg" alt="Rasel Mir" />
+                </div>
+                <div class="stage-bubble stage-bubble-red" title="Sanjit Roy" style="width: 26%; height: 26%; top: 53.0%; left: 64.71%; z-index: 18;">
+                  <img src="https://dashboard.pathedits.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOUVQRGc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--96c9a4b6f010972551d6727885363a95eeb97085/T8MHR5XH8-UJBGM5CQL-c374e1fafb85-512.png" alt="Sanjit Roy" />
+                </div>
+                <div class="stage-bubble stage-bubble-purple" title="Mehadi Hasan" style="width: 26%; height: 26%; top: 69.0%; left: 37.0%; z-index: 17;">
+                  <img src="https://dashboard.pathedits.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeHdhRGc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--592d364829fe61c056cad5794d43d3d2159fc0e5/IMG_20250508_132422859_HDR%20half%2012.jpg" alt="Mehadi Hasan" />
+                </div>
+                <div class="stage-bubble stage-bubble-yellow" title="Ripon Deb" style="width: 26%; height: 26%; top: 53.0%; left: 9.29%; z-index: 16;">
+                  <img src="https://dashboard.pathedits.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeFgwRFE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--183563547efd573e212e1c9c4efd64711e492dd0/T8MHR5XH8-UJCLS0R88-e93421f3903b-512.jpg" alt="Ripon Deb" />
+                </div>
+                <div class="stage-bubble stage-bubble-blue" title="Uzzal Prodhan" style="width: 26%; height: 26%; top: 21.0%; left: 9.29%; z-index: 15;">
+                  <img src="https://dashboard.pathedits.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMW9SRGc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--76ddee0d5ca2bf97f592b3719465bebc1275fe6e/Uzzal%2015.png" alt="Uzzal Prodhan" />
+                </div>
+                <div class="stage-bubble stage-bubble-red" title="Motiur Shadhin" style="width: 26%; height: 26%; top: 5.0%; left: 37.0%; z-index: 14;">
+                  <img src="https://dashboard.pathedits.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBd01ZRGc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--99f0f01222ce46862f4d9dba6771272cd03e716a/Profile%20pic.jpg" alt="Motiur Shadhin" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Form -->
+            <div class="contact-form-fields-col">
+              <form class="actual-contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to the Path support team. We will respond within 45 minutes.'); this.reset();">
+                <div class="form-2col-row">
+                  <div class="form-input-group">
+                    <label class="form-field-label" for="contact_name">Full name</label>
+                    <input type="text" class="styled-text-input" id="contact_name" name="name" placeholder="Your full name" required />
+                  </div>
+                  <div class="form-input-group">
+                    <label class="form-field-label" for="contact_email">Email</label>
+                    <input type="email" class="styled-text-input" id="contact_email" name="email" placeholder="Your email address" required />
+                  </div>
+                </div>
+
+                <div class="form-input-group">
+                  <label class="form-field-label" for="contact_topic">Topic</label>
+                  <select class="styled-select-input" id="contact_topic" name="topic" required>
+                    <option value="">Select a topic</option>
+                    <option value="production">Production</option>
+                    <option value="sales">Sales</option>
+                    <option value="billing">Billing</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-input-group">
+                  <label class="form-field-label" for="contact_message">Message</label>
+                  <textarea class="styled-textarea-input" id="contact_message" name="message" placeholder="Write your message here" rows="5" required></textarea>
+                </div>
+
+                <div class="form-btn-submit-row">
+                  <button type="submit" class="styled-submit-btn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Base Container Styles */
+  .help-centre-page-wrapper {
+    background-color: #FFFFFF !important;
+    min-height: 80vh;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+  }
+  .help-centre-inner-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 40px 24px 80px 24px;
+    box-sizing: border-box;
+    font-family: 'Asap', sans-serif;
+  }
+
+  /* Top Header & Search */
+  .help-centre-top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .help-centre-title-area {
+    flex: 1 1 auto;
+  }
+  .help-centre-main-title {
+    color: #282294;
+    font-family: 'Livvic', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 6px 0;
+  }
+  .help-centre-sub-text {
+    color: #5F5572;
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .help-centre-search-area {
+    flex: 0 0 340px;
+    max-width: 100%;
+  }
+  .help-search-form-box {
+    display: flex;
+    width: 100%;
+    border: 1px solid #E2DEFC;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(40, 34, 148, 0.04);
+  }
+  .help-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    color: #282294;
+    background: transparent;
+  }
+  .help-search-submit-btn {
+    background-color: #8075FF;
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Asap', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .help-search-submit-btn:hover {
+    background-color: #6C5CE7;
+  }
+
+  /* Section Title */
+  .help-section-title-wrap {
+    margin-bottom: 16px;
+  }
+  .help-section-heading {
+    color: #282294;
+    font-family: 'Livvic', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* Academy Banner Card */
+  .academy-card-container {
+    margin-bottom: 48px;
+  }
+  .academy-banner-card {
+    background-color: #F1EFFE;
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease;
+  }
+  .academy-banner-card:hover {
+    box-shadow: 0 8px 24px rgba(40, 34, 148, 0.06);
+  }
+  .academy-icon-box {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 12px;
+    background-color: #E2DEFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .academy-text-box {
+    flex: 1 1 auto;
+  }
+  .academy-course-title {
+    margin: 0 0 6px 0;
+  }
+  .academy-title-link {
+    color: #282294;
+    font-family: 'Livvic', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .academy-title-link:hover {
+    color: #8075FF;
+  }
+  .academy-course-desc {
+    color: #5F5572;
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 8px 0;
+  }
+  .academy-course-meta {
+    color: #8B829D;
+    font-family: 'Asap', sans-serif;
+    font-size: 13px;
+    margin: 0;
+  }
+  .academy-btn-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .btn-start-course {
+    background-color: #8075FF;
+    border: 1px solid #8075FF;
+    color: #FFFFFF;
+    font-family: 'Asap', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+  }
+  .btn-start-course:hover {
+    background-color: #6C5CE7;
+    border-color: #6C5CE7;
+  }
+  .btn-view-outline {
+    background-color: transparent;
+    border: 1px solid #8075FF;
+    color: #8075FF;
+    font-family: 'Asap', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+  }
+  .btn-view-outline:hover {
+    background-color: #E2DEFC;
+    color: #6C5CE7;
+    border-color: #6C5CE7;
+  }
+
+  /* Browse Topics Grid */
+  .browse-topics-container {
+    margin-bottom: 56px;
+  }
+  .browse-topics-container .help-section-heading {
+    margin-bottom: 24px;
+  }
+  .browse-topics-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .topic-card-box {
+    background-color: #FFFFFF;
+    border: 1px solid #E2DEFC;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    box-shadow: 0 2px 12px rgba(40, 34, 148, 0.03);
+    position: relative;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+  }
+  .topic-card-box:hover {
+    border-color: #8075FF;
+    box-shadow: 0 8px 24px rgba(40, 34, 148, 0.08);
+  }
+  .topic-card-text-area {
+    flex: 1 1 auto;
+    padding-right: 20px;
+  }
+  .topic-card-title {
+    margin: 0 0 16px 0;
+  }
+  .topic-title-link {
+    color: #282294;
+    font-family: 'Livvic', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .topic-title-link:hover {
+    color: #8075FF;
+  }
+  .topic-article-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .topic-article-link {
+    color: #282294;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.2s ease;
+  }
+  .topic-article-link:hover {
+    color: #8075FF;
+    text-decoration: underline;
+  }
+  .topic-card-footer-link {
+    margin-top: 4px;
+  }
+  .view-all-link {
+    color: #8075FF;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .view-all-link:hover {
+    color: #6C5CE7;
+    text-decoration: underline;
+  }
+  .topic-card-icon-area {
+    width: 68px;
+    height: 68px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .topic-svg-icon {
+    width: 68px !important;
+    height: 68px !important;
+    max-width: 68px !important;
+    max-height: 68px !important;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Contact the Path Team Section */
+  .contact-team-section-wrap {
+    margin-top: 56px;
+  }
+  .contact-team-header-area {
+    margin-bottom: 24px;
+  }
+  .contact-team-header-area .help-section-heading {
+    margin-bottom: 8px;
+  }
+  .direct-email-link {
+    color: #282294;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  .direct-email-link:hover {
+    color: #8075FF;
+  }
+  .contact-team-main-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2DEFC;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(40, 34, 148, 0.04);
+    box-sizing: border-box;
+  }
+  .contact-team-grid-layout {
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  /* Left Avatar Stage */
+  .contact-avatar-cluster-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-avatar-stage {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 1 / 1;
+  }
+  .stage-bubble {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(40, 34, 148, 0.1);
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+  }
+  .stage-bubble:hover {
+    transform: scale(1.08);
+  }
+  .stage-bubble img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .stage-bubble-filler {
+    box-shadow: none;
+  }
+  .stage-bubble-yellow {
+    background-color: #FFDE87;
+  }
+  .stage-bubble-purple {
+    background-color: #D3CEFE;
+  }
+  .stage-bubble-red {
+    background-color: #FFB8B8;
+  }
+  .stage-bubble-blue {
+    background-color: #BDE4FE;
+  }
+  .stage-bubble-indigo {
+    background-color: #B3AEFE;
+  }
+
+  /* Form Fields */
+  .actual-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .form-2col-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .form-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-field-label {
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #282294;
+    margin: 0;
+  }
+  .styled-text-input,
+  .styled-select-input,
+  .styled-textarea-input {
+    width: 100%;
+    border: 1px solid #E2DEFC;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+    color: #282294;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .styled-text-input:focus,
+  .styled-select-input:focus,
+  .styled-textarea-input:focus {
+    border-color: #8075FF;
+    box-shadow: 0 0 0 3px rgba(128, 117, 255, 0.15);
+  }
+  .styled-textarea-input {
+    resize: vertical;
+  }
+  .form-btn-submit-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6px;
+  }
+  .styled-submit-btn {
+    background-color: #8075FF;
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Asap', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .styled-submit-btn:hover {
+    background-color: #6C5CE7;
+  }
+
+  /* Responsive Rules */
+  @media (max-width: 900px) {
+    .academy-banner-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .academy-btn-actions {
+      width: 100%;
+    }
+    .btn-start-course,
+    .btn-view-outline {
+      flex: 1;
+      text-align: center;
+    }
+    .browse-topics-grid-2col {
+      grid-template-columns: 1fr;
+    }
+    .contact-team-grid-layout {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .help-centre-top-header {
+      flex-direction: column;
+    }
+    .help-centre-search-area {
+      width: 100%;
+      flex: 1 1 auto;
+    }
+    .form-2col-row {
+      grid-template-columns: 1fr;
+    }
+    .contact-team-main-card {
+      padding: 24px 16px;
+    }
+  }
+</style>

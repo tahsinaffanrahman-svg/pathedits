@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Affiliate Program | Path Edits" description="Earn commission by referring customers to Path">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Affiliate Program" subtitle="Earn commission by referring customers to Path" />
+    
+    <section class="affiliate-section">
+      <div class="container">
+        <div class="content-wrapper">
+          <h2>Partner with Path</h2>
+          <p>Join our affiliate program and earn passive income by referring photographers, ecommerce brands, and agencies to Path.</p>
+          
+          <div class="benefits-grid">
+            <div class="benefit">
+              <h3>Earn 10% Commission</h3>
+              <p>Get 10% commission on every order placed by your referrals for their first year.</p>
+            </div>
+            <div class="benefit">
+              <h3>High Conversion</h3>
+              <p>Our quality and pricing make it easy to convert your audience into active users.</p>
+            </div>
+            <div class="benefit">
+              <h3>Fast Payouts</h3>
+              <p>Receive your commissions monthly via PayPal or direct bank transfer.</p>
+            </div>
+            <div class="benefit">
+              <h3>Marketing Assets</h3>
+              <p>Access our library of banners, logos, and copy to help you promote effectively.</p>
+            </div>
+          </div>
+          
+          <div class="how-it-works">
+            <h2>How It Works</h2>
+            <ol>
+              <li><strong>Sign Up:</strong> Apply for our affiliate program for free.</li>
+              <li><strong>Share:</strong> Use your unique referral link on your blog, social media, or email list.</li>
+              <li><strong>Earn:</strong> Collect commissions when your referrals place orders.</li>
+            </ol>
+          </div>
+          
+          <div class="cta-section">
+            <h2>Ready to start earning?</h2>
+            <a href="/pages/free-trial" class="btn">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .affiliate-section {
+    padding: 80px 0;
+    background: white;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 80px;
+  }
+  @media (max-width: 768px) {
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .benefit {
+    background: #F8F6FA;
+    padding: 32px;
+    border-radius: 20px;
+  }
+  .benefit h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  .benefit p {
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+  .how-it-works {
+    background: #F3F1F9;
+    padding: 60px;
+    border-radius: 20px;
+    margin-bottom: 80px;
+  }
+  .how-it-works ol {
+    counter-reset: steps;
+    list-style: none;
+    padding: 0;
+  }
+  .how-it-works li {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    margin-bottom: 24px;
+    padding-left: 60px;
+    position: relative;
+  }
+  .how-it-works li::before {
+    counter-increment: steps;
+    content: counter(steps);
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 40px;
+    height: 40px;
+    background: #9B93EE;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Livvic', sans-serif;
+    font-weight: 700;
+  }
+  .how-it-works strong {
+    color: #2B1B9A;
+  }
+  .cta-section {
+    text-align: center;
+  }
+  .btn {
+    display: inline-block;
+    background: #67B6F4;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.125rem;
+  }
+</style>

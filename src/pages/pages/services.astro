@@ -1,0 +1,449 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import Footer from '../../components/Footer.astro';
+import CtaSection from '../../components/CtaSection.astro';
+
+const services = [
+  {
+    title: 'Clipping path',
+    desc: 'Hand-drawn clipping paths give you crisp, clean cutouts that you can put on any background.',
+    image: 'https://cdn.pathedits.com/Images/shared/service-cards/clipping-path-service-shoe-edited.png?w=200',
+    price: '$0.39',
+    viewLink: '/pages/clipping-path',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  },
+  {
+    title: 'Background removal',
+    desc: 'Make product photos pop with a clean white (or any other color you choose) background.',
+    image: 'https://cdn.pathedits.com/Images/shared/service-cards/background-removal-earbuds-edited.png?w=200',
+    price: '$0.39',
+    viewLink: '/pages/background-removal',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  },
+  {
+    title: 'Image masking',
+    desc: 'For more intricate shots (like anything involving hair or fur), image masking gives you that extra level of precision, for cutouts that look completely natural.',
+    image: 'https://cdn.pathedits.com/Images/shared/service-cards/image-masking-curly-hair-edited.png?w=200',
+    price: '$1.19',
+    viewLink: '/pages/image-masking',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  },
+  {
+    title: 'Shadow',
+    desc: 'Natural-looking shadows make products look more realistic — and generate more sales. Add depth and make your images more visually appealing.',
+    image: 'https://cdn.pathedits.com/Images/shared/service-cards/shadow-services-chair-edited.png?w=200',
+    price: '$0.25',
+    viewLink: '/pages/drop-shadow',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  },
+  {
+    title: 'Ghost mannequin',
+    desc: 'Remove mannequins or models to showcase the natural fit and drape of apparel, while still keeping the focus on your products.',
+    image: 'https://cdn.pathedits.com/Images/shared/service-cards/ghost-mannequin-purple-tshirt-edited.png?w=200',
+    price: '$0.89',
+    viewLink: '/pages/ghost-mannequin',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  },
+  {
+    title: 'Symmetrical edit',
+    desc: 'Get perfectly symmetric apparel product photos. We mirror your photos by hand—no templates, no shortcuts. Ideal for apparel, ecommerce, and product photography.',
+    image: 'https://cdn.pathedits.com/Images/pages/mirror-effect/light-blue-trousers-symmetry-edited.png',
+    price: '$2.99',
+    viewLink: '/pages/symmetrical-edit',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  },
+  {
+    title: 'Photo retouching',
+    desc: 'Get the perfect shot, even after the fact. Correct flaws or imperfections, and make every element of your image shine.',
+    image: 'https://cdn.pathedits.com/Images/shared/service-cards/photo-retouching-camera-edited.png?w=200',
+    price: '$0.69',
+    viewLink: '/pages/photo-retouching',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  },
+  {
+    title: 'Color change',
+    desc: 'Show true-to-life colors and minimize returns from customers who are disappointed their items don’t match the photo — without having to shoot every shade.',
+    image: 'https://cdn.pathedits.com/Images/shared/service-cards/color-change-striped-socks-edited.png?w=200',
+    price: '$0.99',
+    viewLink: '/pages/color-variants',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  },
+  {
+    title: 'Multi-clipping path',
+    desc: 'Select multiple areas within your image so they can be edited separately.',
+    image: 'https://cdn.pathedits.com/Images/shared/service-cards/multi-clipping-path-red-bicycle-edited.png?w=200',
+    price: '$1.19',
+    viewLink: '/pages/multi-clipping-path-services',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  },
+  {
+    title: 'Vector conversion',
+    desc: 'Convert images to vector files that can scale to any size without a loss of fine detail or quality.',
+    image: 'https://cdn.pathedits.com/Images/shared/service-cards/vector-conversion-drawing-pen-edited.png?w=200',
+    price: '$3.99',
+    viewLink: '/pages/vector-conversion',
+    orderLink: 'https://dashboard.pathedits.com/instant_quotes/new'
+  }
+];
+---
+
+<Layout title="Image Editing Services | Path" description="Professional photo editing services, available 24/7">
+  <Header />
+  <InfoBar />
+  <main>
+    <!-- Virtual Studio Intro Section -->
+    <section class="intro-section">
+      <div class="container">
+        <h1>Path is your virtual photo editing studio</h1>
+        <p class="subtitle">
+          <strong>Upload your images and get them back in hours, pixel perfect and ready to sell</strong> — the size you need, the format you need. You don’t even have to think about it.
+        </p>
+        
+        <div class="petal-row">
+          <div class="petal-group">
+            <figure class="petal">
+              <img src="https://cdn.pathedits.com/Images/pages/services/path-virtual-photo-editing-studio.png" alt="Red sneakers on red background shape" />
+            </figure>
+            <figure class="petal">
+              <img src="https://cdn.pathedits.com/Images/pages/services/path-virtual-photo-editing-earbuds.png" alt="AirPods on purple background shape" />
+            </figure>
+          </div>
+          <div class="petal-group">
+            <figure class="petal">
+              <img src="https://cdn.pathedits.com/Images/pages/services/path-virtual-photo-retouching-portrait.png" alt="Smiling woman on yellow background shape" />
+            </figure>
+            <figure class="petal">
+              <img src="https://cdn.pathedits.com/Images/pages/services/path-virtual-photo-editing-striped-sock.png" alt="Blue striped sock on cyan background shape" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="services-hub">
+      <div class="container">
+        <h2>All our photo-editing services</h2>
+        
+        <div class="services-grid">
+          {services.map(service => (
+            <div class="service-card">
+              <div class="card-image-wrap">
+                <img src={service.image} alt={service.title} />
+              </div>
+              <h3>{service.title}</h3>
+              <p class="service-desc">{service.desc}</p>
+              <div class="price-block">
+                Starting at <span class="price-value">{service.price}</span> per image
+              </div>
+              <div class="button-group">
+                <a href={service.viewLink} class="btn-outline">View Details</a>
+                <a href={service.orderLink} class="btn-solid">Order Now</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Trustpilot Reviews Slider Section -->
+    <section class="trustpilot-reviews-section">
+      <div class="container-wide">
+        <div class="slider-header">
+          <img src="https://cdn.pathedits.com/Illustrations/trusted-image-editing-services.svg" alt="5-star reviews star" class="reviews-star-icon" />
+          <h2 class="reviews-title">Backed by thousands of 5-star reviews</h2>
+          <p class="reviews-subtitle">Path has saved 40,000+ businesses valuable time and money with premium image editing services.</p>
+        </div>
+        <div class="trustpilot-widget-wrap">
+          <div class="trustpilot-widget" data-locale="en-US" data-template-id="54ad5defc6454f065c28af8b" data-businessunit-id="614492196d2477001d850c10" data-style-height="250px" data-style-width="100%" data-theme="light" data-stars="1,2,3,4,5" data-review-languages="en">
+            <a href="https://uk.trustpilot.com/review/pathedits.com" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CtaSection centered={true} />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .container-wide {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  
+  /* Trustpilot Reviews Slider Section */
+  .trustpilot-reviews-section {
+    background-color: #E2DEFC;
+    padding: 80px 0;
+    text-align: center;
+  }
+  .slider-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .reviews-star-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 24px;
+  }
+  .reviews-title {
+    font-family: 'Livvic', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2B1B9A;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+  }
+  .reviews-subtitle {
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    color: #2B1B9A;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .trustpilot-widget-wrap {
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 250px;
+  }
+
+  /* Intro Section */
+  .intro-section {
+    background: #FFFFFF;
+    padding: 80px 0 40px;
+    text-align: center;
+  }
+  .intro-section h1 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: clamp(32px, 3.3vw, 48px);
+    font-weight: 600;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  .intro-section .subtitle {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto 56px;
+  }
+  .intro-section .subtitle strong {
+    font-weight: 700;
+    color: #2B1B9A;
+  }
+  
+  /* Petal Images Row */
+  .petal-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 56px;
+    flex-wrap: wrap;
+  }
+  .petal-group {
+    display: flex;
+    gap: 32px;
+    flex-wrap: nowrap;
+  }
+  .petal {
+    margin: 0;
+  }
+  .petal img {
+    width: 100%;
+    max-width: 190px !important;
+    height: auto;
+  }
+  
+  /* Services Hub */
+  .services-hub {
+    background-color: #F8F6FA;
+    padding: 80px 0 100px;
+  }
+  .services-hub h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 56px;
+    line-height: 1.2;
+  }
+  
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  /* Service Card */
+  .service-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 8px 32px rgba(43, 27, 154, 0.04), 0px 0px 4px rgba(43, 27, 154, 0.04);
+    box-sizing: border-box;
+  }
+  .card-image-wrap {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .card-image-wrap img {
+    max-width: 200px;
+    max-height: 160px;
+    object-fit: contain;
+  }
+  .service-card h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+  .service-desc {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 24px;
+    max-width: 460px;
+  }
+  
+  /* Price Block */
+  .price-block {
+    margin: 24px 0;
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    color: #756F85;
+    text-align: center;
+  }
+  .price-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2B1B9A;
+    margin: 0 4px;
+  }
+  
+  /* Button Group */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: auto;
+    max-width: 320px;
+  }
+  
+  /* Buttons */
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    color: #2B1B9A;
+    border: 1.5px solid #E2DEFC;
+    border-radius: 8px;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    min-height: 48px;
+    width: 100%;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+  }
+  .btn-outline:hover {
+    border-color: #2B1B9A;
+    background: rgba(43, 27, 154, 0.02);
+  }
+  
+  .btn-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #67B6F4;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    min-height: 48px;
+    width: 100%;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 14px rgba(103, 182, 244, 0.4);
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+  }
+  .btn-solid:hover {
+    background: #79B5EF;
+    box-shadow: 0 6px 20px rgba(103, 182, 244, 0.5);
+  }
+  
+  /* Responsive breakpoints */
+  @media (max-width: 1000px) {
+    .services-grid {
+      gap: 24px;
+    }
+    .service-card {
+      padding: 32px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .petal-row {
+      gap: 20px;
+    }
+    .petal-group {
+      gap: 20px;
+    }
+    .petal img {
+      max-width: 140px !important;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .petal-row {
+      gap: 16px;
+    }
+    .petal-group {
+      gap: 16px;
+      width: 100%;
+      justify-content: center;
+    }
+    .petal img {
+      max-width: calc(50vw - 32px) !important;
+      height: auto !important;
+    }
+  }
+</style>

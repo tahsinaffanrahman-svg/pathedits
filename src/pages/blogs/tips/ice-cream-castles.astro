@@ -1,0 +1,157 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import InfoBar from '../../../components/InfoBar.astro';
+import PageHero from '../../../components/PageHero.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<Layout title="How Ice Cream Castles Reduced Turnaround | Path Edits" description="How Ice Cream Castles Reduced Their Photo Turnaround from 1 Week to 1 Day">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="How Ice Cream Castles Reduced Their Photo Turnaround from 1 Week to 1 Day" subtitle="Case Study: Scaling ecommerce post-production" />
+    
+    <section class="case-study-section">
+      <div class="container">
+        <div class="content-wrapper">
+          <div class="main-content">
+            <img src="https://cdn.pathedits.com/Images/pages/home/ice-cream-castles-product-photo-path.png" alt="Ice Cream Castles Product Photo" class="hero-image" />
+            
+            <h2>The Challenge</h2>
+            <p>Ice Cream Castles, a fast-growing children's apparel brand, was struggling with their photo editing bottleneck. Processing thousands of images in-house took a full week for each new collection, delaying product launches and frustrating the team.</p>
+            
+            <h2>The Solution</h2>
+            <p>They partnered with Path to handle their entire image post-production workflow, including clipping paths, ghost mannequin effects, and color correction. Path set up a dedicated team to ensure consistency with their brand guidelines.</p>
+            
+            <h2>The Results</h2>
+            <p>By outsourcing to Path, Ice Cream Castles achieved remarkable results:</p>
+            <ul>
+              <li><strong>1 week &rarr; 1 day turnaround</strong> for complete collections</li>
+              <li>Thousands of images processed flawlessly</li>
+              <li>Consistent quality across all product lines</li>
+              <li>Freed up internal team to focus on marketing and growth</li>
+            </ul>
+            
+            <blockquote class="quote">
+              "Path completely transformed our workflow. What used to take us a week of painful editing now happens overnight while we sleep."
+              <cite>&mdash; Alee Mills, Director of Operations</cite>
+            </blockquote>
+          </div>
+          
+          <div class="sidebar">
+            <div class="cta-box">
+              <h3>Ready to scale your post-production?</h3>
+              <p>Join Ice Cream Castles and thousands of other brands saving time with Path.</p>
+              <a href="/pages/free-trial" class="btn">Get started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .case-study-section {
+    padding: 80px 0;
+    background: white;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+  }
+  @media (max-width: 900px) {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+  .hero-image {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 40px 0 20px;
+  }
+  h2:first-of-type {
+    margin-top: 0;
+  }
+  p, ul {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  ul {
+    padding-left: 24px;
+  }
+  li {
+    margin-bottom: 12px;
+  }
+  .quote {
+    background: #F3F1F9;
+    border-left: 4px solid #9B93EE;
+    padding: 32px;
+    border-radius: 0 20px 20px 0;
+    margin: 40px 0;
+    font-family: 'Livvic', sans-serif;
+    font-size: 1.5rem;
+    color: #2B1B9A;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.4;
+  }
+  .quote cite {
+    display: block;
+    font-family: 'Asap', sans-serif;
+    font-size: 1.125rem;
+    color: #5F5572;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .cta-box {
+    background: #F8F6FA;
+    padding: 40px 32px;
+    border-radius: 20px;
+    text-align: center;
+    position: sticky;
+    top: 40px;
+  }
+  .cta-box h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .cta-box p {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  .btn {
+    display: inline-block;
+    background: #67B6F4;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+  }
+</style>

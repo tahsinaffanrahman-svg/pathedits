@@ -1,0 +1,814 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PricingOptions from '../../components/PricingOptions.astro';
+import Footer from '../../components/Footer.astro';
+
+const services = [
+  { name: "Clipping path", price: "$0.39", icon: "https://cdn.pathedits.com/Icons/clipping-path.svg" },
+  { name: "Background removal", price: "$0.39", icon: "https://cdn.pathedits.com/Icons/background-removal.svg" },
+  { name: "Shadow", price: "$0.25", icon: "https://cdn.pathedits.com/Icons/shadow.svg" },
+  { name: "Ghost mannequin", price: "$0.89", icon: "https://cdn.pathedits.com/Icons/ghost-mannequin.svg" },
+  { name: "Image masking", price: "$1.19", icon: "https://cdn.pathedits.com/Icons/image-making.svg" },
+  { name: "Color change", price: "$0.99", icon: "https://cdn.pathedits.com/Icons/color-changes.svg" },
+  { name: "Photo retouching", price: "$0.69", icon: "https://cdn.pathedits.com/Icons/photo-retouching.svg" },
+  { name: "Multi-clipping path", price: "$1.19", icon: "https://cdn.pathedits.com/Icons/multi-clipping-path.svg" },
+  { name: "Symmetrical edit", price: "$2.99", icon: "https://cdn.pathedits.com/Icons/symmetry.svg" },
+  { name: "Vector conversion", price: "$3.99", icon: "https://cdn.pathedits.com/Icons/vector-services.svg" }
+];
+
+const creditTiers = [
+  { purchase: 50, bonus: 4, cost: 50, rate: 0.93 },
+  { purchase: 100, bonus: 13, cost: 100, rate: 0.88 },
+  { purchase: 250, bonus: 40, cost: 250, rate: 0.86 },
+  { purchase: 500, bonus: 100, cost: 500, rate: 0.83 },
+  { purchase: 1000, bonus: 250, cost: 1000, rate: 0.80 },
+  { purchase: 2500, bonus: 700, cost: 2500, rate: 0.78 },
+  { purchase: 5000, bonus: 1550, cost: 5000, rate: 0.76 },
+  { purchase: 10000, bonus: 3500, cost: 10000, rate: 0.74 }
+];
+
+const pricingFaqs = [
+  {
+    q: "Do you offer a discount on large orders?",
+    a: "Yes! There are two ways to get volume discounts with Path: purchase one of our Path credit packs to save up to 35%, or contact our team for custom flat rates if you need to edit 1,000+ images per month."
+  },
+  {
+    q: "Is there a free trial?",
+    a: "Absolutely. We offer a free trial where we will edit your first 2 images for free. No credit card is required, so you can test our quality risk-free."
+  },
+  {
+    q: "How do I see exactly how much my edits will cost?",
+    a: "Once you log in and upload your images, our dashboard will analyze the files and give you an instant, transparent quote based on the selected services and turnaround times. No hidden fees."
+  },
+  {
+    q: "What factors affect my photo editing price?",
+    a: "Your final price depends on three main variables: the complexity of the service (e.g. clipping path vs complex image masking), the turnaround speed you choose (6h, 12h, or next morning), and whether you pay per order or use Path credits."
+  }
+];
+
+const sliderCards = [
+  { url: "https://cdn.pathedits.com/Images/pages/apparel-fashion/service-cards/green-dress-background-removal.png", tag: "Background removal", bgColor: "#fa585a", link: "/pages/background-removal" },
+  { url: "https://cdn.pathedits.com/Images/pages/apparel-fashion/service-cards/brown-hoodie-clipping-path-v2.png", tag: "Clipping path", bgColor: "#9d91f6", link: "/pages/clipping-path" },
+  { url: "https://cdn.pathedits.com/Images/pages/apparel-fashion/service-cards/brown-hat-drop-shadow.png", tag: "Drop shadow", bgColor: "#67b6f4", link: "/pages/drop-shadow" },
+  { url: "https://cdn.pathedits.com/Images/pages/apparel-fashion/service-cards/green-shirt-photo-retouching.png", tag: "Photo retouching", bgColor: "#ffcd1f", link: "/pages/photo-retouching" },
+  { url: "https://cdn.pathedits.com/Images/pages/apparel-fashion/service-cards/floral-blazer-ghost-mannequin.png", tag: "Ghost mannequin", bgColor: "#fa585a", link: "/pages/ghost-mannequin" },
+  { url: "https://cdn.pathedits.com/Images/pages/apparel-fashion/service-cards/purple-outfit-symmetry-edit-v2.png", tag: "Symmetrical edit", bgColor: "#ffcd1f", link: "/pages/symmetrical-edit" },
+  { url: "https://cdn.pathedits.com/Images/pages/apparel-fashion/service-cards/backpacks-color-change-edit.png", tag: "Color change", bgColor: "#67b6f4", link: "/pages/color-variants" },
+  { url: "https://cdn.pathedits.com/Images/pages/apparel-fashion/service-cards/floral-shorts-multi-clipping-path.png", tag: "Multi-clipping path", bgColor: "#ffcd1f", link: "/pages/multi-clipping-path-services" },
+  { url: "https://cdn.pathedits.com/Images/pages/apparel-fashion/service-cards/girl-costume-image-masking.png", tag: "Image masking", bgColor: "#fa585a", link: "/pages/image-masking" }
+];
+---
+
+<Layout title="Pricing Options & Photo Editing Rates | Path" description="Stress less with simple, transparent pricing. Explore clipping path and image editing rates, use our credit calculator, and subscribe for bulk discounts.">
+  <Header />
+  <InfoBar />
+  <main>
+    <!-- 1. Hero Section (Matching Exact Screenshot Layout) -->
+    <section class="pricing-hero-section" style="background-color: #F8F6FA; padding: 80px 0 90px;">
+      <div class="container-wide" style="max-width: 1440px; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+        <div class="hero-flex" style="display: flex; align-items: center; justify-content: space-between; gap: 48px;">
+          <!-- Left Column -->
+          <div class="hero-text-col" style="flex: 1; max-width: 580px;">
+            <h1 style="font-family: 'Livvic', sans-serif; color: #282294; font-size: clamp(32px, 3.4vw, 48px); font-weight: 600; line-height: 1.18; margin: 0 0 24px;">
+              Stress less with simple pricing and pixel perfect photo edits
+            </h1>
+            <p class="hero-sub" style="font-family: 'Asap', sans-serif; color: #282294; font-size: 18px; line-height: 1.5; margin: 0 0 36px;">
+              Curious about how much your edits will cost? Get an instant quote to see your total right away, or keep reading to learn more about how Path photo editing rates work.
+            </p>
+            <a href="https://dashboard.pathedits.com/instant_quotes/new" class="btn-solid-blue" style="display: inline-flex; align-items: center; justify-content: center; background-color: #67B6F4; color: #2B1B9A; font-family: 'Asap', sans-serif; font-weight: 700; font-size: 16px; min-height: 48px; padding: 0 28px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 14px rgba(103, 182, 244, 0.4);">
+              Get an instant quote &rarr;
+            </a>
+          </div>
+
+          <!-- Right Column Illustration (Exact Vector Match to Screenshot) -->
+          <div class="hero-illustration-col" style="flex: 1; max-width: 580px; display: flex; justify-content: center;">
+            <svg viewBox="0 0 600 420" width="100%" height="auto" style="max-width: 560px; height: auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="cardShadow" x="-10%" y="-10%" width="130%" height="130%">
+                  <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#2B1B9A" flood-opacity="0.06"/>
+                </filter>
+              </defs>
+
+              <!-- Desk Base Line -->
+              <path d="M400 360H530 M420 360H220" stroke="#2B1B9A" stroke-width="2" stroke-linecap="round"/>
+
+              <!-- Colored Connecting Wire Loops -->
+              <!-- Yellow / Orange Start -->
+              <path d="M420 365C390 375 370 340 400 320C420 305 450 360 410 370C360 380 370 250 420 240" stroke="#FFB800" stroke-width="4" stroke-linecap="round"/>
+              <!-- Red / Coral Curve -->
+              <path d="M420 240C430 238 450 250 440 280C430 310 400 365 380 370" stroke="#FA585A" stroke-width="4" stroke-linecap="round"/>
+              <!-- Purple Loop -->
+              <path d="M480 330C520 345 520 280 490 270C460 260 510 330 540 335C570 340 560 280 500 240" stroke="#9D91F5" stroke-width="4" stroke-linecap="round"/>
+              <!-- Light Blue Loop around picture -->
+              <path d="M490 335C520 340 545 320 545 295C545 260 480 230 520 155" stroke="#67B6F4" stroke-width="4" stroke-linecap="round"/>
+
+              <!-- Floating Checklist Card (Left Top) -->
+              <g filter="url(#cardShadow)">
+                <rect x="50" y="80" width="230" height="130" rx="10" fill="#FFFFFF" />
+                
+                <!-- Row 1: Upload images -->
+                <circle cx="76" cy="110" r="10" fill="#C5E2FC" />
+                <path d="M72 110L75 113L80 107" stroke="#282294" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="96" y="114" fill="#5F5572" font-family="'Asap', sans-serif" font-size="13" font-weight="600">Upload images</text>
+                
+                <!-- Row 2: Select services -->
+                <circle cx="76" cy="142" r="10" fill="#C5E2FC" />
+                <path d="M72 142L75 145L80 139" stroke="#282294" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="96" y="146" fill="#5F5572" font-family="'Asap', sans-serif" font-size="13" font-weight="600">Select services</text>
+                
+                <!-- Row 3: Select turnaround time -->
+                <circle cx="76" cy="174" r="10" fill="#C5E2FC" />
+                <path d="M72 174L75 177L80 171" stroke="#282294" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="96" y="178" fill="#5F5572" font-family="'Asap', sans-serif" font-size="13" font-weight="600">Select turnaround time</text>
+              </g>
+
+              <!-- Floating Dollar Badge ($) -->
+              <g filter="url(#cardShadow)">
+                <rect x="250" y="60" width="46" height="46" rx="10" fill="#67B6F4" />
+                <text x="273" y="92" fill="#FFFFFF" font-family="'Livvic', sans-serif" font-size="24" font-weight="700" text-anchor="middle">$</text>
+              </g>
+
+              <!-- Picture Frame with Sweater (Right Top) -->
+              <g transform="translate(470, 130)">
+                <rect x="0" y="0" width="80" height="90" rx="8" stroke="#2B1B9A" stroke-width="2" fill="#FFFFFF"/>
+                <!-- Sweater outline -->
+                <path d="M25 25L32 20H48L55 25L65 40L55 45L50 35V65H30V35L25 45L15 40L25 25Z" stroke="#2B1B9A" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+                <!-- Heart on sweater -->
+                <path d="M40 45C38 42 35 42 34 44C33 46 33 48 40 53C47 48 47 46 46 44C45 42 42 42 40 45Z" stroke="#FFB800" stroke-width="1.5" fill="none"/>
+              </g>
+
+              <!-- Person At Laptop -->
+              <!-- Curly Purple Hair -->
+              <path d="M380 180C360 180 345 160 345 140C345 110 365 90 400 90C430 90 450 110 450 135C450 150 440 165 435 175C425 185 410 185 400 185Z" fill="#9D91F5"/>
+              <circle cx="360" cy="150" r="14" fill="#9D91F5"/>
+              <circle cx="370" cy="120" r="16" fill="#9D91F5"/>
+              <circle cx="430" cy="120" r="18" fill="#9D91F5"/>
+              <circle cx="440" cy="150" r="14" fill="#9D91F5"/>
+
+              <!-- Face & Neck -->
+              <path d="M375 145C375 170 390 190 405 190C420 190 435 170 435 145C435 130 425 125 405 125C385 125 375 130 375 145Z" fill="#FFFFFF" stroke="#2B1B9A" stroke-width="2"/>
+              <path d="M395 190V205H415V190" fill="#FFFFFF" stroke="#2B1B9A" stroke-width="2"/>
+
+              <!-- Glasses & Facial Features -->
+              <circle cx="390" cy="155" r="8" stroke="#2B1B9A" stroke-width="2" fill="#FFFFFF"/>
+              <circle cx="415" cy="155" r="8" stroke="#2B1B9A" stroke-width="2" fill="#FFFFFF"/>
+              <path d="M398 155H407" stroke="#2B1B9A" stroke-width="2"/>
+              <circle cx="390" cy="155" r="2.5" fill="#2B1B9A"/>
+              <circle cx="415" cy="155" r="2.5" fill="#2B1B9A"/>
+              <!-- Smiling Mouth -->
+              <path d="M398 172C402 176 408 176 412 172" stroke="#2B1B9A" stroke-width="2" stroke-linecap="round"/>
+
+              <!-- Body / Clothes -->
+              <path d="M355 330C355 250 365 210 405 210C445 210 455 250 455 330" fill="#FFFFFF" stroke="#2B1B9A" stroke-width="2"/>
+              <path d="M375 210C390 225 420 225 435 210" stroke="#2B1B9A" stroke-width="2" fill="none"/>
+
+              <!-- Arms & Hands -->
+              <path d="M355 270L380 320L400 325" stroke="#2B1B9A" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M455 270L430 320L410 325" stroke="#2B1B9A" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+              <!-- Laptop -->
+              <g transform="translate(350, 270)">
+                <path d="M15 50L30 10H80L95 50Z" fill="#FFFFFF" stroke="#2B1B9A" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="55" cy="30" r="5" stroke="#2B1B9A" stroke-width="1.8"/>
+                <path d="M5 50H105L110 56H0L5 50Z" fill="#FFFFFF" stroke="#2B1B9A" stroke-width="2" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Service Pricing Table Grid (Matching Second Image) -->
+    <section class="services-price-section" style="background-color: #EDF5FD; padding: 80px 0 100px;">
+      <div class="container" style="max-width: 1256px; margin: 0 auto; padding: 0 24px; box-sizing: border-box;">
+        <h2 style="font-family: 'Livvic', sans-serif; color: #282294; font-size: 32px; font-weight: 600; text-align: center; margin: 0 0 48px;">
+          See the starting cost for photo editing rates
+        </h2>
+        
+        <div class="services-pricing-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          {services.map(svc => (
+            <div class="svc-price-card" style="background: #FFFFFF; border-radius: 12px; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 16px rgba(43, 27, 154, 0.05); box-sizing: border-box;">
+              <div class="svc-card-left" style="display: flex; align-items: center; gap: 16px;">
+                <img src={svc.icon} alt={svc.name} style="width: 36px; height: 36px; object-fit: contain;" />
+                <span class="svc-card-title" style="font-family: 'Livvic', sans-serif; color: #282294; font-size: 20px; font-weight: 600;">
+                  {svc.name}
+                </span>
+              </div>
+              <div class="svc-card-right" style="display: flex; align-items: baseline; gap: 6px;">
+                <span style="font-size: 11px; font-weight: 800; color: #282294; letter-spacing: 0.05em; font-family: 'Asap', sans-serif;">FROM</span>
+                <span style="font-family: 'Livvic', sans-serif; font-size: 20px; font-weight: 800; color: #282294;">{svc.price}</span>
+                <span style="font-size: 11px; font-weight: 800; color: #282294; letter-spacing: 0.05em; font-family: 'Asap', sans-serif;">PER IMAGE</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Carousel Testimonial Slider & Rolling Ticker -->
+    <section class="testimonials-slider-section" style="background-color: #EDF5FD; padding: 80px 0 0 0; overflow: hidden; position: relative;">
+      <div class="container-wide" style="max-width: 1256px; margin: 0 auto; padding: 0 24px; position: relative;">
+        <div class="slider-wrapper" style="position: relative; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 80px;">
+          <!-- Left Arrow Overlay (Pink/Red Translucent background) -->
+          <button class="slider-btn prev-btn" id="sliderPrev" aria-label="Previous image" style="position: absolute; left: -16px; top: 50%; transform: translateY(-50%); width: 56px; height: 56px; border-radius: 50%; background-color: rgba(250, 88, 90, 0.4); border: none; color: #FFFFFF; font-size: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; font-weight: bold; line-height: 1;">&lsaquo;</button>
+          
+          <div class="slider-container" style="width: 100%; overflow: hidden; border-radius: 16px;">
+            <div class="slider-track" id="sliderTrack" style="display: flex; gap: 24px; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
+              {sliderCards.map((card, idx) => (
+                <div class="slider-slide" style="flex: 0 0 calc(33.333% - 16px); box-sizing: border-box; transition: transform 0.2s ease;">
+                  <div style={`background-color: ${card.bgColor}; width: 100%; aspect-ratio: 320/335; border-radius: 12px; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px 46px 60px 46px; box-sizing: border-box; overflow: hidden;`}>
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                      <img src={card.url} alt={card.tag} style="max-height: 100%; max-width: 100%; object-fit: contain; display: block;" />
+                    </div>
+                    <div style="position: absolute; bottom: 16px; right: 16px; z-index: 2;">
+                      <a href={card.link} style="display: inline-block; padding: 4px 12px; font-family: 'Asap', sans-serif; font-size: 13px; line-height: 22px; background-color: #ffffff; color: #2B1B9A; text-decoration: none; border-radius: 8px; font-weight: 700; transition: background-color 0.3s ease; box-shadow: 0 4px 12px rgba(43,27,154,0.1); border: 1px solid #E9E6EF;">{card.tag}</a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Right Arrow Overlay (White background with shadow) -->
+          <button class="slider-btn next-btn" id="sliderNext" aria-label="Next image" style="position: absolute; right: -16px; top: 50%; transform: translateY(-50%); width: 56px; height: 56px; border-radius: 50%; background-color: #FFFFFF; border: none; color: #2B1B9A; font-size: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 4px 16px rgba(43, 27, 154, 0.15); font-weight: bold; line-height: 1;">&rsaquo;</button>
+        </div>
+      </div>
+      
+      <!-- Rolling Ticker Banner -->
+      <div class="marquee-banner" style="background-color: #2B1B9A; color: #FFFFFF; padding: 24px 0; overflow: hidden; white-space: nowrap; width: 100%;">
+        <div class="marquee-track" style="display: inline-block; animation: marquee 20s linear infinite;">
+          <div class="marquee-content" style="display: flex; align-items: center; gap: 48px;">
+            <span style="font-family: 'Livvic', sans-serif; font-size: 22px; font-weight: 600;">Get your first two images edited, on us.</span>
+            <a href="/pages/free-trial" style="background: #FFFFFF; color: #2B1B9A; font-family: 'Asap', sans-serif; font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">Get 2 free edits &rarr;</a>
+            <span style="font-family: 'Livvic', sans-serif; font-size: 22px; font-weight: 600;">Get your first two images edited, on us.</span>
+            <a href="/pages/free-trial" style="background: #FFFFFF; color: #2B1B9A; font-family: 'Asap', sans-serif; font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">Get 2 free edits &rarr;</a>
+            <span style="font-family: 'Livvic', sans-serif; font-size: 22px; font-weight: 600;">Get your first two images edited, on us.</span>
+            <a href="/pages/free-trial" style="background: #FFFFFF; color: #2B1B9A; font-family: 'Asap', sans-serif; font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">Get 2 free edits &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- 5. Pricing Plan Comparison Table -->
+    <PricingOptions />
+
+    <!-- 6. Enterprise & Bulk Discounts (Large Accordion Section) -->
+    <section class="bulk-discounts-section" style="background: #FFFFFF; padding: 100px 0;">
+      <div class="container" style="max-width: 1256px; margin: 0 auto; padding: 0 24px;">
+        <div class="pe-faq-container">
+          
+          <!-- Item 1: See how photo editing pricing works -->
+          <div class="pe-faq-item">
+            <div class="pe-faq-question">
+              <img src="https://cdn.pathedits.com/Illustrations/custom-photo-editing.svg" alt="Explore Path’s custom photo editing pricing for personalized editing solutions." />
+              <div class="pe-faq-content">
+                <h3 class="pe-faq-title">See how photo editing pricing works</h3>
+                <p class="pe-faq-subtitle">Take a look at what goes into your total cost</p>
+              </div>
+              <div class="pe-faq-toggle"></div>
+            </div>
+            <div class="pe-faq-answer">
+              <div class="pe-faq-answer-inner">
+                <p>Every Path order is different, and your total photo editing rates will be calculated based on your services, number of images, overall complexity, and speed of your edits.</p>
+                <p>When you start a new order, we’ll ask a few questions and then analyze your images on the spot. You’ll get an accurate quote right away, so you know exactly how much your order will cost before you finish your request.</p>
+                <p>Here’s a breakdown of what we’re looking at when we assess your order and determine your photo editing rates:</p>
+                
+                <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 20px;">
+                  <div>
+                    <h4 style="font-family: 'Livvic', sans-serif; font-size: 18px; color: #2B1B9A; margin: 0 0 8px;"><span style="color: #67B6F4; font-weight: 700; margin-right: 8px;">1.</span> Service type</h4>
+                    <p style="margin: 0; color: #5F5572;">Each service has a different starting price based on how complicated it is, and how long it will take your designer. You can also combine services—for example background removal + shadow—and when you do this, you’ll get a combined total that accounts for all of the services you’ve chosen.</p>
+                  </div>
+                  <div>
+                    <h4 style="font-family: 'Livvic', sans-serif; font-size: 18px; color: #2B1B9A; margin: 0 0 8px;"><span style="color: #67B6F4; font-weight: 700; margin-right: 8px;">2.</span> Complexity</h4>
+                    <p style="margin: 0; color: #5F5572;">Not all edits are created equal. If you only need a simple cutout against a plain background, that will cost less than something more complicated (for example, a cutout of a birdcage, or a curly-haired model standing against a wire fence). We’ll analyze each image to see how complicated your edits are, then price them to match.</p>
+                  </div>
+                  <div>
+                    <h4 style="font-family: 'Livvic', sans-serif; font-size: 18px; color: #2B1B9A; margin: 0 0 8px;"><span style="color: #67B6F4; font-weight: 700; margin-right: 8px;">3.</span> Turnaround time</h4>
+                    <p style="margin: 0; color: #5F5572;">The default turnaround time is 24 hours, but if you need your edits faster, you can choose to pay a bit more and get them sooner. Likewise, if you don’t mind waiting, you can save some money.</p>
+                  </div>
+                  <div>
+                    <h4 style="font-family: 'Livvic', sans-serif; font-size: 18px; color: #2B1B9A; margin: 0 0 8px;"><span style="color: #67B6F4; font-weight: 700; margin-right: 8px;">4.</span> Number of copies</h4>
+                    <p style="margin: 0; color: #5F5572;">Need multiple copies of the same image in different sizes or formats? These are priced per copy, at a rate of 20¢ per file if you’ve chosen the standard turnaround time.</p>
+                  </div>
+                </div>
+
+                <div style="margin-top: 32px; background-color: #2B1B9A; color: #FFFFFF; padding: 32px; border-radius: 12px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; box-sizing: border-box;">
+                  <p style="margin: 0; color: #FFFFFF; font-size: 18px; font-weight: 600; line-height: 1.4;">It’s quick and easy to <strong>see exactly how much your photo editing rates will cost</strong>. Just start a new order, upload your images, and see your total right there.</p>
+                  <a href="https://dashboard.pathedits.com/instant_quotes/new" style="background-color: #67B6F4; color: #2B1B9A; font-family: 'Asap', sans-serif; font-weight: 700; font-size: 15px; padding: 12px 32px; border-radius: 8px; text-decoration: none; text-transform: uppercase; box-shadow: 0 4px 14px rgba(103, 182, 244, 0.3);">Get instant quote</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Save more with path credits -->
+          <div class="pe-faq-item">
+            <div class="pe-faq-question">
+              <img src="https://cdn.pathedits.com/Illustrations/save-more-edits-path-credits.svg" alt="Path credits offer bulk savings for frequent users or teams managing large volumes of edits." />
+              <div class="pe-faq-content">
+                <h3 class="pe-faq-title">Save more with path credits</h3>
+                <p class="pe-faq-subtitle">An easy way to get the best photo editing rate per shot</p>
+              </div>
+              <div class="pe-faq-toggle"></div>
+            </div>
+            <div class="pe-faq-answer">
+              <div class="pe-faq-answer-inner">
+                <p>If you’re a Path regular, have a mountain of edits coming up, or share your account with other team members, you can buy Path credits for an even better deal.</p>
+                <p>Path credits work like money — each credit is worth $1 towards your order total. Credits don’t expire—they’ll live in your Path account so you can use them whenever you need edits.</p>
+                
+                <!-- Credits Selector Dropdown Calculator Widget -->
+                <div class="widget-pricing-credits" style="background-color: #f8f6fa; padding: 32px; border-radius: 12px; margin-top: 24px; max-width: 480px; box-sizing: border-box;">
+                  <label for="pricing-credits-select" style="font-family: 'Asap', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 12px; color: #2B1B9A;">
+                    Number of credits
+                  </label>
+                  <div class="select-wrapper" style="position: relative; width: 100%; margin-bottom: 24px;">
+                    <select id="pricing-credits-select" style="width: 100%; color: #2B1B9A; background-color: #FFFFFF; padding: 16px 24px; border: 1px solid #E9E6EF; border-radius: 8px; font-family: 'Asap', sans-serif; font-size: 16px; font-weight: 700; appearance: none; cursor: pointer; box-sizing: border-box; background-image: url(&quot;data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b1b9a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e&quot;); background-repeat: no-repeat; background-position: right 20px center; background-size: 16px;">
+                      <option value="$25.00|0|25">25</option>
+                      <option value="$50.00|4|54" selected>54</option>
+                      <option value="$100.00|10|110">110</option>
+                      <option value="$250.00|30|280">280</option>
+                      <option value="$500.00|80|580">580</option>
+                      <option value="$1,000.00|200|1200">1200</option>
+                    </select>
+                  </div>
+                  <div id="pricing-credits-free" style="border-bottom: 1px solid #E9E6EF; padding: 16px 0; display: flex; align-items: center; justify-content: space-between; font-family: 'Asap', sans-serif; font-size: 18px; color: #2B1B9A;">
+                    <span style="font-weight: 600;">Free credits</span>
+                    <span class="amount" id="free" style="font-weight: 700; color: #17b86a;">4</span>
+                  </div>
+                  <div id="pricing-credits-total" style="border-bottom: 1px solid #E9E6EF; padding: 16px 0; display: flex; align-items: center; justify-content: space-between; font-family: 'Asap', sans-serif; font-size: 18px; color: #2B1B9A; margin-bottom: 24px;">
+                    <span style="font-weight: 600;">Total to pay</span>
+                    <span class="amount money" id="total" style="font-weight: 700;">$50.00</span>
+                  </div>
+                  <div class="actions">
+                    <a class="btn-path btn-path-blue" href="https://dashboard.pathedits.com/credits/c54/purchase" id="pricing-credits-buy-btn" style="display: block; text-align: center; text-transform: uppercase; background-color: #67B6F4; color: #2B1B9A; font-family: 'Asap', sans-serif; font-weight: 700; font-size: 15px; padding: 16px 24px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 14px rgba(103, 182, 244, 0.3);">
+                      Get <span class="amount" id="btnCredits">54</span> credits now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Pricing for large orders -->
+          <div class="pe-faq-item">
+            <div class="pe-faq-question">
+              <img src="https://cdn.pathedits.com/Illustrations/bulk-photo-editing-pricing-large-orders.svg" alt="Visual representation of pricing plans tailored for bulk photo editing services, optimized for large order workflows." />
+              <div class="pe-faq-content">
+                <h3 class="pe-faq-title">Pricing for large orders</h3>
+                <p class="pe-faq-subtitle">Get custom support and pricing for high-volume photo edits</p>
+              </div>
+              <div class="pe-faq-toggle"></div>
+            </div>
+            <div class="pe-faq-answer">
+              <div class="pe-faq-answer-inner">
+                <p>If you need more than 100 images edited at a time, or are ordering 1000+ images per month, we can set you up with custom support and pricing.</p>
+                <p><a href="https://dashboard.pathedits.com/help" style="color: #2B1B9A; text-decoration: underline; font-weight: 700;">Contact us</a> and we’ll look after you.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Currency Conversion Section -->
+    <section class="currency-conversion-section" style="background-color: #FFFFFF; padding: 100px 0;">
+      <div class="container" style="max-width: 1256px; margin: 0 auto; padding: 0 24px;">
+        <div class="currency-columns" style="display: flex; align-items: center; justify-content: space-between; gap: 48px;">
+          <div class="currency-text" style="flex: 1; max-width: 504px;">
+            <h2 style="font-family: 'Livvic', sans-serif; color: #2B1B9A; font-size: clamp(28px, 3.3vw, 40px); font-weight: 600; line-height: 1.2; margin: 0 0 24px;">Avoid currency conversion and foreign transaction fees</h2>
+            <p style="font-family: 'Asap', sans-serif; color: #5F5572; font-size: 18px; line-height: 1.6; margin: 0;">With our currency converter tool, you can choose from more than <strong>25 global currencies</strong>. You can save more by avoiding foreign transaction fees. Simply use the dropdown menu in the upper right of the main menu to select your currency of choice.</p>
+          </div>
+          <div class="currency-img" style="flex: 1; max-width: 616px; display: flex; justify-content: center;">
+            <img src="https://cdn.pathedits.com/Illustrations/avoid-currency-conversion.svg" alt="Avoid currency conversion illustration" style="width: 100%; height: auto;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fast, Secure Checkout Section -->
+    <section class="checkout-secure-section" style="background-color: #FFFFFF; padding: 0 0 100px 0;">
+      <div class="container" style="max-width: 1256px; margin: 0 auto; padding: 0 24px;">
+        <div class="checkout-card" style="background-color: #2B1B9A; border-radius: 12px; padding: 64px 80px; display: flex; align-items: center; gap: 48px; box-sizing: border-box; color: #FFFFFF;">
+          <div class="checkout-illustration" style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 140px;">
+            <img src="https://cdn.pathedits.com/Illustrations/secure-payment-shield-icon.svg" alt="Secure payment shield icon" style="width: auto; height: 180px; display: block;" />
+          </div>
+          <div class="checkout-info" style="flex-grow: 1; display: flex; flex-direction: column;">
+            <h2 style="font-family: 'Livvic', sans-serif; font-size: 32px; font-weight: 600; color: #FFFFFF; margin: 0 0 12px;">Fast, secure checkout</h2>
+            <p style="font-family: 'Asap', sans-serif; font-size: 18px; line-height: 1.5; color: rgba(255, 255, 255, 0.9); margin: 0 0 40px; max-width: 600px;">We accept most major credit cards and PayPal. We’ll only take your payment details once you’ve finalized your order and are ready to authorize payment.</p>
+            
+            <div class="payment-logos" style="display: flex; flex-wrap: wrap; gap: 16px;">
+              <div class="logo-box" style="background-color: #FFFFFF; border-radius: 8px; width: 120px; height: 60px; display: flex; align-items: center; justify-content: center; padding: 8px 16px; box-sizing: border-box; box-shadow: 0 4px 12px rgba(43, 27, 154, 0.08);">
+                <img src="https://cdn.pathedits.com/Icons/american-express-payment-icon.svg" alt="American Express" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+              </div>
+              <div class="logo-box" style="background-color: #FFFFFF; border-radius: 8px; width: 120px; height: 60px; display: flex; align-items: center; justify-content: center; padding: 8px 16px; box-sizing: border-box; box-shadow: 0 4px 12px rgba(43, 27, 154, 0.08);">
+                <img src="https://cdn.pathedits.com/Icons/visa-card-icon.svg" alt="Visa" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+              </div>
+              <div class="logo-box" style="background-color: #FFFFFF; border-radius: 8px; width: 120px; height: 60px; display: flex; align-items: center; justify-content: center; padding: 8px 16px; box-sizing: border-box; box-shadow: 0 4px 12px rgba(43, 27, 154, 0.08);">
+                <img src="https://cdn.pathedits.com/Icons/mastercard-icon.svg" alt="Mastercard" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+              </div>
+              <div class="logo-box" style="background-color: #FFFFFF; border-radius: 8px; width: 120px; height: 60px; display: flex; align-items: center; justify-content: center; padding: 8px 16px; box-sizing: border-box; box-shadow: 0 4px 12px rgba(43, 27, 154, 0.08);">
+                <img src="https://cdn.pathedits.com/Icons/paypal-payment-icon.svg" alt="PayPal" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Photo Editing Rate FAQs Section (Accordion) -->
+    <section class="pricing-rate-faq-section" style="background-color: #FFFFFF; padding: 100px 0;">
+      <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: 64px;">
+          <h2 style="font-family: 'Livvic', sans-serif; color: #2B1B9A; font-size: 36px; font-weight: 600; margin: 0 0 16px;">Photo editing rate FAQs</h2>
+          <p style="font-family: 'Asap', sans-serif; color: #67B6F4; font-size: 20px; line-height: 1.4; margin: 0; font-weight: 500;">Questions other customers have asked us about photo editing rates</p>
+        </div>
+        
+        <div class="pe-faq-container">
+          <!-- FAQ 1 -->
+          <div class="pe-faq-item">
+            <div class="pe-faq-question" style="padding: 24px 32px;">
+              <div class="pe-faq-content">
+                <h3 class="pe-faq-title" style="font-size: 18px; color: #2B1B9A;">Do you offer a discount on large orders?</h3>
+              </div>
+              <div class="pe-faq-toggle"></div>
+            </div>
+            <div class="pe-faq-answer">
+              <div class="pe-faq-answer-inner" style="padding-bottom: 24px;">
+                <p>We do! There are two ways:</p>
+                <ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                  <li>Purchase a pack of Path credits. When you buy a bigger credit pack, we’ll top you up with extra bonus credits. Each credit is worth $1 towards your future orders. The largest credit pack is 1200 credits for $1000.</li>
+                  <li>If you regularly need more than 100 images edited at a time, or need 1000+ images edited per month, we can work with you on custom support and pricing. Contact us at <a href="mailto:hello@pathedits.com" style="color: #2B1B9A; text-decoration: underline; font-weight: 600;">hello@pathedits.com</a> and we’ll look after you.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="pe-faq-item">
+            <div class="pe-faq-question" style="padding: 24px 32px;">
+              <div class="pe-faq-content">
+                <h3 class="pe-faq-title" style="font-size: 18px; color: #2B1B9A;">Is there a free trial?</h3>
+              </div>
+              <div class="pe-faq-toggle"></div>
+            </div>
+            <div class="pe-faq-answer">
+              <div class="pe-faq-answer-inner" style="padding-bottom: 24px;">
+                <p>You bet. You can get your <a href="https://pathedits.com/pages/free-trial" style="color: #2B1B9A; text-decoration: underline; font-weight: 600;">first two images edited at no charge</a>. You won’t even need to enter a credit card 🙂</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="pe-faq-item">
+            <div class="pe-faq-question" style="padding: 24px 32px;">
+              <div class="pe-faq-content">
+                <h3 class="pe-faq-title" style="font-size: 18px; color: #2B1B9A;">How do I request a quote?</h3>
+              </div>
+              <div class="pe-faq-toggle"></div>
+            </div>
+            <div class="pe-faq-answer">
+              <div class="pe-faq-answer-inner" style="padding-bottom: 24px;">
+                <p>You can instantly estimate the cost of your editing services using our <a href="https://dashboard.pathedits.com/instant_quotes/new" style="color: #2B1B9A; text-decoration: underline; font-weight: 600;">Instant Quote</a> system. Simply provide the details of your project, such as the types of edits and upload your images, and the system will generate an immediate quote for you. It’s fast, easy, and available right on our website!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="pe-faq-item">
+            <div class="pe-faq-question" style="padding: 24px 32px;">
+              <div class="pe-faq-content">
+                <h3 class="pe-faq-title" style="font-size: 18px; color: #2B1B9A;">How does turnaround time affect the price of my order?</h3>
+              </div>
+              <div class="pe-faq-toggle"></div>
+            </div>
+            <div class="pe-faq-answer">
+              <div class="pe-faq-answer-inner" style="padding-bottom: 24px;">
+                <p>You get to choose the turnaround time that works best for you. Our default turnaround time is 24 hours, but when you customize and confirm your order, you can choose from these times:</p>
+                <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; list-style-type: disc;">
+                  <li>6 hours</li>
+                  <li>12 hours</li>
+                  <li>24 hours</li>
+                  <li>48 hours</li>
+                  <li>96 hours</li>
+                </ul>
+                <p style="margin-top: 8px;">The longer the turnaround time, the less the image-editing services will cost. If you’re working against a tight deadline, you can pay extra to have your images back in less than 24 hours.</p>
+                <p>Not in a rush? Choose a turnaround time greater than 24 hours and save money on your order.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="pe-faq-item">
+            <div class="pe-faq-question" style="padding: 24px 32px;">
+              <div class="pe-faq-content">
+                <h3 class="pe-faq-title" style="font-size: 18px; color: #2B1B9A;">Do you offer recurring subscriptions?</h3>
+              </div>
+              <div class="pe-faq-toggle"></div>
+            </div>
+            <div class="pe-faq-answer">
+              <div class="pe-faq-answer-inner" style="padding-bottom: 24px;">
+                <p>Yes we do. <a href="https://dashboard.pathedits.com/help" style="color: #2B1B9A; text-decoration: underline; font-weight: 600;">Get in touch</a> and we’ll work out a plan that fits your business.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Final CTA Section -->
+    <section class="pricing-cta-section" style="background-color: #F8F6FA; padding: 100px 0;">
+      <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 24px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;">
+        <div>
+          <img src="https://cdn.pathedits.com/Illustrations/work-and-passion-illustration.svg" alt="Find the time to fall in love with your work again" style="width: 140px; height: auto; display: block; margin: 0 auto;" />
+        </div>
+        <h2 style="font-family: 'Livvic', sans-serif; color: #2B1B9A; font-size: clamp(26px, 3.5vw, 40px); font-weight: 600; line-height: 1.2; margin: 0 0 16px; max-width: 600px;">Find the time to fall in love with your work again</h2>
+        <div style="display: flex; justify-content: center;">
+          <a href="https://dashboard.pathedits.com/instant_quotes/new" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #67B6F4; color: #2B1B9A; font-family: 'Asap', sans-serif; font-weight: 700; font-size: 16px; min-height: 48px; padding: 0 32px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 14px rgba(103, 182, 244, 0.4);">
+            Start a new order
+            <span style="font-size: 18px; line-height: 1;">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+
+  .pe-faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .pe-faq-item {
+    background-color: #F8F6FA;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .pe-faq-item.active {
+    background-color: #FFFFFF;
+    border-color: #2B1B9A;
+    box-shadow: 0 10px 30px rgba(43, 27, 154, 0.06);
+  }
+  .pe-faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 40px;
+    cursor: pointer;
+    gap: 24px;
+  }
+  @media (max-width: 768px) {
+    .pe-faq-question {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+    }
+  }
+  .pe-faq-question img {
+    width: 96px;
+    height: auto;
+    flex-shrink: 0;
+  }
+  .pe-faq-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pe-faq-title {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .pe-faq-subtitle {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.8;
+  }
+  .pe-faq-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(43, 27, 154, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  .pe-faq-toggle::before, .pe-faq-toggle::after {
+    content: "";
+    position: absolute;
+    background-color: #2B1B9A;
+    transition: all 0.3s ease;
+  }
+  .pe-faq-toggle::before {
+    width: 14px;
+    height: 2px;
+  }
+  .pe-faq-toggle::after {
+    width: 2px;
+    height: 14px;
+  }
+  .pe-faq-item.active .pe-faq-toggle::after {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  .pe-faq-item.active .pe-faq-toggle::before {
+    opacity: 0.6;
+  }
+  .pe-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  .pe-faq-item.active .pe-faq-answer {
+    padding: 0 40px 40px 40px;
+  }
+  .pe-faq-answer-inner {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 16px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+
+
+  @media (max-width: 960px) {
+    .hero-flex {
+      flex-direction: column !important;
+      text-align: center;
+    }
+    .services-pricing-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .calc-container {
+      flex-direction: column !important;
+      padding: 24px !important;
+    }
+    .bulk-accordion-container {
+      flex-direction: column !important;
+      gap: 32px !important;
+    }
+    .bulk-illustrations-column {
+      height: 200px !important;
+    }
+    .cta-inner {
+      flex-direction: column-reverse !important;
+      text-align: center;
+      padding: 32px !important;
+    }
+    .faq-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .currency-columns {
+      flex-direction: column !important;
+      text-align: center;
+      gap: 32px !important;
+    }
+    .currency-text, .currency-img {
+      max-width: 100% !important;
+    }
+    .checkout-card {
+      flex-direction: column !important;
+      align-items: center;
+      text-align: center;
+      padding: 40px 32px !important;
+      gap: 32px !important;
+    }
+    .checkout-info p {
+      margin: 0 auto 32px auto !important;
+    }
+    .payment-logos {
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  // 1. Carousel Slider functionality
+  const track = document.getElementById('sliderTrack');
+  const slides = Array.from(track ? track.children : []);
+  const prevBtn = document.getElementById('sliderPrev');
+  const nextBtn = document.getElementById('sliderNext');
+  let currentIdx = 0;
+
+  function getMaxIdx() {
+    if (window.innerWidth > 960) return Math.max(0, slides.length - 3); // 3 visible
+    if (window.innerWidth > 600) return Math.max(0, slides.length - 2); // 2 visible
+    return Math.max(0, slides.length - 1); // 1 visible
+  }
+
+  function updateSlider() {
+    if (track && slides.length > 0 && slides[0] instanceof HTMLElement) {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = 24;
+      const offset = currentIdx * (slideWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+    }
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    const maxIdx = getMaxIdx();
+    currentIdx = (currentIdx === 0) ? maxIdx : currentIdx - 1;
+    updateSlider();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    const maxIdx = getMaxIdx();
+    currentIdx = (currentIdx >= maxIdx) ? 0 : currentIdx + 1;
+    updateSlider();
+  });
+
+  window.addEventListener('resize', () => {
+    currentIdx = Math.min(currentIdx, getMaxIdx());
+    updateSlider();
+  });
+
+  // Call once to position correctly
+  setTimeout(updateSlider, 100);
+
+  // 3. Dynamic Large Accordion Section functionality
+  const faqItems = document.querySelectorAll('.pe-faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.pe-faq-question');
+    const answer = item.querySelector('.pe-faq-answer');
+    
+    question?.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all other items
+      faqItems.forEach(other => {
+        if (other !== item) {
+          other.classList.remove('active');
+          const otherAnswer = other.querySelector('.pe-faq-answer');
+          if (otherAnswer instanceof HTMLElement) {
+            otherAnswer.style.maxHeight = '';
+          }
+        }
+      });
+      
+      // Toggle current item
+      if (isActive) {
+        item.classList.remove('active');
+        if (answer instanceof HTMLElement) {
+          answer.style.maxHeight = '0px';
+        }
+      } else {
+        item.classList.add('active');
+        if (answer instanceof HTMLElement) {
+          answer.style.maxHeight = answer.scrollHeight + 100 + 'px';
+        }
+      }
+    });
+  });
+
+  // 4. Credits Dropdown Calculator Widget
+  const selectElement = document.getElementById("pricing-credits-select");
+  const freeVal = document.getElementById("free");
+  const totalVal = document.getElementById("total");
+  const creditsVal = document.getElementById("btnCredits");
+  const buyBtn = document.getElementById("pricing-credits-buy-btn");
+
+  selectElement?.addEventListener("change", (event) => {
+    const target = event.target;
+    if (target instanceof HTMLSelectElement) {
+      const parts = target.value.split('|');
+      if (parts.length === 3) {
+        if (freeVal) freeVal.textContent = parts[1];
+        if (totalVal) totalVal.textContent = parts[0];
+        if (creditsVal) creditsVal.textContent = parts[2];
+        if (buyBtn) {
+          buyBtn.setAttribute('href', `https://dashboard.pathedits.com/credits/c${parts[2]}/purchase`);
+        }
+      }
+    }
+  });</script>

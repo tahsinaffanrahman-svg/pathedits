@@ -1,0 +1,142 @@
+---
+const faqs = [
+  { q: "Do you offer a discount on large orders?", a: "Two ways - purchase credit packs (up to 1,200 for $1,000) or contact hello@pathedits.com for custom pricing on 100+ images." },
+  { q: "Is there a free trial?", a: "Yes, first 2 images edited free, no credit card required." },
+  { q: "How do I see exactly how much my edits will cost?", a: "Our platform gives instant pricing. Custom quotes available for large/unique orders." },
+  { q: "Do I need to request a quote?", a: "Not necessarily. Instant pricing available, custom quotes for special needs." },
+  { q: "Do you offer rush turnaround?", a: "Yes - six-hour, same-day, and overnight delivery options." },
+  { q: "Do you offer recurring subscriptions?", a: "Yes, with predictable pricing and priority service." }
+];
+---
+
+<section class="faq">
+  <div class="container">
+    <h2>FAQs about Path services</h2>
+    <div class="faq-list">
+      {faqs.map((faq, index) => (
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>{faq.q}</span>
+            <div class="toggle-btn">
+              <span class="plus">+</span>
+              <span class="minus">-</span>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <p>{faq.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
+<style>
+  .faq {
+    background: #FFFFFF;
+    padding: 80px 0;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  h2 {
+    text-align: center;
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 54px 0;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .faq-item {
+    background: #F8F6FA;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    padding: 24px 32px;
+    transition: all 0.3s ease;
+  }
+  .faq-item.active {
+    background: #fff;
+    border: 2px solid #2B1B9A;
+  }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+  }
+  .toggle-btn {
+    width: 71px;
+    height: 71px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #2B1B9A;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .minus {
+    display: none;
+  }
+  .faq-item.active .plus {
+    display: none;
+  }
+  .faq-item.active .minus {
+    display: block;
+  }
+  .faq-answer {
+    display: none;
+    padding-top: 16px;
+  }
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+  .faq-answer p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  @media (max-width: 600px) {
+    .faq-question {
+      font-size: 20px;
+    }
+    .toggle-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+    }
+  }
+</style>

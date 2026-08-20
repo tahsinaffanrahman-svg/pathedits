@@ -1,0 +1,353 @@
+---
+// Pricing comparison table matching live pathedits.com
+const plans = [
+  {
+    name: "Standard",
+    tagline: "Pay As You Go",
+    icon: "https://cdn.pathedits.com/Illustrations/pay-as-you-go-illustration-edited.svg",
+    alt: "Illustration representing pay-as-you-go model for flexible image editing services."
+  },
+  {
+    name: "Pro",
+    tagline: "Path Credits Subscription",
+    icon: "https://cdn.pathedits.com/Illustrations/save-time-money-path-credits.svg",
+    alt: "Path credits help you save time and money on photo editing services.",
+    button: {
+      text: "Subscribe",
+      link: "/pages/credits"
+    }
+  },
+  {
+    name: "Enterprise",
+    tagline: "$499/month",
+    icon: "https://cdn.pathedits.com/Illustrations/bulk-photo-editing-pricing-large-orders.svg",
+    alt: "Pricing plans tailored for bulk photo editing services.",
+    button: {
+      text: "Contact sales →",
+      link: "/pages/contact"
+    }
+  }
+];
+
+const features = [
+  {
+    name: "Next Morning Turnaround",
+    desc: "Edited images delivered by 9am the next morning in your timezone.",
+    values: ["dash", "check", "check"]
+  },
+  {
+    name: "Discount on Path credits",
+    desc: "Bonus free credits you get when you buy or subscribe to Path credits.",
+    values: ["0 %", "35 %", "Custom"]
+  },
+  {
+    name: "Image editing price",
+    desc: "How your editing prices are calculated — standard per-service rates or custom flat pricing.",
+    values: ["Variable", "Variable", "Flat"]
+  },
+  {
+    name: "Team access",
+    desc: "Invite teammates to share one account, credits balance, and orders.",
+    values: ["dash", "3 users", "Unlimited"]
+  },
+  {
+    name: "FTP access",
+    desc: "Download completed edits directly to your systems via FTP.",
+    values: ["dash", "check", "check"]
+  },
+  {
+    name: "File sharing via 3rd party",
+    desc: "Connect your preferred file storage tools for smoother handoff of originals and edits.",
+    values: ["dash", "dash", "check"]
+  },
+  {
+    name: "Dedicated Account Manager",
+    desc: "A named Path contact who knows your account and helps with priorities and requests.",
+    values: ["dash", "dash", "check"]
+  },
+  {
+    name: "Minimum order fee",
+    desc: "A small fee applied when an order is below the minimum checkout amount.",
+    values: ["$2.5", "dash", "dash"]
+  },
+  {
+    name: "Dedicated Editing Team",
+    desc: "A consistent team of editors trained on your brand and quality standards.",
+    values: ["dash", "check", "check"]
+  },
+  {
+    name: "Monthly billing by invoice",
+    desc: "Pay on a monthly invoice instead of checking out order by order.",
+    values: ["dash", "dash", "check"]
+  },
+  {
+    name: "CSR impact report and certification",
+    desc: "Reporting and certification on the social impact of your Path editing work.",
+    values: ["dash", "Contact us", "check"]
+  }
+];
+---
+
+<section class="pe-pricing-section">
+  <div class="container">
+    <h2 class="section-title">Our pricing options</h2>
+
+    <div class="pricing-card">
+      <div class="table-container">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th class="col-feature">
+                <span class="sr-only">Features</span>
+              </th>
+              {plans.map(plan => (
+                <th class="col-plan">
+                  <div class="plan-header">
+                    <img src={plan.icon} alt={plan.alt} class="plan-icon" loading="lazy" />
+                    <div class="plan-name">{plan.name}</div>
+                    <div class="plan-tagline">{plan.tagline}</div>
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {features.map((feature, idx) => (
+              <tr class={idx % 2 === 0 ? "row-even" : "row-odd"}>
+                <td class="col-feature">
+                  <div class="feature-name">{feature.name}</div>
+                  <div class="feature-desc">{feature.desc}</div>
+                </td>
+                {feature.values.map(val => (
+                  <td class="col-value">
+                    {val === "check" ? (
+                      <span class="check-icon" aria-label="Included">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                    ) : val === "dash" ? (
+                      <span class="dash-icon" aria-label="Not included">—</span>
+                    ) : (
+                      <span class="text-value">{val}</span>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="col-feature"></td>
+              <td class="col-cta"></td>
+              <td class="col-cta">
+                <a href="/pages/credits" class="btn-plan btn-pro">Subscribe</a>
+              </td>
+              <td class="col-cta">
+                <a href="/pages/contact" class="btn-plan btn-enterprise">Contact sales <span>&rarr;</span></a>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pe-pricing-section {
+    background: linear-gradient(76deg, rgb(163, 215, 244) 0%, rgb(226, 222, 255) 100%);
+    padding: 80px 0;
+  }
+
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .section-title {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .pricing-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(43, 27, 154, 0.08);
+    overflow: hidden;
+    padding: 40px 32px 32px 32px;
+  }
+
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+  }
+
+  /* Columns sizing */
+  .col-feature {
+    width: 40%;
+    text-align: left;
+    padding: 20px 24px 20px 0;
+    vertical-align: middle;
+  }
+
+  .col-plan {
+    width: 20%;
+    text-align: center;
+    padding: 0 16px 32px 16px;
+    vertical-align: bottom;
+  }
+
+  .col-value {
+    width: 20%;
+    text-align: center;
+    padding: 20px 16px;
+    vertical-align: middle;
+  }
+
+  .col-cta {
+    width: 20%;
+    text-align: center;
+    padding: 28px 16px 12px 16px;
+  }
+
+  /* Plan header cards */
+  .plan-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .plan-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 16px;
+  }
+
+  .plan-name {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .plan-tagline {
+    color: #5F5572;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* Row content */
+  .pricing-table tbody tr {
+    border-top: 1px solid #EEEDF6;
+  }
+
+  .feature-name {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .feature-desc {
+    color: #5F5572;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .dash-icon {
+    color: #A5A1B0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .text-value {
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  /* Buttons */
+  .btn-plan {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #8B80E8;
+    color: #FFFFFF;
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(139, 128, 232, 0.25);
+    white-space: nowrap;
+  }
+
+  .btn-plan:hover {
+    background: #7367D8;
+    transform: translateY(-1px);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 900px) {
+    .pe-pricing-section {
+      padding: 60px 0;
+    }
+    .pricing-card {
+      padding: 24px 16px;
+      border-radius: 16px;
+    }
+    .plan-icon {
+      width: 90px;
+      height: 90px;
+    }
+    .feature-name {
+      font-size: 15px;
+    }
+    .feature-desc {
+      font-size: 13px;
+    }
+  }
+</style>

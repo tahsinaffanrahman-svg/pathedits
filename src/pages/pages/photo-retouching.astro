@@ -1,0 +1,238 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import FAQ from '../../components/FAQ.astro';
+import Footer from '../../components/Footer.astro';
+
+const breadcrumbs = [
+  { label: 'Services', href: '/pages/services' },
+  { label: 'Photo Retouching Service', href: '#' }
+];
+
+const faqs = [
+  { question: "What retouching do you offer?", answer: "Skin smoothing, wrinkle removal, teeth whitening, product cleanup, dust/scratch removal." },
+  { question: "For portraits?", answer: "Yes, headshots and fashion." },
+  { question: "Turnaround?", answer: "As little as 6 hours." }
+];
+---
+
+<Layout title="Photo Retouching Service | Path Edits" description="Correct flaws and imperfections, and make every element of your image shine">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Photo Retouching Service" subtitle="Correct flaws and imperfections, and make every element of your image shine" breadcrumbs={breadcrumbs} />
+    
+    <section class="value-prop">
+      <div class="container">
+        <div class="content-wrapper">
+          <div class="text-content">
+            <h2>Make Every Detail Perfect</h2>
+            <p>Enhance the quality of your photographs with our expert photo retouching service. From subtle blemish removal to advanced color correction, we ensure your product and portrait imagery look their absolute best.</p>
+          </div>
+          <div class="image-content">
+            <img src="https://cdn.pathedits.com/Images/shared/service-cards/photo-retouching-camera-edited.png?w=400" alt="Photo Retouching Example" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-grid">
+      <div class="container">
+        <h2>Service Benefits</h2>
+        <div class="grid">
+          <div class="benefit-card">
+            <img src="https://cdn.pathedits.com/Icons/photo-retouching.svg" alt="Skin retouching" class="icon" />
+            <h3>Skin Retouching</h3>
+            <p>Natural smoothing, blemish removal, and realistic enhancements.</p>
+          </div>
+          <div class="benefit-card">
+            <img src="https://cdn.pathedits.com/Icons/photo-retouching.svg" alt="Product enhancement" class="icon" />
+            <h3>Product Enhancement</h3>
+            <p>Clean up dust, scratches, and manufacturing defects from product photos.</p>
+          </div>
+          <div class="benefit-card">
+            <img src="https://cdn.pathedits.com/Icons/photo-retouching.svg" alt="Color correction" class="icon" />
+            <h3>Color Correction</h3>
+            <p>Adjust exposure, contrast, and color balance for impactful imagery.</p>
+          </div>
+          <div class="benefit-card">
+            <img src="https://cdn.pathedits.com/Icons/photo-retouching.svg" alt="Blemish removal" class="icon" />
+            <h3>Blemish Removal</h3>
+            <p>Erase distracting elements and imperfections effortlessly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-info">
+      <div class="container">
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="price-box">
+          <p class="price">From $0.69 <span>per image</span></p>
+          <p>Get affordable, high-quality retouching to elevate your visual content.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2>Ready to shine?</h2>
+        <a href="/pages/free-trial" class="btn-primary">Get started &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  
+  h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #332B50;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    line-height: 1.6;
+    font-size: 1.125rem;
+  }
+
+  .value-prop {
+    background-color: #FFFFFF;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .text-content, .image-content {
+    flex: 1;
+  }
+  
+  .image-content img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(43, 27, 154, 0.1);
+  }
+
+  .benefits-grid {
+    background-color: #F3F1F9;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .benefit-card {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-info {
+    background-color: #FFFFFF;
+    text-align: center;
+  }
+  
+  .price-box {
+    background: #F8F6FA;
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .price {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .price span {
+    font-size: 1.5rem;
+    color: #5F5572;
+  }
+
+  .faq-section {
+    background-color: #F3F1F9;
+  }
+
+  .cta-section {
+    background-color: #FFFFFF;
+    text-align: center;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .btn-primary {
+    display: inline-block;
+    background-color: #67B6F4;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(103, 182, 244, 0.4);
+  }
+  
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

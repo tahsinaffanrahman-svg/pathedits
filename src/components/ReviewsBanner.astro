@@ -1,0 +1,208 @@
+---
+---
+
+<section class="reviews-banner-wrapper">
+	<div class="container">
+		<div class="reviews-card">
+
+			<!-- Left: multicolour gradient star illustration -->
+			<div class="star-graphic">
+				<img
+					src="https://cdn.pathedits.com/Illustrations/trusted-image-editing-services.svg"
+					alt="5-star reviews"
+					width="150"
+					height="150"
+					onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+				/>
+				<!-- Fallback: inline gradient star matching screenshot exactly -->
+				<svg style="display:none" width="150" height="150" viewBox="0 0 150 150" fill="none">
+					<path
+						d="M75 18 L91 55 L132 58 L102 84 L111 125 L75 105 L39 125 L48 84 L18 58 L59 55 Z"
+						stroke="url(#sGrad)"
+						stroke-width="9"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						fill="none"
+					/>
+					<!-- Inner infinity swirl -->
+					<path
+						d="M75 75 C64 62 50 62 50 72 C50 82 64 82 75 75 C86 68 100 68 100 78 C100 88 86 88 75 75 Z"
+						stroke="url(#sGrad)"
+						stroke-width="6"
+						stroke-linecap="round"
+						fill="none"
+					/>
+					<defs>
+						<linearGradient id="sGrad" x1="18" y1="18" x2="132" y2="125" gradientUnits="userSpaceOnUse">
+							<stop offset="0%"   stop-color="#FFCE1E"/>
+							<stop offset="30%"  stop-color="#FA585A"/>
+							<stop offset="65%"  stop-color="#9B93EE"/>
+							<stop offset="100%" stop-color="#67b6f4"/>
+						</linearGradient>
+					</defs>
+				</svg>
+			</div>
+
+			<!-- Right: text + Trustpilot -->
+			<div class="reviews-content">
+				<h2>Over 10,000 5-star reviews</h2>
+				<p class="reviews-sub">We've edited more than 10 million images for 42,000+ businesses like yours.</p>
+
+				<!-- Trustpilot block — stacked -->
+				<div class="tp-block">
+					<!-- Row 1: T logo + Trustpilot wordmark -->
+					<div class="tp-brand-row">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="#00b67a" aria-hidden="true">
+							<path d="M12 0L14.9 9H24L16.55 14.6L19.45 23.6L12 18L4.55 23.6L7.45 14.6L0 9H9.1Z"/>
+						</svg>
+						<span class="tp-wordmark">Trustpilot</span>
+					</div>
+					<!-- Row 2: 5 green star squares -->
+					<div class="tp-stars" aria-label="5 stars out of 5">
+						<span class="tp-star">★</span>
+						<span class="tp-star">★</span>
+						<span class="tp-star">★</span>
+						<span class="tp-star">★</span>
+						<span class="tp-star">★</span>
+					</div>
+					<!-- Row 3: TrustScore -->
+					<p class="tp-score">
+						TrustScore <strong>4.8</strong>
+						&nbsp;|&nbsp;
+						<a href="https://uk.trustpilot.com/review/pathedits.com" target="_blank" rel="noopener" class="tp-link">12,687 reviews</a>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Exact gradient from real site */
+	.reviews-banner-wrapper {
+		background: linear-gradient(90deg, rgba(163,215,244,1) 0%, rgba(226,222,255,1) 100%);
+		padding: 48px 0;
+	}
+
+	/* White card — full container width, compact height */
+	.reviews-card {
+		background: #ffffff;
+		border-radius: 20px;
+		padding: 30px 44px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 36px;
+		width: 100%;          /* fills full container — no max-width cap */
+		box-shadow: 0 6px 28px rgba(43,27,154,0.08);
+	}
+
+	/* Left star graphic */
+	.star-graphic {
+		flex-shrink: 0;
+		width: 120px;
+		height: 120px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.star-graphic img,
+	.star-graphic svg {
+		width: 120px;
+		height: 120px;
+		display: block;
+	}
+
+	/* Right content */
+	.reviews-content {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	/* Heading — bold purple, matches screenshot */
+	.reviews-content h2 {
+		font-family: 'Livvic', sans-serif;
+		font-size: clamp(22px, 1.8rem, 30px);
+		font-weight: 700;
+		color: #2b1b9a;
+		margin: 0;
+		line-height: 1.2;
+	}
+
+	/* Subtitle */
+	.reviews-sub {
+		font-family: 'Asap', sans-serif;
+		font-size: 15px;
+		color: #5f5572;
+		margin: 0 0 8px;
+		line-height: 1.5;
+	}
+
+	/* Trustpilot stacked block */
+	.tp-block {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	/* Row 1: T icon + Trustpilot text */
+	.tp-brand-row {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+
+	.tp-wordmark {
+		font-family: 'Asap', sans-serif;
+		font-size: 15px;
+		font-weight: 700;
+		color: #191919;
+	}
+
+	/* Row 2: green star squares */
+	.tp-stars {
+		display: flex;
+		gap: 3px;
+	}
+
+	.tp-star {
+		background: #00b67a;
+		color: #ffffff;
+		font-size: 17px;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 2px;
+	}
+
+	/* Row 3: score text */
+	.tp-score {
+		font-family: 'Asap', sans-serif;
+		font-size: 13px;
+		color: #333333;
+		margin: 0;
+	}
+
+	.tp-link {
+		color: #333333;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.tp-link:hover { color: #2b1b9a; }
+
+	@media (max-width: 680px) {
+		.reviews-card {
+			flex-direction: column;
+			padding: 28px 24px;
+			gap: 20px;
+			text-align: center;
+		}
+		.tp-brand-row, .tp-stars { justify-content: center; }
+	}
+</style>

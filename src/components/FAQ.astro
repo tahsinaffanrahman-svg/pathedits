@@ -1,0 +1,71 @@
+---
+interface Props {
+	items: { question: string; answer: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="faq-section">
+	{items.map((item, i) => (
+		<details class="faq-item" id={`faq-${i}`}>
+			<summary class="faq-q">
+				<span>{item.question}</span>
+				<svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+			</summary>
+			<div class="faq-a">
+				<p set:html={item.answer} />
+			</div>
+		</details>
+	))}
+</div>
+
+<style>
+	.faq-section {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.faq-item {
+		border-bottom: 1px solid rgba(43,27,154,0.1);
+	}
+
+	.faq-q {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 0;
+		cursor: pointer;
+		font-family: 'Livvic', sans-serif;
+		font-size: 18px;
+		font-weight: 600;
+		color: #2b1b9a;
+		list-style: none;
+		gap: 16px;
+	}
+
+	.faq-q::-webkit-details-marker { display: none; }
+
+	.faq-arrow {
+		flex-shrink: 0;
+		transition: transform 0.25s ease;
+		color: #9b93ee;
+	}
+
+	details[open] .faq-arrow {
+		transform: rotate(180deg);
+	}
+
+	.faq-a {
+		padding: 0 0 20px;
+	}
+
+	.faq-a p {
+		font-family: 'Asap', sans-serif;
+		font-size: 15px;
+		color: #5f5572;
+		line-height: 1.65;
+		margin: 0;
+	}
+</style>

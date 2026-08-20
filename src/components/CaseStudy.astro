@@ -1,0 +1,211 @@
+---
+---
+
+<section class="cs-section">
+	<div class="container cs-inner">
+
+		<!-- ── Left: speech bubble + author ── -->
+		<div class="cs-left">
+
+			<!-- Speech bubble card -->
+			<div class="speech-bubble">
+				<p class="quote-text">
+					The amount of pictures we're able to get back in such a short amount of time
+					is one of the things we absolutely love about Path. We're able to photograph
+					all of our products and submit for editing in the same evening.
+					<strong>We wake up to the edited images the next day, and they're perfect.</strong>
+					We have the freedom to shoot products on any surface with any lighting because
+					we know Path will come through and deliver consistent, quality imagery every time.
+				</p>
+			</div>
+
+			<!-- Author row: big quote mark + name/title -->
+			<div class="author-row">
+				<!-- Double quotation mark icon — light blue/purple -->
+				<svg class="quote-icon" width="40" height="32" viewBox="0 0 40 32" fill="none" aria-hidden="true">
+					<path d="M0 32 L0 18 C0 8 5 2 16 0 L18 4 C12 6 9 10 9 14 L16 14 L16 32 Z" fill="#9D91F5" opacity="0.5"/>
+					<path d="M22 32 L22 18 C22 8 27 2 38 0 L40 4 C34 6 31 10 31 14 L38 14 L38 32 Z" fill="#9D91F5" opacity="0.5"/>
+				</svg>
+				<div class="author-info">
+					<strong class="author-name">Alee Mills</strong>
+					<span class="author-title">Director of Operations, Ice Cream Castles</span>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- ── Right: headline + read link + photo ── -->
+		<div class="cs-right">
+
+			<h2 class="cs-heading">
+				See how Ice Cream Castles reduced their
+				<strong>product photo turnaround from 1 week to 1 day with Path</strong>
+			</h2>
+
+			<a href="/blogs/tips/ice-cream-castles" class="cs-read-link">
+				Read story
+			</a>
+
+			<figure class="cs-photo">
+				<img
+					src="https://cdn.pathedits.com/Images/pages/home/ice-cream-castles-product-photo-path.png"
+					alt="Three children in matching patterned outfits — Ice Cream Castles"
+				/>
+			</figure>
+
+		</div>
+
+	</div>
+</section>
+
+<style>
+	.cs-section {
+		background: #ffffff;
+		padding: 80px 0 60px;
+	}
+
+	/* Two-column layout */
+	.cs-inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 64px;
+		align-items: flex-start;
+	}
+
+	/* ── Left column ── */
+	.cs-left {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Speech bubble — light blue border, white bg, bottom-left tail */
+	.speech-bubble {
+		background: #ffffff;
+		border: 1.5px solid #c5d8f5;
+		border-radius: 20px;
+		padding: 32px 36px;
+		position: relative;
+	}
+
+	/* Triangle tail at bottom-left (border layer) */
+	.speech-bubble::after {
+		content: '';
+		position: absolute;
+		bottom: -22px;
+		left: 44px;
+		border-left: 13px solid transparent;
+		border-right: 13px solid transparent;
+		border-top: 22px solid #c5d8f5;
+	}
+
+	/* Triangle tail fill (white layer on top) */
+	.speech-bubble::before {
+		content: '';
+		position: absolute;
+		bottom: -18px;
+		left: 46px;
+		border-left: 11px solid transparent;
+		border-right: 11px solid transparent;
+		border-top: 18px solid #ffffff;
+		z-index: 1;
+	}
+
+	/* Quote text */
+	.quote-text {
+		font-family: 'Asap', sans-serif;
+		font-size: 15px;
+		line-height: 1.72;
+		color: #332b50;
+		margin: 0;
+	}
+
+	.quote-text strong {
+		font-weight: 700;
+		color: #332b50;
+	}
+
+	/* Author row — sits below the bubble */
+	.author-row {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		margin-top: 28px;
+	}
+
+	.quote-icon {
+		flex-shrink: 0;
+	}
+
+	.author-info {
+		display: flex;
+		flex-direction: column;
+		gap: 3px;
+	}
+
+	.author-name {
+		font-family: 'Livvic', sans-serif;
+		font-size: 18px;
+		font-weight: 700;
+		color: #2b1b9a;
+	}
+
+	.author-title {
+		font-family: 'Asap', sans-serif;
+		font-size: 14px;
+		color: #5f5572;
+	}
+
+	/* ── Right column ── */
+	.cs-right {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+		padding-top: 8px;
+	}
+
+	/* Heading: regular weight intro + bold key phrase */
+	.cs-heading {
+		font-family: 'Livvic', sans-serif;
+		font-size: clamp(20px, 1.65rem, 28px);
+		font-weight: 400;
+		color: #2b1b9a;
+		line-height: 1.35;
+		margin: 0;
+	}
+
+	.cs-heading strong {
+		font-weight: 700;
+	}
+
+	/* "Read story" underlined link */
+	.cs-read-link {
+		font-family: 'Asap', sans-serif;
+		font-size: 15px;
+		font-weight: 500;
+		color: #2b1b9a;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		width: fit-content;
+	}
+
+	.cs-read-link:hover { color: #9b93ee; }
+
+	/* Photo — no border-radius, matches screenshot */
+	.cs-photo {
+		margin: 0;
+		line-height: 0;
+	}
+
+	.cs-photo img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	@media (max-width: 880px) {
+		.cs-inner {
+			grid-template-columns: 1fr;
+			gap: 48px;
+		}
+	}
+</style>

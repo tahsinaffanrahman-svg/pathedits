@@ -1,0 +1,121 @@
+---
+---
+
+<section class="un-compact-section">
+	<div class="container un-compact-inner">
+
+		<!-- Left: UN Global Compact logo + "WE SUPPORT" -->
+		<div class="un-logo-col">
+			<img
+				src="https://cdn.pathedits.com/Logos/un-global-compact-logo.svg"
+				alt="UN Global Compact logo"
+				class="un-logo"
+				onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+			/>
+			<!-- Fallback inline SVG globe logo -->
+			<svg style="display:none" class="un-logo" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<!-- Outer ring text arc background -->
+				<circle cx="70" cy="70" r="65" stroke="#1a2b6b" stroke-width="2" fill="none"/>
+				<!-- Globe -->
+				<circle cx="70" cy="70" r="38" stroke="#1a2b6b" stroke-width="2" fill="none"/>
+				<ellipse cx="70" cy="70" rx="16" ry="38" stroke="#1a2b6b" stroke-width="1.5" fill="none"/>
+				<line x1="32" y1="70" x2="108" y2="70" stroke="#1a2b6b" stroke-width="1.5"/>
+				<line x1="36" y1="54" x2="104" y2="54" stroke="#1a2b6b" stroke-width="1"/>
+				<line x1="36" y1="86" x2="104" y2="86" stroke="#1a2b6b" stroke-width="1"/>
+				<!-- Laurel wreath bottom -->
+				<path d="M26 104 C32 96 44 98 50 104" stroke="#1a2b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+				<path d="M34 110 C38 102 50 104 54 110" stroke="#1a2b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+				<path d="M114 104 C108 96 96 98 90 104" stroke="#1a2b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+				<path d="M106 110 C102 102 90 104 86 110" stroke="#1a2b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+				<line x1="70" y1="108" x2="70" y2="116" stroke="#1a2b6b" stroke-width="2"/>
+				<!-- "UN GLOBAL COMPACT" arc text suggestion -->
+				<text x="70" y="18" text-anchor="middle" font-size="7" font-weight="700" fill="#1a2b6b" letter-spacing="2" font-family="sans-serif">UN GLOBAL COMPACT</text>
+			</svg>
+		</div>
+
+		<!-- Right: Description text -->
+		<div class="un-text-col">
+			<p class="un-desc">
+				As a UN Global Compact participant, we're committed to doing business in a way that's both sustainable
+				and socially conscious. Want to know more?
+				<a href="https://unglobalcompact.org/" target="_blank" rel="noopener" class="un-link">
+					Learn about the UN Global Compact
+				</a>
+				and its guiding principles.
+			</p>
+		</div>
+
+	</div>
+</section>
+
+<style>
+	/* Light lavender background — matches Trustpilot section */
+	.un-compact-section {
+		background-color: #F3F1F9;
+		padding: 56px 0;
+	}
+
+	/* Two-column layout */
+	.un-compact-inner {
+		display: grid;
+		grid-template-columns: 220px 1fr;
+		gap: 80px;
+		align-items: center;
+	}
+
+	/* Left column */
+	.un-logo-col {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
+	}
+
+	.un-logo {
+		width: 140px;
+		height: 140px;
+		display: block;
+	}
+
+	.un-we-support {
+		font-family: 'Livvic', sans-serif;
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		color: #1a2b6b;
+		margin: 0;
+		text-align: center;
+	}
+
+	/* Right column */
+	.un-text-col {
+		max-width: 620px;
+	}
+
+	.un-desc {
+		font-family: 'Asap', sans-serif;
+		font-size: 15px;
+		line-height: 1.65;
+		color: #2b1b9a;
+		margin: 0;
+	}
+
+	/* "Learn about the UN Global Compact" link */
+	.un-link {
+		color: #67b6f4;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color 0.2s;
+	}
+
+	.un-link:hover { color: #2b1b9a; }
+
+	@media (max-width: 700px) {
+		.un-compact-inner {
+			grid-template-columns: 1fr;
+			gap: 32px;
+		}
+		.un-logo-col { align-items: center; }
+	}
+</style>

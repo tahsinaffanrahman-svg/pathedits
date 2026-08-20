@@ -1,0 +1,194 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const faqs = [
+  { question: "What is a clipping path?", answer: "A vector path drawn around an object to isolate it from its background." },
+  { question: "What file formats do you return?", answer: "We can return PSD, PNG, TIFF, and JPEG formats based on your needs." },
+  { question: "How fast is turnaround?", answer: "As little as 6 hours for most orders depending on volume." },
+  { question: "Do you handle complex shapes?", answer: "Yes, including intricate jewelry, hair, and detailed products." }
+];
+---
+
+<Layout title="Clipping Path Service | Path Edits" description="Hand-drawn clipping paths for crisp, clean cutouts on any background. Starting from $0.39 per image.">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Clipping Path Service" subtitle="Hand-drawn clipping paths for crisp, clean cutouts on any background" breadcrumb={[{label: 'Services', href: '/pages/services'}]} />
+    
+    <section class="value-prop section-white">
+      <div class="container">
+        <div class="split-layout">
+          <div class="content">
+            <h2>Perfect cutouts, every time</h2>
+            <p>Our hand-drawn clipping paths guarantee pixel-perfect edges for your product images. We don't rely on automated magic wands—our team manually creates precise vector paths around every product.</p>
+          </div>
+          <div class="image-wrapper">
+            <img src="https://cdn.pathedits.com/Images/shared/service-cards/clipping-path-service-shoe-edited.png?w=400" alt="Clipping Path Service" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits section-light">
+      <div class="container">
+        <h2 class="text-center">Why choose our clipping path service?</h2>
+        <div class="grid">
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/clipping-path.svg" alt="Pixel-perfect edges" width="48" height="48" />
+            <h3>Pixel-perfect edges</h3>
+            <p>100% hand-drawn paths ensuring crisp and sharp edges.</p>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/clipping-path.svg" alt="Any background" width="48" height="48" />
+            <h3>Any background</h3>
+            <p>Place your isolated subjects seamlessly onto any new background.</p>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/clipping-path.svg" alt="Fast turnaround" width="48" height="48" />
+            <h3>Fast turnaround</h3>
+            <p>Get your images back in as little as 6 hours.</p>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/clipping-path.svg" alt="Hand-drawn precision" width="48" height="48" />
+            <h3>Hand-drawn precision</h3>
+            <p>Manual clipping path techniques outshine AI auto-selections.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing section-white">
+      <div class="container text-center">
+        <h2>Transparent Pricing</h2>
+        <p class="price-callout">From <strong>$0.39</strong> per image</p>
+        <p>Affordable, quality clipping path services scaled to your business needs.</p>
+      </div>
+    </section>
+
+    <section class="faq-section section-light">
+      <div class="container">
+        <h2 class="text-center">Frequently Asked Questions</h2>
+        <div class="faq-wrapper">
+            <FAQ items={faqs} />
+        </div>
+      </div>
+    </section>
+
+    <section class="cta section-white">
+      <div class="container text-center">
+        <h2>Ready to elevate your product images?</h2>
+        <p>Get pixel-perfect clipping paths starting today.</p>
+        <a href="/pages/free-trial" class="btn">Get started &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .section-white {
+    background-color: #ffffff;
+    padding: 4rem 1rem;
+  }
+  .section-light {
+    background-color: #F8F6FA;
+    padding: 4rem 1rem;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+  }
+  .text-center {
+    text-align: center;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .split-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .split-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  .card img {
+    margin-bottom: 1rem;
+  }
+  
+  .price-callout {
+    font-size: 2.5rem;
+    color: #2B1B9A;
+    font-weight: 700;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #67B6F4;
+    color: #2B1B9A;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .btn:hover {
+    background-color: #9B93EE;
+    color: #ffffff;
+  }
+  
+  .faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+</style>

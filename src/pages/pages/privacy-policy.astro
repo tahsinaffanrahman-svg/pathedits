@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Privacy Policy | Path Edits" description="Privacy Policy for Path Edits">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Privacy Policy" subtitle="Last updated: January 2024" />
+    
+    <section class="legal-content">
+      <div class="container">
+        <div class="content-body">
+          <h2>1. Data Collection</h2>
+          <p>We collect information you provide directly to us when you create an account, upload images, or communicate with us. This includes your name, email address, payment information, and any files you submit for editing.</p>
+          
+          <h2>2. Data Usage</h2>
+          <p>We use the information we collect to:</p>
+          <ul>
+            <li>Provide, maintain, and improve our services</li>
+            <li>Process your transactions and send related information</li>
+            <li>Send you technical notices, updates, security alerts, and support messages</li>
+            <li>Respond to your comments, questions, and requests</li>
+          </ul>
+          
+          <h2>3. Data Storage and Security</h2>
+          <p>Your uploaded images are stored securely on our servers. We use industry-standard encryption and security measures to protect your data. Images are retained for a limited time after processing, after which they are permanently deleted from our systems.</p>
+          
+          <h2>4. Your Rights</h2>
+          <p>You have the right to access, update, or delete your personal information at any time. You can also object to our processing of your personal data or request that we restrict processing.</p>
+          
+          <h2>5. Contact Us</h2>
+          <p>If you have any questions about this Privacy Policy, please contact us at privacy@pathedits.com.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal-content {
+    padding: 80px 0;
+    background: white;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .content-body h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 40px 0 20px;
+  }
+  .content-body h2:first-child {
+    margin-top: 0;
+  }
+  .content-body p, .content-body ul {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  .content-body ul {
+    padding-left: 24px;
+  }
+  .content-body li {
+    margin-bottom: 12px;
+  }
+</style>

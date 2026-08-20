@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Testimonials | Path Edits" description="See what our customers say">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Testimonials" subtitle="See what our customers say" />
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="trustpilot-summary">
+          <h2>TrustScore 4.8 / 12,687 reviews</h2>
+          <!-- Trustpilot Widget -->
+          <div class="trustpilot-widget" data-locale="en-US" data-template-id="539ad0ffdec7e10e686debd7" data-businessunit-id="614492196d2477001d850c10" data-style-height="350px" data-style-width="100%" data-theme="light">
+            <a href="https://www.trustpilot.com/review/pathedits.com" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
+        </div>
+
+        <div class="quotes-grid">
+          <div class="quote-card">
+            <p class="quote">"Fast, reliable, and amazing quality. They save us hours every week!"</p>
+            <p class="author">- Sarah J.</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote">"The clipping paths are flawless. Highly recommended."</p>
+            <p class="author">- Mike T.</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote">"Excellent customer service and turnaround time."</p>
+            <p class="author">- Emily R.</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote">"Path edits handles our high volume smoothly during peak seasons."</p>
+            <p class="author">- David K.</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote">"Perfectly retouched images every time. Great partner."</p>
+            <p class="author">- Jessica W.</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote">"Affordable pricing without compromising on quality."</p>
+            <p class="author">- Alex M.</p>
+          </div>
+        </div>
+
+        <div class="case-study">
+          <h2>Case Study: Ice Cream Castles</h2>
+          <p>Learn how Ice Cream Castles scaled their e-commerce imagery and reduced post-production time by 50% using Path Edits' dedicated photo editing services.</p>
+          <a href="#" class="btn-outline">Read Case Study</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container { max-width: 1256px; margin: 0 auto; padding: 40px 20px; }
+  .testimonials-section { background-color: #F8F6FA; }
+  h2 { font-family: 'Livvic', sans-serif; color: #2B1B9A; margin-bottom: 20px; text-align: center; }
+  .trustpilot-summary { margin-bottom: 50px; }
+  .quotes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+  .quote-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+  .quote { font-family: 'Asap', sans-serif; color: #5F5572; font-style: italic; margin-bottom: 15px; }
+  .author { font-family: 'Livvic', sans-serif; font-weight: 600; color: #332B50; }
+  .case-study { background: #2B1B9A; color: white; padding: 40px; border-radius: 20px; text-align: center; }
+  .case-study h2 { color: white; }
+  .case-study p { font-family: 'Asap', sans-serif; margin-bottom: 30px; font-size: 1.1rem; color: #F8F6FA; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .btn-outline { display: inline-block; border: 2px solid #67B6F4; color: #67B6F4; font-family: 'Asap', sans-serif; font-weight: 700; padding: 12px 30px; border-radius: 8px; text-decoration: none; }
+</style>

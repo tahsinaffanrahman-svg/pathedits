@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Clipping Path India is Now Path | Path Edits" description="Same great service, new name. The transition from Clipping Path India to Path.">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Clipping Path India is Now Path" subtitle="Same great service, new name" />
+    
+    <section class="transition-story">
+      <div class="container">
+        <div class="content-wrapper">
+          <h2>Our Next Chapter</h2>
+          <p>For over a decade, Clipping Path India has been your trusted partner for high-quality photo editing. We've grown from specializing in clipping paths to offering a comprehensive suite of post-production services.</p>
+          
+          <p>As our services evolved, we realized our name needed to evolve too. <strong>We are now simply Path.</strong></p>
+          
+          <div class="changes-grid">
+            <div class="change-card">
+              <h3>Same Team</h3>
+              <p>You'll continue working with the same dedicated account managers and expert editors you trust.</p>
+            </div>
+            <div class="change-card">
+              <h3>Same Quality</h3>
+              <p>Our commitment to pixel-perfect edits and rigorous QA remains unchanged.</p>
+            </div>
+            <div class="change-card">
+              <h3>Improved Platform</h3>
+              <p>Path brings a faster, more intuitive platform to manage your orders and teams effortlessly.</p>
+            </div>
+          </div>
+          
+          <div class="cta-section">
+            <h2>Experience the new Path</h2>
+            <p>Log in to see our updated platform or start a new trial today.</p>
+            <a href="/pages/free-trial" class="btn">Start a New Order</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .transition-story {
+    padding: 80px 0;
+    background: #F8F6FA;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  strong {
+    color: #2B1B9A;
+  }
+  .changes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 60px 0;
+  }
+  @media (max-width: 768px) {
+    .changes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .change-card {
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(43, 27, 154, 0.05);
+    text-align: left;
+  }
+  .change-card h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  .change-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .cta-section {
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+  }
+  .btn {
+    display: inline-block;
+    background: #67B6F4;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.125rem;
+    margin-top: 16px;
+  }
+</style>

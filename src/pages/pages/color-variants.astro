@@ -1,0 +1,238 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import FAQ from '../../components/FAQ.astro';
+import Footer from '../../components/Footer.astro';
+
+const breadcrumbs = [
+  { label: 'Services', href: '/pages/services' },
+  { label: 'Color Change Service', href: '#' }
+];
+
+const faqs = [
+  { question: "Can you change any color?", answer: "Yes, fabric, leather, metal, plastic." },
+  { question: "How accurate?", answer: "We match Pantone/HEX codes." },
+  { question: "Multiple variants per image?", answer: "Yes." }
+];
+---
+
+<Layout title="Color Change Service | Path Edits" description="Show true-to-life colors for all your products without shooting every shade">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Color Change Service" subtitle="Show true-to-life colors for all your products without shooting every shade" breadcrumbs={breadcrumbs} />
+    
+    <section class="value-prop">
+      <div class="container">
+        <div class="content-wrapper">
+          <div class="text-content">
+            <h2>Showcase Every Hue and Variant</h2>
+            <p>Skip the expensive, time-consuming process of photographing every color variant of your product. Our color change service accurately matches your physical items to produce stunning imagery of every available shade.</p>
+          </div>
+          <div class="image-content">
+            <img src="https://cdn.pathedits.com/Images/shared/service-cards/color-change-striped-socks-edited.png?w=400" alt="Color Change Example" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-grid">
+      <div class="container">
+        <h2>Service Benefits</h2>
+        <div class="grid">
+          <div class="benefit-card">
+            <img src="https://cdn.pathedits.com/Icons/color-changes.svg" alt="Product variants without reshooting" class="icon" />
+            <h3>Save on Reshoots</h3>
+            <p>Generate product variants without organizing new photoshoots.</p>
+          </div>
+          <div class="benefit-card">
+            <img src="https://cdn.pathedits.com/Icons/color-changes.svg" alt="True-to-life colors" class="icon" />
+            <h3>True-to-Life Colors</h3>
+            <p>Exact color matching to accurately represent the physical product.</p>
+          </div>
+          <div class="benefit-card">
+            <img src="https://cdn.pathedits.com/Icons/color-changes.svg" alt="Reduced photography costs" class="icon" />
+            <h3>Reduced Costs</h3>
+            <p>Drastically cut photography overhead by capturing just a single base shot.</p>
+          </div>
+          <div class="benefit-card">
+            <img src="https://cdn.pathedits.com/Icons/color-changes.svg" alt="Consistent color accuracy" class="icon" />
+            <h3>Consistent Color Accuracy</h3>
+            <p>Maintain consistent brand standards across all product variations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-info">
+      <div class="container">
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="price-box">
+          <p class="price">From $0.99 <span>per image</span></p>
+          <p>Get pixel-perfect color variants with exceptional accuracy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2>Ready to showcase all your variants?</h2>
+        <a href="/pages/free-trial" class="btn-primary">Get started &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  
+  h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #332B50;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    line-height: 1.6;
+    font-size: 1.125rem;
+  }
+
+  .value-prop {
+    background-color: #FFFFFF;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .text-content, .image-content {
+    flex: 1;
+  }
+  
+  .image-content img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(43, 27, 154, 0.1);
+  }
+
+  .benefits-grid {
+    background-color: #F3F1F9;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .benefit-card {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-info {
+    background-color: #FFFFFF;
+    text-align: center;
+  }
+  
+  .price-box {
+    background: #F8F6FA;
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .price {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .price span {
+    font-size: 1.5rem;
+    color: #5F5572;
+  }
+
+  .faq-section {
+    background-color: #F3F1F9;
+  }
+
+  .cta-section {
+    background-color: #FFFFFF;
+    text-align: center;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .btn-primary {
+    display: inline-block;
+    background-color: #67B6F4;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(103, 182, 244, 0.4);
+  }
+  
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

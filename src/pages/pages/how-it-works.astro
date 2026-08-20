@@ -1,0 +1,1098 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import CtaSection from '../../components/CtaSection.astro';
+import ReviewsBanner from '../../components/ReviewsBanner.astro';
+import Footer from '../../components/Footer.astro';
+
+const steps = [
+  {
+    stepNumber: "Step 1",
+    title: "Select a service and upload your images.",
+    description: "When you start a new order, we’ll use your service selections and images to give you an accurate price for your order—without having to wait for a quote.\n\nEverything is secure and encrypted. You can upload any of these file types:",
+    img: "https://cdn.pathedits.com/Images/pages/how-it-works/step-1-service-selection-image-upload.png",
+    alt: "Service selection and image upload process",
+    fileTypes: [
+      { name: "JPG (Preferred)", preferred: true },
+      { name: "PSD", preferred: false },
+      { name: "TIFF", preferred: false },
+      { name: "PNG", preferred: false },
+      { name: "NEF", preferred: false },
+      { name: "RAW", preferred: false },
+      { name: "CR2", preferred: false },
+      { name: "DNG", preferred: false },
+      { name: "PDF", preferred: false }
+    ]
+  },
+  {
+    stepNumber: "Step 2",
+    title: "Choose your turnaround time.",
+    description: "Our default turnaround time for image edits is 24 hours, but you can opt for a faster turnaround if needed. Not in a rush? Choose a longer turnaround time and get a lower cost.",
+    img: "https://cdn.pathedits.com/Images/pages/how-it-works/step-2-turnaround-time-options.png",
+    alt: "Turnaround time options 6, 12, and 24 hours"
+  },
+  {
+    stepNumber: "Step 3",
+    title: "Share any details and finish up your order.",
+    description: "Need to share something with your designer? You can add instructions and attach supporting files—or skip this step if you don’t have anything to share.\n\nYou can also make final adjustments to timing, number of images, file format, and copies—and add free straightening, cropping, or resizing to your order. When you’re all set, finish up your order, and we’ll get to work.",
+    img: "https://cdn.pathedits.com/Images/pages/how-it-works/step-3-finalize-order-image-editing.png",
+    alt: "Order form customization options and adjustments"
+  },
+  {
+    stepNumber: "Step 4",
+    title: "We edit your images, while you get back to the fun stuff.",
+    description: "Once those tedious edits are off your plate, you can get back to the parts of your work you enjoy most.\n\nWe’ll carefully edit your images by hand. Each image will then be double-checked for perfection before we send you the finished files.",
+    img: "https://cdn.pathedits.com/Images/pages/how-it-works/step-4-hand-edited-images-checked.png",
+    alt: "Hand edited images checked by pro designers"
+  },
+  {
+    stepNumber: "Step 5",
+    title: "Download your professionally edited images.",
+    description: "As soon as your photos are ready, we’ll email you a link to download the files, all ready to go. It’s that simple!",
+    img: "https://cdn.pathedits.com/Images/pages/how-it-works/step-5-download-professionally-edited-images.png",
+    alt: "Download professionally edited images"
+  }
+];
+
+const popularServices = [
+  {
+    title: "Clipping path",
+    desc: "Hand-drawn clipping paths give you crisp, clean cutouts that you can put on any background. Put your images on any background color or setting.",
+    price: "$0.39",
+    img: "https://cdn.pathedits.com/Images/shared/service-cards/clipping-path-service-shoe-edited.png",
+    link: "/pages/clipping-path",
+    colorBg: "#FA585A"
+  },
+  {
+    title: "Background removal",
+    desc: "Make product photos pop with a clean white (or any other color you choose) background. Put your images on any background color or setting.",
+    price: "$0.39",
+    img: "https://cdn.pathedits.com/Images/shared/service-cards/background-removal-earbuds-edited.png",
+    link: "/pages/background-removal",
+    colorBg: "#67B6F4"
+  },
+  {
+    title: "Image masking",
+    desc: "For more intricate shots (like anything involving hair or fur), image masking gives you that extra level of precision, for cutouts that look completely natural.",
+    price: "$1.19",
+    img: "https://cdn.pathedits.com/Images/shared/service-cards/image-masking-curly-hair-edited.png",
+    link: "/pages/image-masking",
+    colorBg: "#9D91F5"
+  },
+  {
+    title: "Shadow",
+    desc: "Natural-looking shadows make products look more realistic — and generate more sales. Add depth and make your images more visually appealing.",
+    price: "$0.25",
+    img: "https://cdn.pathedits.com/Images/shared/service-cards/shadow-services-chair-edited.png",
+    link: "/pages/drop-shadow",
+    colorBg: "#FFCD1E"
+  },
+  {
+    title: "Ghost mannequin",
+    desc: "Remove mannequins or models to showcase the natural fit and drape of apparel, while still keeping the focus on your products.",
+    price: "$0.89",
+    img: "https://cdn.pathedits.com/Images/shared/service-cards/ghost-mannequin-purple-tshirt-edited.png",
+    link: "/pages/ghost-mannequin",
+    colorBg: "#FA585A"
+  },
+  {
+    title: "Symmetrical edit",
+    desc: "Get perfectly symmetric apparel product photos. We mirror your photos by hand—no templates, no shortcuts. Ideal for apparel, ecommerce, and product photography.",
+    price: "$2.99",
+    img: "https://cdn.pathedits.com/Images/pages/mirror-effect/light-blue-trousers-symmetry-edited.png",
+    link: "/pages/symmetrical-edit",
+    colorBg: "#67B6F4"
+  },
+  {
+    title: "Color change",
+    desc: "Show true-to-life colors and minimize returns from customers who are disappointed their items don’t match the photo — without having to shoot every shade.",
+    price: "$0.99",
+    img: "https://cdn.pathedits.com/Images/shared/service-cards/color-change-striped-socks-edited.png",
+    link: "/pages/color-variants",
+    colorBg: "#9D91F5"
+  },
+  {
+    title: "Photo retouching",
+    desc: "Get the perfect shot, even after the fact. Correct flaws or imperfections, and make every element of your image shine.",
+    price: "$0.69",
+    img: "https://cdn.pathedits.com/Images/shared/service-cards/photo-retouching-camera-edited.png",
+    link: "/pages/photo-retouching",
+    colorBg: "#FFCD1E"
+  },
+  {
+    title: "Multi-clipping path",
+    desc: "Select multiple areas within your image so they can be edited separately. Put your images on any background color or setting.",
+    price: "$1.19",
+    img: "https://cdn.pathedits.com/Images/shared/service-cards/multi-clipping-path-red-bicycle-edited.png",
+    link: "/pages/multi-clipping-path-services",
+    colorBg: "#FA585A"
+  },
+  {
+    title: "Vector conversion",
+    desc: "Convert images to vector files that can scale to any size without a loss of fine detail or quality. Scalable artwork for any application.",
+    price: "$3.99",
+    img: "https://cdn.pathedits.com/Images/shared/service-cards/vector-conversion-drawing-pen-edited.png",
+    link: "/pages/vector-conversion",
+    colorBg: "#67B6F4"
+  }
+];
+
+const audiences = [
+  {
+    icon: "https://cdn.pathedits.com/Illustrations/services-busy-professional-photographers.svg",
+    title: "A busy sports photographer",
+    desc: "with batches of edits due from a recent event"
+  },
+  {
+    icon: "https://cdn.pathedits.com/Illustrations/image-editing-solutions-ecommerce-retailers.svg",
+    title: "An ecommerce retailer",
+    desc: "adding lots of new product images to your online store"
+  },
+  {
+    icon: "https://cdn.pathedits.com/Illustrations/image-editing-services-freelancers-agencies.svg",
+    title: "A photo studio manager",
+    desc: "looking for professional editing for regular bulk orders"
+  }
+];
+---
+
+<Layout title="How It Works | Path Edits" description="Getting pro clipping path services from Path edits is easy. Place your order instantly and get your photos back in as little as 6 hours. Available 24/7.">
+  <Header />
+  <InfoBar />
+  <main class="how-it-works-page">
+    
+    <!-- Hero Header -->
+    <section class="section-how-header">
+      <div class="header-inner">
+        <div class="header-left">
+          <h1>The simple way to<br>get pixel perfect<br>photo edits</h1>
+          <div class="subtitle-wrapper">
+            <h4>Here’s how we make it easy to get fast,<br>affordable product photo edits — <strong>all done by<br>hand by pro designers.</strong></h4>
+          </div>
+        </div>
+        <div class="header-right">
+          <img 
+            src="https://cdn.pathedits.com/Images/pages/how-it-works/pixel-perfect-product-photo-edits.png" 
+            alt="The simple way to get pixel perfect photo edits illustration"
+            class="header-graphic"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 5-Step Process Section -->
+    <section class="section-how-steps">
+      <div class="steps-path-bg"></div>
+      <div class="container">
+        <div class="steps-list">
+          {steps.map(step => (
+            <div class="step-row">
+              <div class="step-image">
+                <img src={step.img} alt={step.alt} loading="lazy" />
+              </div>
+              <div class="step-content">
+                <h2 class="step-number">{step.stepNumber}</h2>
+                <h4 class="step-heading">{step.title}</h4>
+                <div class="step-text">
+                  {step.description.split('\n\n').map(p => (
+                    <p>{p}</p>
+                  ))}
+                  {step.fileTypes && (
+                    <ul class="file-types-list">
+                      {step.fileTypes.map(ft => (
+                        <li class={ft.preferred ? "preferred" : ""}>{ft.name}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pixel Perfect Guarantee Banner -->
+    <section class="guarantee-section">
+      <div class="container">
+        <div class="guarantee-card">
+          <div class="guarantee-image">
+            <img src="https://cdn.pathedits.com/Illustrations/pixel-perfect-results-illustration.svg" alt="Pixel perfect results" />
+          </div>
+          <div class="guarantee-info">
+            <h2>Pixel perfect guarantee</h2>
+            <p>If you’re not 100% happy with your edits, let us know. We’ll make any revisions you need right away.</p>
+            <div class="guarantee-cta">
+              <a href="/pages/free-trial" class="btn-guarantee">Get started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Services Section -->
+    <section class="popular-services-section">
+      <div class="container services-container-rel">
+        <h2 class="services-title">Our <strong>most popular</strong> photo-editing services</h2>
+        
+        <button class="services-arrow arrow-prev" id="services-prev" aria-label="Previous service">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B1B9A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="services-viewport" id="services-viewport">
+          <div class="services-track" id="services-track">
+            {popularServices.map(service => (
+              <div class="service-slide">
+                <div class="service-item-card">
+                  <div class="service-img-wrapper" style={`--backdrop-color: ${service.colorBg};`}>
+                    <img src={service.img} alt={service.title} loading="lazy" />
+                  </div>
+                  <div class="service-content-wrapper">
+                    <h3 class="service-name">{service.title}</h3>
+                    <p class="service-desc">{service.desc}</p>
+                    <div class="service-price">
+                      Starting at <span class="price-val">{service.price}</span> per image
+                    </div>
+                    <div class="service-actions">
+                      <a href={service.link} class="btn-view">View details</a>
+                      <a href="/pages/free-trial" class="btn-order">Order now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <button class="services-arrow arrow-next" id="services-next" aria-label="Next service">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B1B9A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Audience Section: Path is perfect for you -->
+    <section class="audience-section">
+      <div class="container">
+        <h2 class="audience-title">Path is perfect for you</h2>
+        <p class="audience-subtitle">You don’t have to do everything yourself. Outsourced clipping path services are ideal if you are…</p>
+        
+        <div class="audience-grid">
+          {audiences.map(item => (
+            <div class="audience-card">
+              <div class="audience-icon">
+                <img src={item.icon} alt={item.title} />
+              </div>
+              <p class="audience-text">
+                <strong>{item.title}</strong> {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Trustpilot Reviews Slider Section -->
+    <section class="trustpilot-reviews-section">
+      <div class="container">
+        <div class="slider-header">
+          <img src="https://cdn.pathedits.com/Illustrations/trusted-image-editing-services.svg" alt="5-star reviews star" class="reviews-star-icon" />
+          <h2 class="reviews-title">Backed by thousands of 5-star reviews</h2>
+          <p class="reviews-subtitle">Path has saved 40,000+ businesses valuable time and money with premium image editing services.</p>
+        </div>
+        <div class="trustpilot-widget-wrap">
+          <div class="trustpilot-widget" data-locale="en-US" data-template-id="54ad5defc6454f065c28af8b" data-businessunit-id="614492196d2477001d850c10" data-style-height="250px" data-style-width="100%" data-theme="light" data-stars="1,2,3,4,5" data-review-languages="en">
+            <a href="https://uk.trustpilot.com/review/pathedits.com" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ReviewsBanner />
+    <CtaSection centered={true} />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  function setupServicesSlider() {
+    const track = document.getElementById('services-track');
+    const prevBtn = document.getElementById('services-prev');
+    const nextBtn = document.getElementById('services-next');
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    let currentIndex = 0;
+    const slides = Array.from(track.querySelectorAll('.service-slide')) as HTMLElement[];
+    const totalSlides = slides.length;
+
+    const updateSlider = () => {
+      if (window.innerWidth >= 1024) {
+        track.style.transform = '';
+        return;
+      }
+      const slideWidth = slides[0]?.offsetWidth || 0;
+      const gap = 24;
+      const offset = currentIndex * (slideWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+    };
+
+    prevBtn.addEventListener('click', () => {
+      if (window.innerWidth >= 1024) return;
+      if (currentIndex === 0) {
+        currentIndex = totalSlides - 1;
+      } else {
+        currentIndex--;
+      }
+      updateSlider();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (window.innerWidth >= 1024) return;
+      if (currentIndex >= totalSlides - 1) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+      updateSlider();
+    });
+
+    window.addEventListener('resize', updateSlider);
+    updateSlider();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupServicesSlider);
+  } else {
+    setupServicesSlider();
+  }
+</script>
+
+<style>
+  .how-it-works-page {
+    background-color: #FFFFFF;
+    color: #2B1B9A;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------------- Hero Section ---------------- */
+  .section-how-header {
+    position: relative;
+    padding: 80px 0 60px 0;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #FFFFFF;
+  }
+
+  .header-inner {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 0 0 clamp(24px, 8vw, 120px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .header-left {
+    flex: 0 0 auto;
+    max-width: 480px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .header-left h1 {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: clamp(34px, 3.4vw, 48px);
+    font-weight: 600;
+    line-height: 1.18;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle-wrapper h4 {
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-size: clamp(16px, 1.35vw, 19px);
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .subtitle-wrapper strong {
+    font-weight: 700;
+  }
+
+  .header-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .header-graphic {
+    width: 100%;
+    max-width: 720px;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: right center;
+  }
+
+  /* ---------------- 5 Steps Flow ---------------- */
+  .section-how-steps {
+    position: relative;
+    padding: 40px 0 80px 0;
+  }
+
+  .steps-path-bg {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 500px;
+    height: 100%;
+    background-image: url('https://cdn.pathedits.com/Images/pages/how-it-works/step-path-illustration-process-flow.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+  .steps-list {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .step-row {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .step-image {
+    flex: 0 0 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .step-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  .step-content {
+    flex: 0 0 50%;
+  }
+
+  .step-number {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: clamp(32px, 3vw, 44px);
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0 0 8px 0;
+  }
+
+  .step-heading {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: clamp(20px, 1.8vw, 24px);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 16px 0;
+  }
+
+  .step-text p {
+    color: #5F5572;
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    line-height: 1.625;
+    margin: 0 0 14px 0;
+  }
+
+  .step-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .file-types-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 18px 0 0 0;
+  }
+
+  .file-types-list li {
+    background-color: #E8F4FE;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5F5572;
+    font-weight: 700;
+  }
+
+  .file-types-list li.preferred {
+    color: #2B1B9A;
+    background-color: #D6EAFD;
+  }
+
+  /* ---------------- Guarantee Banner ---------------- */
+  .guarantee-section {
+    background-color: #2B1B9A;
+    padding: 72px 0;
+    margin: 40px 0;
+  }
+
+  .guarantee-card {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .guarantee-image {
+    flex: 0 0 160px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .guarantee-image img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+  }
+
+  .guarantee-info {
+    flex: 1;
+  }
+
+  .guarantee-info h2 {
+    color: #FFFFFF;
+    font-family: 'Livvic', sans-serif;
+    font-size: clamp(28px, 2.5vw, 36px);
+    font-weight: 600;
+    margin: 0 0 12px 0;
+  }
+
+  .guarantee-info p {
+    color: #FFFFFF;
+    font-family: 'Asap', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+    opacity: 0.95;
+  }
+
+  .btn-guarantee {
+    display: inline-flex;
+    align-items: center;
+    background-color: #67B6F4;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s, transform 0.2s;
+  }
+
+  .btn-guarantee:hover {
+    background-color: #53A4E5;
+    transform: translateY(-2px);
+  }
+
+  /* ---------------- Popular Services ---------------- */
+  .popular-services-section {
+    background: linear-gradient(90deg, #A3D7F4 0%, #E2DEFF 100%);
+    padding: 80px 0;
+    overflow: hidden;
+  }
+
+  .services-container-rel {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 68px; /* Dedicated gutter for arrows */
+    box-sizing: border-box;
+  }
+
+  .services-title {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 48px 0;
+  }
+
+  .services-title strong {
+    font-weight: 700;
+  }
+
+  .services-viewport {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+  }
+
+  .services-track {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    width: max-content;
+    will-change: transform;
+  }
+
+  .service-slide {
+    flex: 0 0 calc(1140px - 136px);
+    width: calc(1140px - 136px);
+    box-sizing: border-box;
+  }
+
+  .service-item-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(43, 27, 154, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    min-height: 380px;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .service-img-wrapper {
+    flex: 0 0 25%;
+    width: 25%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--backdrop-color, #79B5EF);
+    padding: 32px;
+    box-sizing: border-box;
+  }
+
+  .service-img-wrapper img {
+    position: relative;
+    z-index: 1;
+    max-width: 150%;
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    transform: scale(1.4);
+  }
+
+  .service-content-wrapper {
+    flex: 0 0 75%;
+    width: 75%;
+    padding: 56px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .service-name {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 600;
+    margin: 0 0 16px 0;
+  }
+
+  .service-desc {
+    color: #5F5572;
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    line-height: 1.625;
+    margin: 0 0 24px 0;
+    max-width: 680px;
+  }
+
+  .service-price {
+    color: #5F5572;
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 24px 0;
+  }
+
+  .price-val {
+    color: #2B1B9A;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .service-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: auto;
+  }
+
+  .btn-view {
+    background-color: #FFFFFF;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: 1px solid #D6D2E8;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-view:hover {
+    background-color: #F8F6FA;
+  }
+
+  .btn-order {
+    background-color: #67B6F4;
+    color: #FFFFFF !important;
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+
+  .btn-order:hover {
+    background-color: #53A4E5;
+  }
+
+  /* Arrows */
+  .services-arrow {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: none;
+    box-shadow: 0 4px 16px rgba(43, 27, 154, 0.16);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+
+  .services-arrow:hover {
+    background-color: #F8F6FA;
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .arrow-prev {
+    left: 8px;
+  }
+
+  .arrow-next {
+    right: 8px;
+  }
+
+  @media (max-width: 1140px) {
+    .services-container-rel {
+      padding: 0 54px;
+    }
+    .service-slide {
+      flex: 0 0 calc(100vw - 108px);
+      width: calc(100vw - 108px);
+    }
+    .arrow-prev {
+      left: 0;
+    }
+    .arrow-next {
+      right: 0;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .service-item-card {
+      flex-direction: column;
+      min-height: auto;
+    }
+    .service-img-wrapper {
+      flex: 0 0 100%;
+      width: 100%;
+      padding: 40px;
+    }
+    .service-img-wrapper img {
+      transform: none;
+      width: 120px;
+    }
+    .service-content-wrapper {
+      flex: 0 0 100%;
+      width: 100%;
+      padding: 32px 24px;
+    }
+    .service-actions {
+      justify-content: center;
+      margin-top: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services-container-rel {
+      padding: 0 44px;
+    }
+    .service-slide {
+      flex: 0 0 calc(100vw - 88px);
+      width: calc(100vw - 88px);
+    }
+    .services-arrow {
+      width: 36px;
+      height: 36px;
+    }
+    .arrow-prev {
+      left: -4px;
+    }
+    .arrow-next {
+      right: -4px;
+    }
+  }
+  /* ---------------- Audience Section ---------------- */
+  .audience-section {
+    padding: 80px 0;
+    background-color: #FFFFFF;
+  }
+
+  .audience-title {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 12px 0;
+  }
+
+  .audience-subtitle {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto 56px auto;
+    max-width: 680px;
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .audience-card {
+    background-color: #F8F6FA;
+    border-radius: 16px;
+    padding: 36px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .audience-icon img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+  }
+
+  .audience-text {
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    color: #332B50;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .audience-text strong {
+    color: #2B1B9A;
+    font-weight: 700;
+  }
+
+  /* ---------------- Trustpilot Reviews Slider Section ---------------- */
+  .trustpilot-reviews-section {
+    background-color: #E2DEFC;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .slider-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .reviews-star-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 24px;
+  }
+
+  .reviews-title {
+    font-family: 'Livvic', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2B1B9A;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+  }
+
+  .reviews-subtitle {
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    color: #2B1B9A;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .trustpilot-widget-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 250px;
+  }
+
+  /* ---------------- Responsive Styles ---------------- */
+  @media (max-width: 991px) {
+    .header-inner {
+      flex-direction: column;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .header-left {
+      max-width: 100%;
+      margin-bottom: 32px;
+    }
+    .header-right {
+      position: relative;
+      width: 100%;
+      height: auto;
+      justify-content: center;
+    }
+    .header-graphic {
+      max-width: 500px;
+      height: auto;
+    }
+    .step-row {
+      flex-direction: column;
+      text-align: center;
+      gap: 28px;
+    }
+    .step-image, .step-content {
+      flex: 0 0 100%;
+    }
+    .file-types-list {
+      justify-content: center;
+    }
+    .steps-path-bg {
+      display: none;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-item-card {
+      flex-direction: column;
+    }
+    .service-img-wrapper {
+      padding: 40px;
+    }
+    .guarantee-card {
+      flex-direction: column;
+      text-align: center;
+    }
+    .audience-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  function setupServicesSlider() {
+    const track = document.getElementById('services-track');
+    const prevBtn = document.getElementById('services-prev');
+    const nextBtn = document.getElementById('services-next');
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    let currentIndex = 0;
+    const slides = Array.from(track.querySelectorAll('.service-slide')) as HTMLElement[];
+    const totalSlides = slides.length;
+
+    const updateSlider = () => {
+      const slideWidth = slides[0]?.offsetWidth || 0;
+      const gap = 24;
+      const offset = currentIndex * (slideWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+    };
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex === 0) {
+        currentIndex = totalSlides - 1;
+      } else {
+        currentIndex--;
+      }
+      updateSlider();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex >= totalSlides - 1) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+      updateSlider();
+    });
+
+    window.addEventListener('resize', updateSlider);
+    updateSlider();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupServicesSlider);
+  } else {
+    setupServicesSlider();
+  }
+</script>

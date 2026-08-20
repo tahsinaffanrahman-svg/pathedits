@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "Clipping Path Service Provider | Image & Photo Editing",
+	description = "Path is your 24/7 virtual photo editing studio for hand-drawn clipping paths and crisp, clean cutouts you can put on any background. Starts at 25¢ per edit."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<link rel="icon" href="https://pathedits.com/wp-content/uploads/2025/05/cropped-gradient-path-logo-icon-blue-purple-loop-32x32.avif" sizes="32x32" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://pathedits.com/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="Path Edits" />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,300..800;1,300..800&family=Livvic:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+		
+		<!-- Trustpilot Official Widget Script -->
+		<script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+	</head>
+	<body class="home page-template-default">
+		<slot />
+	</body>
+</html>

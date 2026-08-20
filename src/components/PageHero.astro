@@ -1,0 +1,75 @@
+---
+interface Props {
+	title: string;
+	subtitle?: string;
+	breadcrumb?: { label: string; href: string }[];
+}
+
+const { title, subtitle, breadcrumb } = Astro.props;
+---
+
+<section class="page-hero">
+	<div class="container">
+		{Array.isArray(breadcrumb) && breadcrumb.length > 0 && (
+			<nav class="breadcrumb" aria-label="Breadcrumb">
+				<a href="/">Home</a>
+				{breadcrumb.map(item => (
+					<>
+						<span class="bc-sep">›</span>
+						<a href={item.href}>{item.label}</a>
+					</>
+				))}
+				<span class="bc-sep">›</span>
+				<span class="bc-current">{title}</span>
+			</nav>
+		)}
+		<h1>{title}</h1>
+		{subtitle && <p class="hero-sub">{subtitle}</p>}
+	</div>
+</section>
+
+<style>
+	.page-hero {
+		background: #2B1B9A;
+		padding: 64px 0 56px;
+		text-align: center;
+	}
+
+	.page-hero h1 {
+		font-family: 'Livvic', sans-serif;
+		font-size: clamp(30px, 3vw, 46px);
+		font-weight: 700;
+		color: #ffffff;
+		margin: 0 0 12px;
+		line-height: 1.2;
+	}
+
+	.hero-sub {
+		font-family: 'Asap', sans-serif;
+		font-size: 18px;
+		color: rgba(255,255,255,0.85);
+		max-width: 640px;
+		margin: 0 auto;
+		line-height: 1.55;
+	}
+
+	.breadcrumb {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		margin-bottom: 20px;
+		font-family: 'Asap', sans-serif;
+		font-size: 13px;
+	}
+
+	.breadcrumb a {
+		color: rgba(255,255,255,0.7);
+		text-decoration: none;
+	}
+
+	.breadcrumb a:hover { color: #ffffff; }
+
+	.bc-sep { color: rgba(255,255,255,0.4); }
+	.bc-current { color: rgba(255,255,255,0.5); }
+</style>

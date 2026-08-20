@@ -1,0 +1,193 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const faqs = [
+  { question: "When is masking needed vs clipping?", answer: "Masking is best for subjects with soft, undefined edges like hair, fur, fuzz, or translucent fabrics." },
+  { question: "What techniques do you use?", answer: "We use advanced techniques like alpha channel masking and layer masking to preserve natural details." },
+  { question: "What file formats can you return?", answer: "We typically deliver PSD files with active layer masks, PNG with transparency, or TIFF formats." }
+];
+---
+
+<Layout title="Image Masking Service | Path Edits" description="For intricate shots like hair or fur, image masking provides extra precision. Starting from $1.19 per image.">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Image Masking Service" subtitle="For intricate shots like hair or fur, image masking provides extra precision" breadcrumb={[{label: 'Services', href: '/pages/services'}]} />
+    
+    <section class="value-prop section-white">
+      <div class="container">
+        <div class="split-layout">
+          <div class="content">
+            <h2>Preserve every fine detail</h2>
+            <p>Our image masking service retains the finest details of hair, fur, feathers, and transparent objects. We provide seamless cutouts that look completely natural on any new background.</p>
+          </div>
+          <div class="image-wrapper">
+            <img src="https://cdn.pathedits.com/Images/shared/service-cards/image-masking-curly-hair-edited.png?h=300" alt="Image Masking Service" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits section-light">
+      <div class="container">
+        <h2 class="text-center">The advantages of image masking</h2>
+        <div class="grid">
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/image-making.svg" alt="Hair and fur precision" width="48" height="48" />
+            <h3>Hair and fur precision</h3>
+            <p>Retain every stray hair or strand of fur naturally.</p>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/image-making.svg" alt="Transparent edges" width="48" height="48" />
+            <h3>Transparent edges</h3>
+            <p>Perfect for glass, smoke, and translucent materials.</p>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/image-making.svg" alt="Complex selections" width="48" height="48" />
+            <h3>Complex selections</h3>
+            <p>Extract objects with undefined borders and intricate outlines.</p>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/image-making.svg" alt="Natural results" width="48" height="48" />
+            <h3>Natural results</h3>
+            <p>Avoid harsh cutouts with soft, blended edge masking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing section-white">
+      <div class="container text-center">
+        <h2>Transparent Pricing</h2>
+        <p class="price-callout">From <strong>$1.19</strong> per image</p>
+        <p>Premium quality masking for your most complex product images.</p>
+      </div>
+    </section>
+
+    <section class="faq-section section-light">
+      <div class="container">
+        <h2 class="text-center">Frequently Asked Questions</h2>
+        <div class="faq-wrapper">
+            <FAQ items={faqs} />
+        </div>
+      </div>
+    </section>
+
+    <section class="cta section-white">
+      <div class="container text-center">
+        <h2>Ready to perfect your complex images?</h2>
+        <p>Start utilizing professional image masking today.</p>
+        <a href="/pages/free-trial" class="btn">Get started &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .section-white {
+    background-color: #ffffff;
+    padding: 4rem 1rem;
+  }
+  .section-light {
+    background-color: #F8F6FA;
+    padding: 4rem 1rem;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+  }
+  .text-center {
+    text-align: center;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .split-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .split-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  .card img {
+    margin-bottom: 1rem;
+  }
+  
+  .price-callout {
+    font-size: 2.5rem;
+    color: #2B1B9A;
+    font-weight: 700;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #67B6F4;
+    color: #2B1B9A;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .btn:hover {
+    background-color: #9B93EE;
+    color: #ffffff;
+  }
+  
+  .faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+</style>

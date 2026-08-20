@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import InfoBar from '../components/InfoBar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Page Not Found | Path" description="Oops! That page can’t be found. It looks like nothing was found at this location.">
+  <Header />
+  <InfoBar />
+  <main class="error-page-main">
+    <div class="container error-container">
+      <div class="error-content">
+        <span class="error-code">404</span>
+        <h1>Oops! That page can’t be found.</h1>
+        <p class="error-msg">It looks like nothing was found at this location. Maybe try going back to our homepage or exploring our professional photo editing services.</p>
+        <div class="error-actions">
+          <a href="/" class="btn-solid">Go to homepage &rarr;</a>
+          <a href="/pages/services" class="btn-outline">View our services</a>
+        </div>
+      </div>
+      <div class="error-illustration">
+        <img src="https://cdn.pathedits.com/Illustrations/photographer-camera-heart-line-illustration.svg" alt="Path error illustration" />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .error-page-main {
+    background-color: #F8F6FA;
+    padding: 100px 0;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+  .error-container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 64px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .error-content {
+    flex: 1;
+    max-width: 600px;
+  }
+  .error-code {
+    font-family: 'Livvic', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #67B6F4;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .error-content h1 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 20px;
+  }
+  .error-msg {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 40px;
+  }
+  
+  /* Buttons */
+  .error-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #67B6F4;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    min-height: 48px;
+    padding: 0 28px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(103, 182, 244, 0.4);
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+  }
+  .btn-solid:hover {
+    background: #79B5EF;
+    box-shadow: 0 6px 20px rgba(103, 182, 244, 0.5);
+  }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    color: #2B1B9A;
+    border: 1.5px solid #E2DEFC;
+    border-radius: 8px;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    min-height: 48px;
+    padding: 0 28px;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+  }
+  .btn-outline:hover {
+    border-color: #2B1B9A;
+    background: rgba(43, 27, 154, 0.02);
+  }
+
+  .error-illustration {
+    flex-shrink: 0;
+    max-width: 480px;
+    width: 100%;
+  }
+  .error-illustration img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 960px) {
+    .error-page-main {
+      padding: 60px 0;
+    }
+    .error-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+    }
+    .error-content {
+      max-width: 100%;
+    }
+    .error-actions {
+      justify-content: center;
+    }
+    .error-illustration {
+      max-width: 320px;
+    }
+  }
+</style>

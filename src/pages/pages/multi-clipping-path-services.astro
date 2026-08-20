@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
+import CtaSection from '../../components/CtaSection.astro';
+---
+
+<Layout title="Multi-Clipping Path Service | Path Edits" description="Select multiple areas within your image so they can be edited separately.">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero 
+      title="Multi-Clipping Path Service" 
+      subtitle="Select multiple areas within your image so they can be edited separately" 
+      breadcrumb="Home / Services / Multi-Clipping Path"
+    />
+    
+    <section class="service-overview">
+      <div class="container">
+        <div class="overview-content">
+          <div class="text-content">
+            <h2>Precision multi-clipping paths starting at $1.19 per image</h2>
+            <p>Our multi-clipping path service allows you to isolate different parts of an image, giving you the power to color correct, change backgrounds, or apply effects to individual elements without affecting the rest of the image.</p>
+            
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <img src="https://cdn.pathedits.com/Icons/multi-clipping-path.svg" alt="Multiple area selection" class="benefit-icon" />
+                <h3>Multiple area selection</h3>
+                <p>Select different parts of your product for independent editing.</p>
+              </div>
+              <div class="benefit-card">
+                <img src="https://cdn.pathedits.com/Icons/multi-clipping-path.svg" alt="Independent editing" class="benefit-icon" />
+                <h3>Independent editing</h3>
+                <p>Change colors, apply effects, or adjust exposure independently.</p>
+              </div>
+              <div class="benefit-card">
+                <img src="https://cdn.pathedits.com/Icons/multi-clipping-path.svg" alt="Color separation" class="benefit-icon" />
+                <h3>Color separation</h3>
+                <p>Perfect for products with multiple colors or materials.</p>
+              </div>
+              <div class="benefit-card">
+                <img src="https://cdn.pathedits.com/Icons/multi-clipping-path.svg" alt="Complex compositions" class="benefit-icon" />
+                <h3>Complex compositions</h3>
+                <p>Handle the most complex product arrangements with precision.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="image-content">
+            <img src="https://cdn.pathedits.com/Images/shared/service-cards/multi-clipping-path-red-bicycle-edited.png?w=400" alt="Multi-Clipping Path Example" class="service-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section bg-pale">
+      <div class="container">
+        <h2 class="text-center">Frequently Asked Questions</h2>
+        <FAQ items={[
+          {
+            question: "What is multi-clipping path?",
+            answer: "Creating multiple paths within one image for independent editing of different areas. It allows you to isolate specific parts of an image for color correction or other edits."
+          },
+          {
+            question: "When is a multi-clipping path needed?",
+            answer: "It is ideal for product photography with multiple color zones, catalog images, complex groupings, or when you need to color correct specific parts of a garment or item independently."
+          }
+        ]} />
+      </div>
+    </section>
+
+    <CtaSection />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .bg-pale {
+    background-color: #F8F6FA;
+  }
+  
+  .service-overview, .faq-section {
+    padding: 80px 0;
+  }
+  
+  .overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  
+  @media (max-width: 900px) {
+    .overview-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .text-content h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .text-content p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  .benefit-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  
+  .benefit-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+  
+  .benefit-card h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #332B50;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+  
+  .benefit-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  
+  .image-content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .service-image {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(43,27,154,0.1);
+  }
+  
+  .text-center {
+    text-align: center;
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+</style>

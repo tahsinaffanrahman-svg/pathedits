@@ -1,0 +1,179 @@
+---
+interface Props {
+  centered?: boolean;
+}
+
+const { centered = false } = Astro.props;
+---
+
+<section class={`final-cta ${centered ? 'centered' : ''}`}>
+  <div class="container">
+    {centered ? (
+      <div class="cta-centered-content">
+        <div class="cta-heart-icon-wrap">
+          <img src="https://cdn.pathedits.com/Illustrations/work-and-passion-illustration.svg" alt="Work and passion heart icon" class="cta-heart-icon" />
+        </div>
+        <h2>Find the time to fall in love with your work again</h2>
+        <a href="/pages/free-trial" class="btn">Get started &rarr;</a>
+      </div>
+    ) : (
+      <div class="cta-content">
+        <div class="copy-side">
+          <h2>Find the time to fall in love with your work again</h2>
+          <a href="/pages/free-trial" class="btn">Get started &rarr;</a>
+        </div>
+        <div class="illustration-side">
+          <img src="https://cdn.pathedits.com/Illustrations/photographer-camera-heart-line-illustration.svg" alt="Photographer" />
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    background: #FFFFFF;
+    padding: 80px 0;
+  }
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .cta-content {
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 24px;
+    display: flex;
+    background: #FFFFFF;
+  }
+  .copy-side {
+    width: 406px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    padding-left: 80px;
+  }
+  h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #79B5EF;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    min-height: 56px;
+    border-radius: 8px;
+    margin-top: 44px;
+    text-decoration: none;
+    padding: 0 32px;
+    width: fit-content;
+  }
+  .illustration-side {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: min(62%, 900px);
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .illustration-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right bottom;
+  }
+
+  /* Centered variant */
+  .final-cta.centered {
+    background: #FFFFFF;
+    padding: 88px 0 104px;
+    text-align: center;
+  }
+  .cta-centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  .cta-heart-icon-wrap {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cta-heart-icon {
+    width: 80px;
+    height: auto;
+  }
+
+
+  .final-cta.centered h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .final-cta.centered .btn {
+    background: #67B6F4;
+    color: #FFFFFF;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    min-height: 56px;
+    border-radius: 8px;
+    margin-top: 44px;
+    text-decoration: none;
+    padding: 0 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    box-shadow: 0 4px 14px rgba(103, 182, 244, 0.4);
+    border: none;
+    transition: all 0.2s ease;
+  }
+  .final-cta.centered .btn:hover {
+    background: #79B5EF;
+    color: #FFFFFF;
+    box-shadow: 0 8px 24px rgba(103, 182, 244, 0.5);
+  }
+
+  @media (max-width: 900px) {
+    .cta-content {
+      flex-direction: column;
+      height: auto;
+      padding: 40px 0 0 0;
+      align-items: center;
+      text-align: center;
+    }
+    .copy-side {
+      width: 100%;
+      padding: 0 24px;
+      align-items: center;
+    }
+    .illustration-side {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      margin-top: 40px;
+    }
+  }
+</style>

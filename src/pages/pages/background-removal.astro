@@ -1,0 +1,194 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const faqs = [
+  { question: "Can you remove complex backgrounds?", answer: "Yes, our team can remove backgrounds from images with highly complex edges and detailed objects." },
+  { question: "What about transparent backgrounds?", answer: "Yes, we can deliver images with transparent backgrounds in PNG format." },
+  { question: "Do you handle bulk orders?", answer: "Yes, we handle large volumes and offer volume discounts." },
+  { question: "What is the turnaround time?", answer: "Turnaround is usually around 6 hours depending on order size." }
+];
+---
+
+<Layout title="Background Removal Service | Path Edits" description="Make product photos pop with clean white or custom-color backgrounds. Starting from $0.39 per image.">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Background Removal Service" subtitle="Make product photos pop with clean white or custom-color backgrounds" breadcrumb={[{label: 'Services', href: '/pages/services'}]} />
+    
+    <section class="value-prop section-white">
+      <div class="container">
+        <div class="split-layout">
+          <div class="content">
+            <h2>Clean, marketplace-ready photos</h2>
+            <p>Ensure your products meet Amazon and eBay requirements with our background removal service. We provide crisp, consistent white or custom-colored backgrounds for all your eCommerce needs.</p>
+          </div>
+          <div class="image-wrapper">
+            <img src="https://cdn.pathedits.com/Images/shared/service-cards/background-removal-earbuds-edited.png?w=400" alt="Background Removal Service" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits section-light">
+      <div class="container">
+        <h2 class="text-center">Benefits of our background removal service</h2>
+        <div class="grid">
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/background-removal.svg" alt="Clean white backgrounds" width="48" height="48" />
+            <h3>Clean white backgrounds</h3>
+            <p>Perfect pure white backgrounds for consistency across your store.</p>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/background-removal.svg" alt="Custom colors" width="48" height="48" />
+            <h3>Custom colors</h3>
+            <p>Match your brand identity with any custom color background.</p>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/background-removal.svg" alt="Marketplace ready" width="48" height="48" />
+            <h3>Marketplace ready</h3>
+            <p>Comply with Amazon, eBay, and Google Shopping image requirements.</p>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pathedits.com/Icons/background-removal.svg" alt="Batch processing" width="48" height="48" />
+            <h3>Batch processing</h3>
+            <p>Get thousands of images processed quickly and efficiently.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing section-white">
+      <div class="container text-center">
+        <h2>Transparent Pricing</h2>
+        <p class="price-callout">From <strong>$0.39</strong> per image</p>
+        <p>Cost-effective background removal services that scale with your volume.</p>
+      </div>
+    </section>
+
+    <section class="faq-section section-light">
+      <div class="container">
+        <h2 class="text-center">Frequently Asked Questions</h2>
+        <div class="faq-wrapper">
+            <FAQ items={faqs} />
+        </div>
+      </div>
+    </section>
+
+    <section class="cta section-white">
+      <div class="container text-center">
+        <h2>Ready to optimize your product photos?</h2>
+        <p>Get marketplace-ready backgrounds today.</p>
+        <a href="/pages/free-trial" class="btn">Get started &rarr;</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .section-white {
+    background-color: #ffffff;
+    padding: 4rem 1rem;
+  }
+  .section-light {
+    background-color: #F8F6FA;
+    padding: 4rem 1rem;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+  }
+  .text-center {
+    text-align: center;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .split-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .split-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  .card img {
+    margin-bottom: 1rem;
+  }
+  
+  .price-callout {
+    font-size: 2.5rem;
+    color: #2B1B9A;
+    font-weight: 700;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #67B6F4;
+    color: #2B1B9A;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .btn:hover {
+    background-color: #9B93EE;
+    color: #ffffff;
+  }
+  
+  .faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+</style>

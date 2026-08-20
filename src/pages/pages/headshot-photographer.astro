@@ -1,0 +1,123 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Headshot Photography Editing | Path Edits" description="Professional headshot retouching for photographers">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Headshot Photography Editing" subtitle="Professional headshot retouching for photographers" />
+    
+    <section class="service-details">
+      <div class="container">
+        <div class="service-content">
+          <div class="image-block">
+            <div class="placeholder-box">
+               <span>Headshot Editing Example</span>
+            </div>
+          </div>
+          <div class="text-block">
+            <h2>Perfect Portraits, Every Time</h2>
+            <p>Deliver flawless corporate headshots and portraits without spending hours zooming in on blemishes. We provide natural, high-end retouching that keeps your clients looking like their best selves.</p>
+            
+            <ul class="benefits">
+              <li><strong>Natural Skin Retouching:</strong> We remove blemishes and soften wrinkles without creating a plastic, over-edited look.</li>
+              <li><strong>Background Cleanup:</strong> Ensure seamless backdrops by removing wrinkles, spots, or replacing backgrounds entirely.</li>
+              <li><strong>Color Correction:</strong> Perfect skin tones and lighting balance across an entire company's team photos.</li>
+              <li><strong>Batch Processing:</strong> Upload a whole company's worth of headshots and get them back processed uniformly.</li>
+            </ul>
+            
+            <a href="/pages/free-trial" class="btn">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .service-details {
+    padding: 80px 0;
+    background: white;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .service-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .service-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+  .benefits li {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    margin-bottom: 16px;
+    padding-left: 28px;
+    position: relative;
+  }
+  .benefits li::before {
+    content: '✓';
+    color: #67B6F4;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+  .benefits strong {
+    color: #2B1B9A;
+  }
+  .btn {
+    display: inline-block;
+    background: #67B6F4;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .placeholder-box {
+    background: #F3F1F9;
+    border-radius: 20px;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Livvic', sans-serif;
+    color: #9B93EE;
+    font-weight: 600;
+  }
+</style>

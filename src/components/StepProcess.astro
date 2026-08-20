@@ -1,0 +1,73 @@
+---
+interface Props {
+	steps: { number: number; title: string; description: string; icon?: string }[];
+}
+
+const { steps } = Astro.props;
+---
+
+<div class="steps-grid">
+	{steps.map(step => (
+		<div class="step-card">
+			<div class="step-number">{step.number}</div>
+			{step.icon && <img src={step.icon} alt={step.title} class="step-icon" />}
+			<h3>{step.title}</h3>
+			<p>{step.description}</p>
+		</div>
+	))}
+</div>
+
+<style>
+	.steps-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 32px;
+		text-align: center;
+	}
+
+	.step-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
+		padding: 24px 16px;
+	}
+
+	.step-number {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background: #2B1B9A;
+		color: #ffffff;
+		font-family: 'Livvic', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.step-icon {
+		width: 80px;
+		height: 80px;
+		object-fit: contain;
+	}
+
+	.step-card h3 {
+		font-family: 'Livvic', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		color: #2b1b9a;
+		margin: 0;
+	}
+
+	.step-card p {
+		font-family: 'Asap', sans-serif;
+		font-size: 15px;
+		color: #5f5572;
+		line-height: 1.6;
+		margin: 0;
+		max-width: 240px;
+	}
+</style>

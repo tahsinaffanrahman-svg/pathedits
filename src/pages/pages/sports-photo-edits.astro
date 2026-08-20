@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Sports Photo Editing | Path Edits" description="Professional editing for sports photographers">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Sports Photo Editing" subtitle="Professional editing for sports photographers" />
+    
+    <section class="service-details">
+      <div class="container">
+        <div class="service-content">
+          <div class="text-block">
+            <h2>Focus on the Action, We'll Handle the Edits</h2>
+            <p>Sports photographers capture hundreds, sometimes thousands, of images per game. Don't spend your off-hours stuck behind a screen. Path offers specialized sports photo editing to get your action shots game-ready fast.</p>
+            
+            <ul class="benefits">
+              <li><strong>Fast Turnaround:</strong> Deliver galleries to athletes and teams faster with our 12-24 hour standard turnaround.</li>
+              <li><strong>Bulk Processing:</strong> We can handle massive batches from tournaments and full-day events.</li>
+              <li><strong>Dynamic Enhancements:</strong> We adjust exposure, fix white balance, and crop for impact, ensuring every shot looks professional.</li>
+            </ul>
+            
+            <a href="/pages/free-trial" class="btn">Get Started</a>
+          </div>
+          <div class="image-block">
+            <div class="placeholder-box">
+               <span>Sports Editing Example</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .service-details {
+    padding: 80px 0;
+    background: #F8F6FA;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .service-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .service-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  p {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+  .benefits li {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    margin-bottom: 16px;
+    padding-left: 28px;
+    position: relative;
+  }
+  .benefits li::before {
+    content: '✓';
+    color: #67B6F4;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+  .benefits strong {
+    color: #2B1B9A;
+  }
+  .btn {
+    display: inline-block;
+    background: #67B6F4;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .placeholder-box {
+    background: #E5E0F5;
+    border-radius: 20px;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Livvic', sans-serif;
+    color: #9B93EE;
+    font-weight: 600;
+  }
+</style>

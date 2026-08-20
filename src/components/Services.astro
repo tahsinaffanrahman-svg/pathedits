@@ -1,0 +1,510 @@
+---
+// All 10 Core Services with authentic before/after image pairs
+const services = [
+  // Row 1: Large Cards (2 columns)
+  {
+    id: "clipping-path",
+    name: "Clipping path",
+    price: "$0.39",
+    size: "large",
+    link: "/pages/clipping-path",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/clipping-path/home-page-showcase/football-product-photo-before-retouching.png?w=1000",
+    afterImg: "https://cdn.pathedits.com/Images/pages/clipping-path/home-page-showcase/football-background-removal-drop-shadow.png?w=1000"
+  },
+  {
+    id: "background-removal",
+    name: "Background removal",
+    price: "$0.39",
+    size: "large",
+    link: "/pages/background-removal",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/background-removal/before-after-gallery-may-26/1-office-chair-clipping-path-before.png?w=1000",
+    afterImg: "https://cdn.pathedits.com/Images/pages/background-removal/before-after-gallery-may-26/1-office-chair-clipping-path-after.png?w=1000"
+  },
+
+  // Row 2: Small Cards (3 columns)
+  {
+    id: "drop-shadow",
+    name: "Shadow",
+    price: "$0.25",
+    size: "small",
+    link: "/pages/drop-shadow",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/drop-shadow/landing-page-photos/cardboard-box-before-shadow-editing.jpg?w=1000",
+    afterImg: "https://cdn.pathedits.com/Images/pages/drop-shadow/landing-page-photos/cardboard-box-natural-shadow-effect.jpg?w=1000"
+  },
+  {
+    id: "color-variants",
+    name: "Color changes",
+    price: "$0.99",
+    size: "small",
+    link: "/pages/color-variants",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/color-variants/home-page-showcase/family-matching-yellow-dresses-before-recoloring.png?w=1000",
+    afterImg: "https://cdn.pathedits.com/Images/pages/color-variants/home-page-showcase/image-masking-color-variant-editing.png?w=1000"
+  },
+  {
+    id: "multi-clipping-path",
+    name: "Multi-clipping path",
+    price: "$1.19",
+    size: "small",
+    link: "/pages/multi-clipping-path-services",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/multi-clipping-path-services/home-page-showcase/Small%20Plastic%20Dog%20Bowl%204%20Stack-Before.png?w=1000",
+    afterImg: "https://cdn.pathedits.com/Images/pages/multi-clipping-path-services/home-page-showcase/photoshop-clipping-path-vector-paths-panel.png?w=1000"
+  },
+
+  // Row 3: Small Cards (3 columns)
+  {
+    id: "ghost-mannequin",
+    name: "Ghost mannequin",
+    price: "$0.89",
+    size: "small",
+    link: "/pages/ghost-mannequin",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/ghost-mannequin/home-page-showcase/purple-apparel-on-mannequin-before-ghost-mannequin-edit.png?w=1000",
+    afterImg: "https://cdn.pathedits.com/Images/pages/ghost-mannequin/home-page-showcase/invisible-ghost-mannequin-apparel-photo-editing.png?w=1000"
+  },
+  {
+    id: "photo-retouching",
+    name: "Retouching",
+    price: "$0.69",
+    size: "small",
+    link: "/pages/photo-retouching",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/photo-retouching/Before_After/2-before-activewear-model-retouching.png?w=1000",
+    afterImg: "https://cdn.pathedits.com/Images/pages/photo-retouching/Before_After/2-after-activewear-model-retouched-background.png?w=1000"
+  },
+  {
+    id: "vector-conversion",
+    name: "Vector conversion",
+    price: "$3.99",
+    size: "small",
+    link: "/pages/vector-conversion",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/vector-conversion/landing-page-before-after-slider/01-vector-conversion-red-card-logo-before.png",
+    afterImg: "https://cdn.pathedits.com/Images/pages/vector-conversion/landing-page-before-after-slider/02-vector-conversion-red-card-logo-after.png"
+  },
+
+  // Row 4: Large Cards (2 columns)
+  {
+    id: "image-masking",
+    name: "Image masking",
+    price: "$1.19",
+    size: "large",
+    link: "/pages/image-masking",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/image-masking/Before_After/3-before-feather-mask-retouching.png?w=1000",
+    afterImg: "https://cdn.pathedits.com/Images/pages/image-masking/Before_After/3-after-feather-mask-background-removal.png?w=1000"
+  },
+  {
+    id: "symmetrical-edit",
+    name: "Symmetry",
+    price: "$2.99",
+    size: "large",
+    link: "/pages/symmetrical-edit",
+    beforeImg: "https://cdn.pathedits.com/Images/pages/mirror-effect/before-after-gallery/Sample%206_before.png?w=1000",
+    afterImg: "https://cdn.pathedits.com/Images/pages/mirror-effect/before-after-gallery/Sample%206_after.png?w=1000"
+  }
+];
+
+const row1 = services.slice(0, 2);
+const row2 = services.slice(2, 5);
+const row3 = services.slice(5, 8);
+const row4 = services.slice(8, 10);
+---
+
+<section class="pe-services">
+  <div class="container">
+    <h2 class="section-heading">See our photo editing services in action</h2>
+
+    <!-- Row 1: 2 Large Cards -->
+    <div class="services-row row-2-col row-large">
+      {row1.map(service => (
+        <div class="service-card large-card">
+          <div class="pe-before-after" data-slider style="--position: 50%;">
+            <img class="pe-ba-img pe-ba-after" src={service.afterImg} alt={`${service.name} after`} loading="lazy" />
+            <img class="pe-ba-img pe-ba-before" src={service.beforeImg} alt={`${service.name} before`} loading="lazy" />
+            <div class="pe-ba-divider">
+              <div class="pe-ba-handle">
+                <span class="arrow-left">&#8249;</span>
+                <span class="arrow-right">&#8250;</span>
+              </div>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="pe-ba-range" aria-label={`Compare before and after for ${service.name}`} />
+          </div>
+          <div class="pe-svc-info">
+            <div class="pe-svc-text">
+              <a href={service.link}><h3>{service.name}</h3></a>
+              <p class="price">From <strong>{service.price}</strong> per image</p>
+            </div>
+            <a href="/pages/free-trial" class="btn-order">Order now <span>&rarr;</span></a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Row 2: 3 Small Cards -->
+    <div class="services-row row-3-col row-small">
+      {row2.map(service => (
+        <div class="service-card small-card">
+          <div class="pe-before-after" data-slider style="--position: 50%;">
+            <img class="pe-ba-img pe-ba-after" src={service.afterImg} alt={`${service.name} after`} loading="lazy" />
+            <img class="pe-ba-img pe-ba-before" src={service.beforeImg} alt={`${service.name} before`} loading="lazy" />
+            <div class="pe-ba-divider">
+              <div class="pe-ba-handle">
+                <span class="arrow-left">&#8249;</span>
+                <span class="arrow-right">&#8250;</span>
+              </div>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="pe-ba-range" aria-label={`Compare before and after for ${service.name}`} />
+          </div>
+          <div class="pe-svc-info">
+            <div class="pe-svc-text">
+              <a href={service.link}><h3>{service.name}</h3></a>
+              <p class="price">From <strong>{service.price}</strong> per image</p>
+            </div>
+            <a href="/pages/free-trial" class="btn-order">Order now <span>&rarr;</span></a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Row 3: 3 Small Cards -->
+    <div class="services-row row-3-col row-small">
+      {row3.map(service => (
+        <div class="service-card small-card">
+          <div class="pe-before-after" data-slider style="--position: 50%;">
+            <img class="pe-ba-img pe-ba-after" src={service.afterImg} alt={`${service.name} after`} loading="lazy" />
+            <img class="pe-ba-img pe-ba-before" src={service.beforeImg} alt={`${service.name} before`} loading="lazy" />
+            <div class="pe-ba-divider">
+              <div class="pe-ba-handle">
+                <span class="arrow-left">&#8249;</span>
+                <span class="arrow-right">&#8250;</span>
+              </div>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="pe-ba-range" aria-label={`Compare before and after for ${service.name}`} />
+          </div>
+          <div class="pe-svc-info">
+            <div class="pe-svc-text">
+              <a href={service.link}><h3>{service.name}</h3></a>
+              <p class="price">From <strong>{service.price}</strong> per image</p>
+            </div>
+            <a href="/pages/free-trial" class="btn-order">Order now <span>&rarr;</span></a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Row 4: 2 Large Cards -->
+    <div class="services-row row-2-col row-large">
+      {row4.map(service => (
+        <div class="service-card large-card">
+          <div class="pe-before-after" data-slider style="--position: 50%;">
+            <img class="pe-ba-img pe-ba-after" src={service.afterImg} alt={`${service.name} after`} loading="lazy" />
+            <img class="pe-ba-img pe-ba-before" src={service.beforeImg} alt={`${service.name} before`} loading="lazy" />
+            <div class="pe-ba-divider">
+              <div class="pe-ba-handle">
+                <span class="arrow-left">&#8249;</span>
+                <span class="arrow-right">&#8250;</span>
+              </div>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="pe-ba-range" aria-label={`Compare before and after for ${service.name}`} />
+          </div>
+          <div class="pe-svc-info">
+            <div class="pe-svc-text">
+              <a href={service.link}><h3>{service.name}</h3></a>
+              <p class="price">From <strong>{service.price}</strong> per image</p>
+            </div>
+            <a href="/pages/free-trial" class="btn-order">Order now <span>&rarr;</span></a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="pe-services-all">
+      <a href="/pages/services" class="btn-all-services">See all our services</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initSliders() {
+    const sliders = document.querySelectorAll<HTMLElement>('[data-slider]');
+    sliders.forEach(slider => {
+      const range = slider.querySelector<HTMLInputElement>('.pe-ba-range');
+      if (!range) return;
+
+      const setPos = (val: string | number) => {
+        slider.style.setProperty('--position', `${val}%`);
+      };
+
+      range.addEventListener('input', (e) => {
+        const target = e.target as HTMLInputElement;
+        setPos(target.value);
+      });
+
+      // Pointer drag interaction
+      let isDragging = false;
+      const updateFromPointer = (e: MouseEvent | Touch) => {
+        const rect = slider.getBoundingClientRect();
+        const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+        const pct = Math.round((x / rect.width) * 100);
+        setPos(pct);
+        range.value = pct.toString();
+      };
+
+      slider.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        updateFromPointer(e);
+      });
+      window.addEventListener('mousemove', (e) => {
+        if (isDragging) updateFromPointer(e);
+      });
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      slider.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) updateFromPointer(e.touches[0]);
+      }, { passive: true });
+      slider.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) updateFromPointer(e.touches[0]);
+      }, { passive: true });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSliders);
+  } else {
+    initSliders();
+  }
+</script>
+
+<style>
+  .pe-services {
+    background-color: #FFFFFF;
+    padding: 80px 0;
+  }
+  .container {
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .section-heading {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .services-row {
+    display: grid;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .row-2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .row-3-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #E9E6EF;
+    box-shadow: 0 4px 16px rgba(43, 27, 154, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .service-card:hover {
+    box-shadow: 0 8px 24px rgba(43, 27, 154, 0.08);
+  }
+
+  .large-card .pe-before-after {
+    height: 400px;
+  }
+  .small-card .pe-before-after {
+    height: 281px;
+  }
+
+  .pe-before-after {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #f0f0f5;
+    user-select: none;
+  }
+
+  .pe-ba-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    pointer-events: none;
+  }
+
+  .pe-ba-after {
+    z-index: 1;
+  }
+
+  .pe-ba-before {
+    z-index: 2;
+    clip-path: inset(0 calc(100% - var(--position, 50%)) 0 0);
+  }
+
+  .pe-ba-divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--position, 50%);
+    width: 2px;
+    background-color: #2B1B9A;
+    z-index: 4;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .pe-ba-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #D2EAFC;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 2px 8px rgba(43, 27, 154, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .pe-ba-handle .arrow-left,
+  .pe-ba-handle .arrow-right {
+    color: #2B1B9A;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .pe-ba-range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 5;
+    margin: 0;
+  }
+
+  /* Bottom info strip */
+  .pe-svc-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 28px;
+    background: #F8F6FA;
+    border-top: 1px solid #E9E6EF;
+    min-height: 96px;
+    box-sizing: border-box;
+    gap: 12px;
+  }
+
+  .pe-svc-text a {
+    text-decoration: none;
+  }
+  .pe-svc-text h3 {
+    color: #2B1B9A;
+    font-family: 'Livvic', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+    transition: color 0.2s;
+  }
+  .pe-svc-text a:hover h3 {
+    color: #9B93EE;
+  }
+  .pe-svc-text .price {
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .pe-svc-text .price strong {
+    font-weight: 700;
+  }
+
+  .btn-order {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFFFFF;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(43, 27, 154, 0.08);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .btn-order:hover {
+    box-shadow: 0 6px 16px rgba(43, 27, 154, 0.14);
+    background: #F1EFFE;
+  }
+  .btn-order span {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  /* Bottom CTA */
+  .pe-services-all {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+  }
+  .btn-all-services {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #67B6F4;
+    color: #2B1B9A;
+    font-family: 'Asap', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .btn-all-services:hover {
+    background: #55A4E2;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 900px) {
+    .row-2-col,
+    .row-3-col {
+      grid-template-columns: 1fr;
+    }
+    .large-card .pe-before-after,
+    .small-card .pe-before-after {
+      height: 320px;
+    }
+    .pe-svc-info {
+      padding: 20px;
+    }
+  }
+</style>

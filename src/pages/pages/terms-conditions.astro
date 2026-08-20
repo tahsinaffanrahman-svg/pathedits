@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import InfoBar from '../../components/InfoBar.astro';
+import PageHero from '../../components/PageHero.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Terms & Conditions | Path Edits" description="Terms & Conditions for Path Edits">
+  <Header />
+  <InfoBar />
+  <main>
+    <PageHero title="Terms & Conditions" subtitle="Last updated: January 2024" />
+    
+    <section class="legal-content">
+      <div class="container">
+        <div class="content-body">
+          <h2>1. Service Terms</h2>
+          <p>By accessing or using our services, you agree to be bound by these Terms. Path provides professional photo editing services based on instructions and files provided by you.</p>
+          
+          <h2>2. Payment</h2>
+          <p>Payment is required before processing begins unless a prior arrangement has been made. We accept major credit cards and PayPal. All sales are final, but we offer a satisfaction guarantee with revisions.</p>
+          
+          <h2>3. Intellectual Property</h2>
+          <p>You retain all rights to your original images. By submitting images to us, you grant us a temporary license to edit and modify them to fulfill your order. Path claims no ownership over your content.</p>
+          
+          <h2>4. Liability</h2>
+          <p>Path shall not be liable for any indirect, incidental, special, consequential or punitive damages resulting from your use of or inability to use the service.</p>
+          
+          <h2>5. Disputes</h2>
+          <p>Any disputes arising out of these terms shall be resolved in accordance with the laws of the jurisdiction where Path is registered.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal-content {
+    padding: 80px 0;
+    background: white;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .content-body h2 {
+    font-family: 'Livvic', sans-serif;
+    color: #2B1B9A;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 40px 0 20px;
+  }
+  .content-body h2:first-child {
+    margin-top: 0;
+  }
+  .content-body p, .content-body ul {
+    font-family: 'Asap', sans-serif;
+    color: #5F5572;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+</style>
