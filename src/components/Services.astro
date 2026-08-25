@@ -494,17 +494,36 @@ const row4 = services.slice(8, 10);
     transform: translateY(-1px);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
+    .row-3-col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .large-card .pe-before-after {
+      height: 340px;
+    }
+    .small-card .pe-before-after {
+      height: 260px;
+    }
+  }
+
+  @media (max-width: 640px) {
     .row-2-col,
     .row-3-col {
       grid-template-columns: 1fr;
     }
     .large-card .pe-before-after,
     .small-card .pe-before-after {
-      height: 320px;
+      height: 260px;
     }
     .pe-svc-info {
-      padding: 20px;
+      padding: 16px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .btn-order {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>

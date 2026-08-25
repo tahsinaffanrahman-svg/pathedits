@@ -255,24 +255,37 @@
   }
   
   @media (max-width: 1024px) {
+    .hero-section .container {
+      padding: 0 24px;
+    }
     .image-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
+    .hero-section {
+      padding: 48px 0 32px;
+    }
+    .hero-section .container {
+      padding: 0 16px;
+    }
+    .hero-content {
+      margin-bottom: 40px;
+    }
+    .subtitle {
+      font-size: 18px;
+    }
     .image-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
     .cta-group {
       flex-direction: column;
     }
-  }
-  
-  @media (max-width: 480px) {
-    .image-grid {
-      grid-template-columns: 1fr;
-      padding-right: 16px;
+    .btn {
+      width: 100%;
     }
   }
 </style>
