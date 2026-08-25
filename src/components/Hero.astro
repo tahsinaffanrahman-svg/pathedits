@@ -254,9 +254,18 @@
     display: inline;
   }
   
+  /* 1. Desktop (>1024px): Default styles above */
+
+  /* 2. Tablet (max-width: 1024px) */
   @media (max-width: 1024px) {
+    .hero-section {
+      padding: 60px 0 36px;
+    }
     .hero-section .container {
       padding: 0 24px;
+    }
+    .hero-content {
+      margin-bottom: 48px;
     }
     .image-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -264,7 +273,8 @@
     }
   }
   
-  @media (max-width: 640px) {
+  /* 3. Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
     .hero-section {
       padding: 48px 0 32px;
     }
@@ -272,7 +282,10 @@
       padding: 0 16px;
     }
     .hero-content {
-      margin-bottom: 40px;
+      margin-bottom: 36px;
+    }
+    h1 {
+      font-size: 32px;
     }
     .subtitle {
       font-size: 18px;
@@ -283,6 +296,7 @@
     }
     .cta-group {
       flex-direction: column;
+      width: 100%;
     }
     .btn {
       width: 100%;

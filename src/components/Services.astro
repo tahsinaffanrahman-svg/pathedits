@@ -494,7 +494,13 @@ const row4 = services.slice(8, 10);
     transform: translateY(-1px);
   }
 
+  /* 1. Desktop (>1024px): Default styles above */
+
+  /* 2. Tablet (max-width: 1024px) */
   @media (max-width: 1024px) {
+    .pe-services {
+      padding: 60px 0;
+    }
     .row-3-col {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -506,7 +512,11 @@ const row4 = services.slice(8, 10);
     }
   }
 
-  @media (max-width: 640px) {
+  /* 3. Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    .pe-services {
+      padding: 48px 0;
+    }
     .row-2-col,
     .row-3-col {
       grid-template-columns: 1fr;
