@@ -18,12 +18,9 @@ const faqs = [
           <button class="faq-question">
             <span>{faq.q}</span>
             <div class="toggle-btn">
-              <svg class="plus-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#282294" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
+              <svg class="toggle-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#282294" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-              <svg class="minus-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#282294" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <line class="vert-line" x1="12" y1="5" x2="12" y2="19"></line>
               </svg>
             </div>
           </button>
@@ -110,18 +107,18 @@ const faqs = [
     margin-left: 20px;
     transition: transform 0.2s ease, background 0.2s ease;
   }
-  .toggle-btn svg {
+  .toggle-svg {
     display: block;
     flex-shrink: 0;
   }
-  .minus-icon {
-    display: none;
+  .vert-line {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform-origin: center;
+    opacity: 1;
   }
-  .faq-item.active .plus-icon {
-    display: none;
-  }
-  .faq-item.active .minus-icon {
-    display: block;
+  .faq-item.active .vert-line {
+    opacity: 0;
+    transform: scaleY(0);
   }
   .faq-answer {
     display: none;
