@@ -18,8 +18,13 @@ const faqs = [
           <button class="faq-question">
             <span>{faq.q}</span>
             <div class="toggle-btn">
-              <span class="plus">+</span>
-              <span class="minus">-</span>
+              <svg class="plus-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B1B9A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <svg class="minus-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B1B9A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
             </div>
           </button>
           <div class="faq-answer">
@@ -48,10 +53,10 @@ const faqs = [
     background: #FFFFFF;
     padding: 80px 0;
   }
-  .container {
-    max-width: 1256px;
+  .faq .container {
+    max-width: 1440px !important;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 32px;
   }
   h2 {
     text-align: center;
@@ -68,7 +73,7 @@ const faqs = [
   }
   .faq-item {
     background: #F8F6FA;
-    border-radius: 8px;
+    border-radius: 12px;
     border: 2px solid transparent;
     padding: 24px 32px;
     transition: all 0.3s ease;
@@ -93,26 +98,29 @@ const faqs = [
     text-align: left;
   }
   .toggle-btn {
-    width: 71px;
-    height: 71px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 14px rgba(43, 27, 154, 0.12);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
-    color: #2B1B9A;
     flex-shrink: 0;
-    margin-left: 16px;
+    margin-left: 20px;
+    transition: transform 0.2s ease, background 0.2s ease;
   }
-  .minus {
+  .toggle-btn svg {
+    display: block;
+    flex-shrink: 0;
+  }
+  .minus-icon {
     display: none;
   }
-  .faq-item.active .plus {
+  .faq-item.active .plus-icon {
     display: none;
   }
-  .faq-item.active .minus {
+  .faq-item.active .minus-icon {
     display: block;
   }
   .faq-answer {
@@ -125,18 +133,51 @@ const faqs = [
   .faq-answer p {
     font-family: 'Asap', sans-serif;
     color: #5F5572;
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
     line-height: 1.5;
   }
-  @media (max-width: 600px) {
+
+  /* 1. Desktop (>1024px): Default styles above */
+
+  /* 2. Tablet (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    .faq {
+      padding: 60px 0;
+    }
+    .faq .container {
+      padding: 0 24px;
+    }
     .faq-question {
-      font-size: 20px;
+      font-size: 22px;
     }
     .toggle-btn {
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  /* 3. Mobile (max-width: 768px) */
+  @media (max-width: 768px) {
+    .faq {
+      padding: 48px 0;
+    }
+    .faq .container {
+      padding: 0 16px;
+    }
+    .faq-item {
+      padding: 20px 24px;
+    }
+    .faq-question {
+      font-size: 18px;
+    }
+    .toggle-btn {
+      width: 44px;
+      height: 44px;
+    }
+    .toggle-btn svg {
+      width: 18px;
+      height: 18px;
     }
   }
 </style>
