@@ -10,7 +10,13 @@
       <div class="right-col">
         <h2>Good for business, good for the world</h2>
         <p>At Path, we believe that when done right, outsourcing can be good for everyone — not just your budget. Learn how your edits are changing lives in Gaibandha, Bangladesh through the Anisa Foundation.</p>
-        <a href="https://anisafoundation.org/" class="btn">Read our story</a>
+        <a href="https://anisafoundation.org/" class="btn" target="_blank" rel="noopener">
+          <span>Read our story</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
         <hr />
         <div class="logos">
           <img src="https://cdn.pathedits.com/Logos/anisa-foundation-heart-logo.svg" alt="Anisa Foundation" width="140" />
@@ -70,14 +76,23 @@
     line-height: 1.5;
   }
   .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background: #67B6F4;
     color: #2B1B9A;
     font-family: 'Asap', sans-serif;
     font-weight: 700;
+    font-size: 18px;
     padding: 14px 28px;
-    border-radius: 8px;
+    border-radius: 12px;
     text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .btn:hover {
+    background: #54A6E8;
+    transform: translateY(-1px);
   }
   hr {
     border: none;
